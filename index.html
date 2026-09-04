@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Esta primera línea le dice al navegador "esto es HTML moderno" -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- charset UTF-8 = para que se vean bien las tildes y la ñ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- viewport = para que se vea bien en el celular también -->
+  <title>Café GOD - Inicio</title>
+  <!-- Este es el nombre que aparece en la pestaña del navegador -->
+
+  <!-- Acá conectamos el archivo de estilos. Tiene que estar
+       en la MISMA carpeta que este archivo .html -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Esta barra de abajo es SOLO para que puedas moverte entre
+       tus 3 páginas mientras trabajás. Borrala cuando entregues
+       si tu profe no la pidió. -->
+  <div class="nav-proyecto">
+    <a href="index.html">Página 1 (Portada)</a> |
+    <a href="menu.html">Página 2 (Menú)</a> |
+    <a href="tienda.html">Página 3 (Tienda)</a>
+  </div>
+
+  <!-- ===================================================
+       BARRA NEGRA DE ARRIBA: "¿ALGO NUEVO?"
+       <header> es la etiqueta para la parte de arriba de
+       la página (como el encabezado de una carta).
+  ==================================================== -->
+  <header class="portada-topbar">
+    ¿ALGO NUEVO?
+  </header>
+
+  <!-- ===================================================
+       SECCIÓN PRINCIPAL (HERO): fondo de mar, texto y botón
+       <section> agrupa un bloque de contenido relacionado.
+  ==================================================== -->
+  <section class="portada-hero">
+
+    <!-- Bloque de texto -->
+    <div class="portada-texto">
+      <h1 class="serif">Cafe "GOD"</h1>
+      <!-- <h1> = título principal de la página (el más grande) -->
+
+      <p>Para esos que lo saben ~</p>
+      <!-- <p> = un párrafo de texto normal -->
+
+      <a href="#" class="boton boton-claro">COMPRAR</a>
+      <!-- <a> normalmente es un link. href="#" es un link "vacío"
+           que no lleva a ningún lado todavía. Cuando tengas la
+           página de compra, cambiás el # por el nombre del archivo,
+           ej: href="comprar.html" -->
+    </div>
+
+    <!-- Acá va la imagen de la mano sosteniendo el vaso de café.
+         Por ahora es un cartel gris. Reemplazalo por una <img>
+         cuando tengas la imagen exportada (mirá las instrucciones
+         que te paso en el chat). -->
+    <div class="portada-imagen placeholder">
+      Imagen: mano sosteniendo<br>el vaso de café
+    </div>
+
+  </section>
+
+</body>
+</html>
