@@ -5,64 +5,464 @@
   <meta charset="UTF-8">
   <!-- charset UTF-8 = para que se vean bien las tildes y la ñ -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- viewport = para que se vea bien en el celular también -->
-  <title>Café GOD - Inicio</title>
-  <!-- Este es el nombre que aparece en la pestaña del navegador -->
+  <!-- viewport = para que se vea bien también en el celular -->
+  <title>Café Loop</title>
 
-  <!-- Acá conectamos el archivo de estilos. Tiene que estar
-       en la MISMA carpeta que este archivo .html -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- ===================================================
+       Acá abajo va TODO el CSS (los estilos: colores,
+       tamaños, espacios), metido adentro de <style>, en vez
+       de estar en un archivo aparte.
+  ==================================================== -->
+  <style>
+
+    /* Traemos dos tipografías de Google Fonts:
+       - Playfair Display: la letra elegante/cursiva para títulos
+       - Poppins: una letra simple para textos normales */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@400;500;600;700&display=swap');
+
+    /* -----------------------------------------------------
+       RESET BÁSICO
+       Los navegadores traen márgenes por defecto en <body>,
+       <h1>, <p>, etc. Esto los pone todos en 0 para que
+       nosotros controlemos los espacios a mano.
+    ----------------------------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* así el padding no rompe los anchos */
+    }
+
+    /* -----------------------------------------------------
+       COLORES DEL PROYECTO
+       Los definimos una sola vez acá arriba como "variables"
+       (con --nombre) para poder reutilizarlos escribiendo
+       var(--nombre-de-la-variable) en cualquier parte de abajo.
+    ----------------------------------------------------- */
+    :root {
+      --negro: #0d0d0d;
+      --blanco: #ffffff;
+      --mar-oscuro: #123b52;
+      --mar-medio: #1f5f82;
+      --lavanda: #8b8fc9;
+      --gris-fondo: #e8e6e1;
+      --texto-gris: #4a4a4a;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--negro);
+      background: var(--blanco);
+    }
+
+    /* Clase para usar la letra elegante en cualquier título */
+    .serif {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    /* -----------------------------------------------------
+       BARRA PARA SALTAR ENTRE SECCIONES
+       (no es parte del diseño de Figma, es solo una ayuda
+       para moverte mientras trabajás. La podés borrar)
+    ----------------------------------------------------- */
+    .nav-proyecto {
+      background: #f2f2f2;
+      padding: 10px 20px;
+      font-size: 0.8rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-proyecto a {
+      margin: 0 10px;
+      color: var(--negro);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav-proyecto a:hover {
+      text-decoration: underline;
+    }
+
+    /* -----------------------------------------------------
+       BOTONES REDONDEADOS (tipo COMPRAR, MENÚ)
+    ----------------------------------------------------- */
+    .boton {
+      display: inline-block;
+      padding: 14px 34px;
+      border-radius: 999px; /* número grande = bordes bien redondeados */
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .boton:hover {
+      transform: translateY(-2px); /* se levanta un poco al pasar el mouse */
+    }
+    .boton-claro {
+      background: var(--blanco);
+      color: var(--negro);
+    }
+    .boton-outline {
+      background: transparent;
+      border: 1px solid var(--negro);
+      color: var(--negro);
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+    }
+
+    /* -----------------------------------------------------
+       CAJAS "PLACEHOLDER" (reemplazan a tus imágenes por ahora)
+       Cuando tengas la imagen real exportada de Figma, borrás
+       esta clase y le ponés una <img src="..."> en su lugar.
+    ----------------------------------------------------- */
+    .placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      color: #555;
+      font-size: 0.8rem;
+      background: repeating-linear-gradient(
+        45deg,
+        #d8d8d8,
+        #d8d8d8 10px,
+        #ececec 10px,
+        #ececec 20px
+      );
+      border-radius: 8px;
+    }
+
+    /* =======================================================
+       SECCIÓN 1: PORTADA "Cafe GOD"
+    ======================================================= */
+    .portada-topbar {
+      background: var(--negro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .portada-hero {
+      position: relative;
+      min-height: 620px;
+      background: linear-gradient(180deg, var(--mar-medio), var(--mar-oscuro));
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      overflow: hidden;
+    }
+
+    .portada-texto h1 {
+      font-size: 3rem;
+      color: #dfe8ef;
+      margin-bottom: 30px;
+    }
+
+    .portada-texto p {
+      font-size: 1.4rem;
+      color: #cfe0ea;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      margin-bottom: 40px;
+      max-width: 420px;
+    }
+
+    .portada-imagen {
+      position: absolute;
+      right: 6%;
+      bottom: 0;
+      width: 260px;
+      height: 340px;
+    }
+
+    /* =======================================================
+       SECCIÓN 2: MENÚ "Café Loop"
+    ======================================================= */
+    .menu-header {
+      background: var(--lavanda);
+      color: var(--blanco);
+      text-align: center;
+      padding: 70px 20px 50px;
+    }
+
+    .menu-header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .menu-header p {
+      max-width: 560px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .menu-productos {
+      background: var(--gris-fondo);
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .tarjeta-producto {
+      width: 220px;
+      text-align: center;
+    }
+
+    .tarjeta-producto .placeholder {
+      width: 100%;
+      height: 260px;
+      margin-bottom: 18px;
+    }
+
+    .tarjeta-producto h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .tarjeta-producto p.descripcion {
+      font-size: 0.8rem;
+      color: var(--texto-gris);
+      margin-bottom: 18px;
+      min-height: 40px;
+    }
+
+    /* =======================================================
+       SECCIÓN 3: TIENDA "Caffe Loop"
+    ======================================================= */
+    .promo-bar {
+      background: #111111;
+      color: #cccccc;
+      font-size: 0.7rem;
+      text-align: center;
+      padding: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .tienda-nav {
+      background: var(--negro);
+      color: var(--blanco);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tienda-nav .nav-izquierda a,
+    .tienda-nav .nav-derecha a {
+      color: var(--blanco);
+      text-decoration: none;
+      margin-right: 22px;
+      font-size: 0.75rem;
+      font-style: italic;
+      letter-spacing: 0.5px;
+    }
+
+    .tienda-nav .logo {
+      font-size: 1.4rem;
+    }
+
+    .tienda-hero {
+      background: var(--lavanda);
+      min-height: 460px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 40px 8%;
+      overflow: hidden;
+    }
+
+    .insignia {
+      background: var(--blanco);
+      color: var(--negro);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      display: inline-block;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .tienda-hero h1 {
+      font-size: 4rem;
+      color: var(--blanco);
+    }
+
+    .tienda-hero-imagen {
+      position: absolute;
+      right: 6%;
+      bottom: 20px;
+      width: 220px;
+      height: 300px;
+    }
+
+    .tienda-footer {
+      background: var(--negro);
+      height: 160px;
+    }
+
+    /* -----------------------------------------------------
+       RESPONSIVE: para que no se vea roto en pantallas chicas
+    ----------------------------------------------------- */
+    @media (max-width: 700px) {
+      .portada-hero,
+      .tienda-hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+      }
+      .portada-imagen,
+      .tienda-hero-imagen {
+        position: static;
+        margin-top: 30px;
+      }
+      .tienda-hero h1 {
+        font-size: 2.5rem;
+      }
+      .menu-productos {
+        gap: 30px;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
-  <!-- Esta barra de abajo es SOLO para que puedas moverte entre
-       tus 3 páginas mientras trabajás. Borrala cuando entregues
-       si tu profe no la pidió. -->
+  <!-- Barrita para saltar rápido entre las 3 secciones mientras
+       trabajás. La podés borrar si no la necesitás. -->
   <div class="nav-proyecto">
-    <a href="index.html">Página 1 (Portada)</a> |
-    <a href="menu.html">Página 2 (Menú)</a> |
-    <a href="tienda.html">Página 3 (Tienda)</a>
+    <a href="#tienda">Tienda</a> |
+    <a href="#menu">Menú</a> |
+    <a href="#portada">Portada</a>
   </div>
 
-  <!-- ===================================================
-       BARRA NEGRA DE ARRIBA: "¿ALGO NUEVO?"
+  <!-- =====================================================
+       SECCIÓN 1: PORTADA (antes era Desktop - 1)
        <header> es la etiqueta para la parte de arriba de
-       la página (como el encabezado de una carta).
-  ==================================================== -->
-  <header class="portada-topbar">
-    ¿ALGO NUEVO?
-  </header>
-
-  <!-- ===================================================
-       SECCIÓN PRINCIPAL (HERO): fondo de mar, texto y botón
-       <section> agrupa un bloque de contenido relacionado.
-  ==================================================== -->
-  <section class="portada-hero">
-
-    <!-- Bloque de texto -->
-    <div class="portada-texto">
-      <h1 class="serif">Cafe "GOD"</h1>
-      <!-- <h1> = título principal de la página (el más grande) -->
-
-      <p>Para esos que lo saben ~</p>
-      <!-- <p> = un párrafo de texto normal -->
-
-      <a href="#" class="boton boton-claro">COMPRAR</a>
-      <!-- <a> normalmente es un link. href="#" es un link "vacío"
-           que no lleva a ningún lado todavía. Cuando tengas la
-           página de compra, cambiás el # por el nombre del archivo,
-           ej: href="comprar.html" -->
+       la página, como el encabezado de una carta.
+  ====================================================== -->
+  <div id="tienda">
+    <!-- Franja negra fina de promociones, arriba de todo -->
+    <div class="promo-bar">
+      15% de descuento todos los Miércoles &nbsp;·&nbsp;
+      Café de Especialidad &nbsp;·&nbsp;
+      Café Gratis en tu cumpleaños
     </div>
 
-    <!-- Acá va la imagen de la mano sosteniendo el vaso de café.
-         Por ahora es un cartel gris. Reemplazalo por una <img>
-         cuando tengas la imagen exportada (mirá las instrucciones
-         que te paso en el chat). -->
-    <div class="portada-imagen placeholder">
-      Imagen: mano sosteniendo<br>el vaso de café
-    </div>
+    <!-- <nav> es la etiqueta especial para menús de navegación -->
+    <nav class="tienda-nav">
+      <div class="nav-izquierda">
+        <a href="#">SHOP</a>
+        <a href="#">Ubicación</a>
+        <a href="#">Sobre nosotros</a>
+      </div>
 
-  </section>
+      <div class="logo serif">Caffe Loop</div>
+
+      <div class="nav-derecha">
+        <!-- Íconos de texto simple por ahora. Más adelante los
+             podés cambiar por íconos reales, ej con Font Awesome -->
+        <a href="#">🔍</a>
+        <a href="#">👤</a>
+        <a href="#">🛒</a>
+      </div>
+    </nav>
+
+    <section class="tienda-hero">
+      <div class="tienda-texto">
+        <span class="insignia">Made with AI</span>
+        <h1 class="serif">Loop</h1>
+      </div>
+
+      <!-- Acá van la bolsa de café y las manos de tu diseño -->
+      <div class="tienda-hero-imagen placeholder">
+        Imagen: bolsa de café<br>"Caffe Loop" + manos
+      </div>
+    </section>
+
+    <!-- Franja negra de abajo, como en tu diseño -->
+    <footer class="tienda-footer"></footer>
+  </div>
+
+  <div id="menu">
+    <header class="menu-header">
+      <h1 class="serif">Café Loop</h1>
+      <p>
+        Cafetería pensada como un espacio para tomar café, escuchar
+        música, estudiar, trabajar o compartir un momento.
+      </p>
+      <a href="#" class="boton boton-claro">MENÚ</a>
+    </header>
+
+    <section class="menu-productos">
+
+      <!-- Tarjeta 1: <article> = un bloque que se entiende solo,
+           como una tarjeta de producto -->
+      <article class="tarjeta-producto">
+        <div class="placeholder">
+          Imagen: gato con<br>taza de café (marrón)
+        </div>
+        <h3>¿Curioso?</h3>
+        <a href="#" class="boton boton-outline">Carrito →</a>
+      </article>
+
+      <!-- Tarjeta 2 -->
+      <article class="tarjeta-producto">
+        <div class="placeholder">
+          Imagen: gato con<br>taza de café (naranja)
+        </div>
+        <h3>¿Curioso?</h3>
+        <p class="descripcion">
+          Nuestro cuestionario sobre café en la manera perfecta de
+          encontrar tu café favorito.
+        </p>
+        <a href="#" class="boton boton-outline">Realizar el cuestionario →</a>
+      </article>
+
+    </section>
+  </div>
+
+  <div id="portada">
+    <header class="portada-topbar">
+      ¿ALGO NUEVO?
+    </header>
+
+    <!-- <section> agrupa un bloque de contenido relacionado -->
+    <section class="portada-hero">
+
+      <div class="portada-texto">
+        <h1 class="serif">Cafe "GOD"</h1>
+        <!-- <h1> = título principal (el texto más grande) -->
+
+        <p>Para esos que lo saben ~</p>
+        <!-- <p> = un párrafo de texto normal -->
+
+        <a href="#" class="boton boton-claro">COMPRAR</a>
+        <!-- href="#" es un link "vacío". Cuando tengas la página
+             de compra real, cambiás el # por el nombre del
+             archivo, ej: href="comprar.html" -->
+      </div>
+
+      <!-- Acá va la imagen de la mano sosteniendo el vaso de café.
+           Por ahora es un cartel gris de aviso. -->
+      <div class="portada-imagen placeholder">
+        Imagen: mano sosteniendo<br>el vaso de café
+      </div>
+
+    </section>
+  </div>
 
 </body>
 </html>
