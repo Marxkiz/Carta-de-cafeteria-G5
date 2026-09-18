@@ -44,6 +44,7 @@
         font-family: "Playfair Display", serif;
         font-style: italic;
       }
+
       .nav-proyecto {
         background: #f2f2f2;
         padding: 10px 20px;
@@ -53,6 +54,7 @@
         top: 0;
         z-index: 10;
       }
+
       .nav-proyecto a {
         display: inline-block;
         margin: 0 10px;
@@ -85,13 +87,16 @@
         cursor: pointer;
         transition: transform 0.15s ease;
       }
+
       .boton:hover {
         transform: translateY(-2px); /* se levanta un poco al pasar el mouse */
       }
+
       .boton-claro {
         background: var(--blanco);
         color: var(--negro);
       }
+
       .boton-outline {
         background: transparent;
         border: 1px solid var(--negro);
@@ -318,20 +323,24 @@
           text-align: center;
           padding-top: 40px;
         }
+
         .portada-imagen,
         .tienda-hero-imagen {
           position: static;
           margin-top: 30px;
         }
+
         .tienda-hero h1 {
           font-size: 2.5rem;
         }
+
         .menu-productos {
           gap: 30px;
         }
       }
     </style>
   </head>
+
   <body>
     <!-- Barrita para saltar rápido entre las 3 secciones mientras
        trabajás. La podés borrar si no la necesitás. -->
@@ -344,7 +353,7 @@
        SECCIÓN 1: PORTADA (antes era Desktop - 1)
        <header> es la etiqueta para la parte de arriba de
        la página, como el encabezado de una carta.
-  ====================================================== -->
+    ====================================================== -->
     <div id="tienda">
       <!-- Franja negra fina de promociones, arriba de todo -->
       <div class="promo-bar">
@@ -418,7 +427,9 @@
             Nuestro cuestionario sobre café en la manera perfecta de encontrar
             tu café favorito.
           </p>
-          <a href="#" class="boton boton-outline">Realizar el cuestionario →</a>
+          <a href="#" class="boton boton-outline">
+            Realizar el cuestionario →
+          </a>
         </article>
       </section>
     </div>
@@ -430,6 +441,7 @@
       <section class="portada-hero">
         <div class="portada-texto">
           <h1 class="serif">Café Loop</h1>
+
           <!-- <h1> = título principal (el texto más grande) -->
 
           <p>Para esos que lo saben ~</p>
