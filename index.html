@@ -7,290 +7,7 @@
   <!-- viewport = para que se vea bien también en el celular -->
   <title>Café Loop</title>
 
-  <style>
-
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@400;500;600;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --negro: #0d0d0d;
-      --blanco: #ffffff;
-      --mar-oscuro: #123b52;
-      --mar-medio: #1f5f82;
-      --lavanda: #8b8fc9;
-      --gris-fondo: #e8e6e1;
-      --texto-gris: #4a4a4a;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--negro);
-      background: var(--blanco);
-    }
-
-    /* Clase para usar la letra elegante en cualquier título */
-    .serif {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-    }
-    .nav-proyecto {
-      background: #f2f2f2;
-      padding: 10px 20px;
-      font-size: 0.8rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav-proyecto a {
-      margin: 0 10px;
-      color: var(--negro);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .nav-proyecto a:hover {
-      text-decoration: underline;
-    }
-
-    .boton {
-      display: inline-block;
-      padding: 14px 34px;
-      border-radius: 999px; /* número grande = bordes bien redondeados */
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-    .boton:hover {
-      transform: translateY(-2px); /* se levanta un poco al pasar el mouse */
-    }
-    .boton-claro {
-      background: var(--blanco);
-      color: var(--negro);
-    }
-    .boton-outline {
-      background: transparent;
-      border: 1px solid var(--negro);
-      color: var(--negro);
-      border-radius: 6px;
-      padding: 10px 20px;
-      font-size: 0.85rem;
-    }
-
-    .placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 12px;
-      color: #555;
-      font-size: 0.8rem;
-      background: repeating-linear-gradient(
-        45deg,
-        #d8d8d8,
-        #d8d8d8 10px,
-        #ececec 10px,
-        #ececec 20px
-      );
-      border-radius: 8px;
-    }
-
-    .portada-topbar {
-      background: var(--negro);
-      color: var(--blanco);
-      text-align: center;
-      padding: 20px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .portada-hero {
-      position: relative;
-      min-height: 620px;
-      background: linear-gradient(180deg, var(--mar-medio), var(--mar-oscuro));
-      display: flex;
-      align-items: center;
-      padding: 60px 8%;
-      overflow: hidden;
-    }
-
-    .portada-texto h1 {
-      font-size: 3rem;
-      color: #dfe8ef;
-      margin-bottom: 30px;
-    }
-
-    .portada-texto p {
-      font-size: 1.4rem;
-      color: #cfe0ea;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      margin-bottom: 40px;
-      max-width: 420px;
-    }
-
-    .portada-imagen {
-      position: absolute;
-      right: 6%;
-      bottom: 0;
-      width: 260px;
-      height: 340px;
-    }
-
-
-    .menu-header {
-      background: var(--lavanda);
-      color: var(--blanco);
-      text-align: center;
-      padding: 70px 20px 50px;
-    }
-
-    .menu-header h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .menu-header p {
-      max-width: 560px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-
-    .menu-productos {
-      background: var(--gris-fondo);
-      padding: 60px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-
-    .tarjeta-producto {
-      width: 220px;
-      text-align: center;
-    }
-
-    .tarjeta-producto .placeholder {
-      width: 100%;
-      height: 260px;
-      margin-bottom: 18px;
-    }
-
-    .tarjeta-producto h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-
-    .tarjeta-producto p.descripcion {
-      font-size: 0.8rem;
-      color: var(--texto-gris);
-      margin-bottom: 18px;
-      min-height: 40px;
-    }
-
-    .promo-bar {
-      background: #111111;
-      color: #cccccc;
-      font-size: 0.7rem;
-      text-align: center;
-      padding: 8px;
-      letter-spacing: 0.5px;
-    }
-
-    .tienda-nav {
-      background: var(--negro);
-      color: var(--blanco);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 6%;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tienda-nav .nav-izquierda a,
-    .tienda-nav .nav-derecha a {
-      color: var(--blanco);
-      text-decoration: none;
-      margin-right: 22px;
-      font-size: 0.75rem;
-      font-style: italic;
-      letter-spacing: 0.5px;
-    }
-
-    .tienda-nav .logo {
-      font-size: 1.4rem;
-    }
-
-    .tienda-hero {
-      background: var(--lavanda);
-      min-height: 460px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 40px 8%;
-      overflow: hidden;
-    }
-
-    .insignia {
-      background: var(--blanco);
-      color: var(--negro);
-      padding: 6px 18px;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      display: inline-block;
-      margin-bottom: 18px;
-      font-weight: 600;
-    }
-
-    .tienda-hero h1 {
-      font-size: 4rem;
-      color: var(--blanco);
-    }
-
-    .tienda-hero-imagen {
-      position: absolute;
-      right: 6%;
-      bottom: 20px;
-      width: 220px;
-      height: 300px;
-    }
-
-    .tienda-footer {
-      background: var(--negro);
-      height: 160px;
-    }
-
-    @media (max-width: 700px) {
-      .portada-hero,
-      .tienda-hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 40px;
-      }
-      .portada-imagen,
-      .tienda-hero-imagen {
-        position: static;
-        margin-top: 30px;
-      }
-      .tienda-hero h1 {
-        font-size: 2.5rem;
-      }
-      .menu-productos {
-        gap: 30px;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -313,7 +30,7 @@
     <!-- <nav> es la etiqueta especial para menús de navegación -->
     <nav class="tienda-nav">
       <div class="nav-izquierda">
-        <a href="#">SHOP</a>
+        <a href="#menu">SHOP</a>
         <a href="#">Ubicación</a>
         <a href="#">Sobre nosotros</a>
       </div>
@@ -352,10 +69,10 @@
         Cafetería pensada como un espacio para tomar café, escuchar
         música, estudiar, trabajar o compartir un momento.
       </p>
-      <a href="#" class="boton boton-claro">MENÚ</a>
+      <a href="#menu-productos" class="boton boton-claro">MENÚ</a>
     </header>
 
-    <section class="menu-productos">
+    <section class="menu-productos" id="menu-productos">
 
       <!-- Tarjeta 1: <article> = un bloque que se entiende solo,
            como una tarjeta de producto -->
@@ -374,7 +91,7 @@
         </div>
         <h3>¿Curioso?</h3>
         <p class="descripcion">
-          Nuestro cuestionario sobre café en la manera perfecta de
+          Nuestro cuestionario sobre café es la manera perfecta de
           encontrar tu café favorito.
         </p>
         <a href="#" class="boton boton-outline">Realizar el cuestionario →</a>
@@ -398,7 +115,7 @@
         <p>Para esos que lo saben ~</p>
         <!-- <p> = un párrafo de texto normal -->
 
-        <a href="#" class="boton boton-claro">COMPRAR</a>
+        <a href="#menu-productos" class="boton boton-claro">COMPRAR</a>
         <!-- href="#" es un link "vacío". Cuando tengas la página
              de compra real, cambiás el # por el nombre del
              archivo, ej: href="comprar.html" -->
