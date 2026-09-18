@@ -9,15 +9,12 @@
 
   <style>
 
-    /* Traemos dos tipografías de Google Fonts:
-       - Playfair Display: la letra elegante/cursiva para títulos
-       - Poppins: una letra simple para textos normales */
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@400;500;600;700&display=swap');
 
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box; /* así el padding no rompe los anchos */
+      box-sizing: border-box;
     }
 
     :root {
@@ -60,9 +57,6 @@
       text-decoration: underline;
     }
 
-    /* -----------------------------------------------------
-       BOTONES REDONDEADOS (tipo COMPRAR, MENÚ)
-    ----------------------------------------------------- */
     .boton {
       display: inline-block;
       padding: 14px 34px;
@@ -90,11 +84,6 @@
       font-size: 0.85rem;
     }
 
-    /* -----------------------------------------------------
-       CAJAS "PLACEHOLDER" (reemplazan a tus imágenes por ahora)
-       Cuando tengas la imagen real exportada de Figma, borrás
-       esta clase y le ponés una <img src="..."> en su lugar.
-    ----------------------------------------------------- */
     .placeholder {
       display: flex;
       align-items: center;
@@ -113,9 +102,6 @@
       border-radius: 8px;
     }
 
-    /* =======================================================
-       SECCIÓN 1: PORTADA "Cafe GOD"
-    ======================================================= */
     .portada-topbar {
       background: var(--negro);
       color: var(--blanco);
@@ -158,9 +144,7 @@
       height: 340px;
     }
 
-    /* =======================================================
-       SECCIÓN 2: MENÚ "Café Loop"
-    ======================================================= */
+
     .menu-header {
       background: var(--lavanda);
       color: var(--blanco);
@@ -213,9 +197,6 @@
       min-height: 40px;
     }
 
-    /* =======================================================
-       SECCIÓN 3: TIENDA "Caffe Loop"
-    ======================================================= */
     .promo-bar {
       background: #111111;
       color: #cccccc;
@@ -289,9 +270,6 @@
       height: 160px;
     }
 
-    /* -----------------------------------------------------
-       RESPONSIVE: para que no se vea roto en pantallas chicas
-    ----------------------------------------------------- */
     @media (max-width: 700px) {
       .portada-hero,
       .tienda-hero {
@@ -324,11 +302,6 @@
     <a href="#portada">Portada</a>
   </div>
 
-  <!-- =====================================================
-       SECCIÓN 1: PORTADA (antes era Desktop - 1)
-       <header> es la etiqueta para la parte de arriba de
-       la página, como el encabezado de una carta.
-  ====================================================== -->
   <div id="tienda">
     <!-- Franja negra fina de promociones, arriba de todo -->
     <div class="promo-bar">
