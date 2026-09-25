@@ -36,7 +36,7 @@
       <div class="nav-derecha">
         <a href="#" aria-label="Buscar" data-action="buscar">🔍</a>
         <a href="#" aria-label="Perfil" data-action="perfil">👤</a>
-        <a href="#" aria-label="Carrito" class="btn-carrito-icon">🛒 <span class="badge-carrito" aria-live="polite">0</span></a>
+        <button type="button" aria-label="Abrir carrito" aria-controls="carrito-panel" aria-expanded="false" class="btn-carrito-icon">🛒 <span class="badge-carrito" aria-live="polite">0</span></button>
       </div>
     </nav>
 
@@ -57,6 +57,32 @@
     <footer class="tienda-footer"></footer>
   </div>
 
+  <div class="carrito-overlay" data-cerrar-carrito></div>
+  <aside
+    class="carrito-panel"
+    id="carrito-panel"
+    aria-label="Carrito de compras"
+    aria-hidden="true"
+  >
+    <div class="carrito-encabezado">
+      <h2>Tu carrito</h2>
+      <button type="button" class="carrito-cerrar" data-cerrar-carrito aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div class="carrito-lista"></div>
+    <p class="carrito-vacio">Tu carrito está vacío.</p>
+
+    <div class="carrito-resumen">
+      <div class="carrito-total-fila">
+        <span>Total</span>
+        <strong class="carrito-total">$0</strong>
+      </div>
+      <button type="button" class="boton boton-outline carrito-vaciar">
+        Vaciar carrito
+      </button>
+    </div>
+  </aside>
+
   <!-- SECCIÓN MENÚ -->
   <div id="menu">
     <header class="menu-header">
@@ -70,7 +96,7 @@
 
     <section class="menu-productos" id="menu-productos">
 
-      <!-- Tarjeta 1 -->
+      <!-- Acceso al menú -->
       <article class="tarjeta-producto">
         <img
           class="producto-imagen"
@@ -78,17 +104,17 @@
           alt="Gato negro sosteniendo una taza de café naranja"
           loading="lazy"
         >
-        <h3>Café clásico</h3>
+        <h3>Nuestro menú</h3>
         <p class="descripcion">
-          Suave, equilibrado y aromático. Ideal para acompañar una pausa
-          tranquila o una tarde de estudio.
+          Conocé nuestra selección de cafés, bebidas y opciones para
+          acompañar cada momento.
         </p>
-        <button type="button" class="boton boton-outline btn-agregar-carrito">
-          <span>Agregar al carrito</span> <span>→</span>
-        </button>
+        <a href="#menu" class="boton boton-outline">
+          <span>Ver nuestro menú</span> <span>→</span>
+        </a>
       </article>
 
-      <!-- Tarjeta 2 -->
+      <!-- Acceso al cuestionario -->
       <article class="tarjeta-producto">
         <img
           class="producto-imagen"
@@ -96,14 +122,13 @@
           alt="Gato negro sosteniendo una taza de café rayada"
           loading="lazy"
         >
-        <h3>Café intenso</h3>
+        <h3>¿Curioso?</h3>
         <p class="descripcion">
-          Una mezcla con más cuerpo y carácter, pensada para quienes
-          disfrutan sabores profundos.
+          Respondé unas preguntas y encontrá el café que mejor va con vos.
         </p>
-        <a href="#portada" class="boton boton-outline">
-          <span>Ver recomendación</span> <span>→</span>
-        </a>
+        <button type="button" class="boton boton-outline" data-action="cuestionario">
+          <span>Hacer el cuestionario</span> <span>→</span>
+        </button>
       </article>
 
     </section>
@@ -124,7 +149,13 @@
           <strong class="portada-precio">$4.500</strong>
           <span class="portada-disponible">Disponible</span>
         </div>
-        <button type="button" class="boton boton-claro btn-agregar-carrito">
+        <button
+          type="button"
+          class="boton boton-claro btn-agregar-carrito"
+          data-producto-id="cafe-god"
+          data-producto-nombre='Café "GOD"'
+          data-producto-precio="4500"
+        >
           🛒 Agregar al carrito
         </button>
       </div>
