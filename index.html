@@ -2,47 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <!-- charset UTF-8 = para que se vean bien las tildes y la ñ -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- viewport = para que se vea bien también en el celular -->
   <title>Café Loop</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Barrita para saltar rápido entre las 3 secciones mientras
-       trabajás. La podés borrar si no la necesitás. -->
+  <!-- Navegación rápida superior -->
   <div class="nav-proyecto">
     <a href="#tienda">Tienda</a> |
     <a href="#menu">Menú</a> |
     <a href="#portada">Portada</a>
   </div>
 
+  <!-- SECCIÓN TIENDA -->
   <div id="tienda">
-    <!-- Franja negra fina de promociones, arriba de todo -->
     <div class="promo-bar">
       15% de descuento todos los Miércoles &nbsp;·&nbsp;
       Café de Especialidad &nbsp;·&nbsp;
       Café Gratis en tu cumpleaños
     </div>
 
-    <!-- <nav> es la etiqueta especial para menús de navegación -->
     <nav class="tienda-nav">
       <div class="nav-izquierda">
         <a href="#menu">SHOP</a>
-        <a href="#">Ubicación</a>
-        <a href="#">Sobre nosotros</a>
+        <a href="#" data-action="ubicacion">Ubicación</a>
+        <a href="#" data-action="nosotros">Sobre nosotros</a>
       </div>
 
       <div class="logo serif">Caffe Loop</div>
 
       <div class="nav-derecha">
-        <!-- Íconos de texto simple por ahora. Más adelante los
-             podés cambiar por íconos reales, ej con Font Awesome -->
-        <a href="#">🔍</a>
-        <a href="#">👤</a>
-        <a href="#">🛒</a>
+        <a href="#" aria-label="Buscar" data-action="buscar">🔍</a>
+        <a href="#" aria-label="Perfil" data-action="perfil">👤</a>
+        <a href="#" aria-label="Carrito" class="btn-carrito-icon">🛒 <span class="badge-carrito" aria-live="polite">0</span></a>
       </div>
     </nav>
 
@@ -52,7 +46,6 @@
         <h1 class="serif">Loop</h1>
       </div>
 
-      <!-- Acá van la bolsa de café y las manos de tu diseño -->
       <img
         class="tienda-hero-imagen"
         src="images/bolsa-cafe-manos.webp"
@@ -61,10 +54,10 @@
       >
     </section>
 
-    <!-- Franja negra de abajo, como en tu diseño -->
     <footer class="tienda-footer"></footer>
   </div>
 
+  <!-- SECCIÓN MENÚ -->
   <div id="menu">
     <header class="menu-header">
       <h1 class="serif">Café Loop</h1>
@@ -72,13 +65,12 @@
         Cafetería pensada como un espacio para tomar café, escuchar
         música, estudiar, trabajar o compartir un momento.
       </p>
-      <a href="#menu-productos" class="boton boton-claro">MENÚ</a>
+      <a href="#menu-productos" class="boton boton-claro">VER MENÚ</a>
     </header>
 
     <section class="menu-productos" id="menu-productos">
 
-      <!-- Tarjeta 1: <article> = un bloque que se entiende solo,
-           como una tarjeta de producto -->
+      <!-- Tarjeta 1 -->
       <article class="tarjeta-producto">
         <img
           class="producto-imagen"
@@ -87,7 +79,9 @@
           loading="lazy"
         >
         <h3>¿Curioso?</h3>
-        <a href="#" class="boton boton-outline">Carrito →</a>
+        <button type="button" class="boton boton-outline btn-agregar-carrito">
+          <span>Carrito</span> <span>→</span>
+        </button>
       </article>
 
       <!-- Tarjeta 2 -->
@@ -103,44 +97,36 @@
           Nuestro cuestionario sobre café es la manera perfecta de
           encontrar tu café favorito.
         </p>
-        <a href="#" class="boton boton-outline">Realizar el cuestionario →</a>
+        <a href="#" class="boton boton-outline" data-action="cuestionario">
+          <span>Realizar el cuestionario</span> <span>→</span>
+        </a>
       </article>
 
     </section>
   </div>
 
+  <!-- SECCIÓN PORTADA -->
   <div id="portada">
     <header class="portada-topbar">
       ¿ALGO NUEVO?
     </header>
 
-    <!-- <section> agrupa un bloque de contenido relacionado -->
     <section class="portada-hero">
-
       <div class="portada-texto">
         <h1 class="serif">Cafe "GOD"</h1>
-        <!-- <h1> = título principal (el texto más grande) -->
-
         <p>Para esos que lo saben ~</p>
-        <!-- <p> = un párrafo de texto normal -->
-
         <a href="#menu-productos" class="boton boton-claro">COMPRAR</a>
-        <!-- href="#" es un link "vacío". Cuando tengas la página
-             de compra real, cambiás el # por el nombre del
-             archivo, ej: href="comprar.html" -->
       </div>
 
-      <!-- Acá va la imagen de la mano sosteniendo el vaso de café.
-           Por ahora es un cartel gris de aviso. -->
       <img
         class="portada-imagen"
         src="images/vaso-cafe-manos.webp"
         alt="Dos manos sosteniendo un vaso de café"
         loading="lazy"
       >
-
     </section>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
