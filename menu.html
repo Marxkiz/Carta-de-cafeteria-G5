@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Menú completo de Café Loop: cafés, infusiones, tortas, panadería y opciones saladas.">
+  <title>Menú | Café Loop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="menu-page">
+  <nav class="menu-nav" aria-label="Navegación principal">
+    <a href="index.html" class="menu-volver">← Volver al inicio</a>
+    <a href="index.html" class="logo serif">Caffe Loop</a>
+    <button
+      type="button"
+      aria-label="Abrir carrito"
+      aria-controls="carrito-panel"
+      aria-expanded="false"
+      class="btn-carrito-icon"
+    >
+      🛒 <span class="badge-carrito" aria-live="polite">0</span>
+    </button>
+  </nav>
+
+  <header class="menu-completo-header">
+    <span class="menu-kicker">Preparado con calma</span>
+    <h1 class="serif">Nuestro menú</h1>
+    <p>Café de especialidad, algo dulce y opciones saladas para cualquier momento del día.</p>
+  </header>
+
+  <nav class="menu-categorias" aria-label="Categorías del menú">
+    <a href="#cafes">Cafés</a>
+    <a href="#tortas">Tortas</a>
+    <a href="#salados">Salados</a>
+  </nav>
+
+  <main>
+    <section class="menu-seccion" id="cafes">
+      <div class="menu-seccion-titulo">
+        <span>01</span>
+        <div>
+          <h2 class="serif">Cafés e infusiones</h2>
+          <p>Clásicos calientes y opciones refrescantes.</p>
+        </div>
+      </div>
+      <div class="productos-grid">
+      <article class="producto-carta" data-categoria="cafe">
+        <div class="producto-icono" aria-hidden="true">☕</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Café</span>
+          <h2>Espresso</h2>
+          <p>Café intenso y concentrado, preparado al momento.</p>
+          <div class="producto-pie">
+            <strong>$ 2.200</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="cafe-espresso"
+              data-producto-nombre="Espresso"
+              data-producto-precio="2200"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="cafe">
+        <div class="producto-icono" aria-hidden="true">🥛</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Café</span>
+          <h2>Latte</h2>
+          <p>Espresso suave con abundante leche vaporizada.</p>
+          <div class="producto-pie">
+            <strong>$ 3.200</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="cafe-latte"
+              data-producto-nombre="Latte"
+              data-producto-precio="3200"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="cafe">
+        <div class="producto-icono" aria-hidden="true">🤎</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Café</span>
+          <h2>Capuccino</h2>
+          <p>Espresso, leche y una capa cremosa de espuma.</p>
+          <div class="producto-pie">
+            <strong>$ 3.300</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="cafe-capuccino"
+              data-producto-nombre="Capuccino"
+              data-producto-precio="3300"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="cafe">
+        <div class="producto-icono" aria-hidden="true">🧊</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Café</span>
+          <h2>Iced coffee</h2>
+          <p>Café frío con leche, hielo y un toque de vainilla.</p>
+          <div class="producto-pie">
+            <strong>$ 3.500</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="cafe-iced"
+              data-producto-nombre="Iced coffee"
+              data-producto-precio="3500"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="cafe">
+        <div class="producto-icono" aria-hidden="true">🍫</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Café</span>
+          <h2>Mocaccino</h2>
+          <p>Café, leche cremosa y chocolate semiamargo.</p>
+          <div class="producto-pie">
+            <strong>$ 3.600</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="cafe-mocaccino"
+              data-producto-nombre="Mocaccino"
+              data-producto-precio="3600"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="te">
+        <div class="producto-icono" aria-hidden="true">🫖</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Infusión</span>
+          <h2>Té en hebras</h2>
+          <p>Selección de té negro, verde o frutos rojos.</p>
+          <div class="producto-pie">
+            <strong>$ 2.600</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="te-hebras"
+              data-producto-nombre="Té en hebras"
+              data-producto-precio="2600"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="menu-seccion menu-seccion-alterna" id="tortas">
+      <div class="menu-seccion-titulo">
+        <span>02</span>
+        <div>
+          <h2 class="serif">Tortas y panadería</h2>
+          <p>Porciones caseras para acompañar tu café.</p>
+        </div>
+      </div>
+      <div class="productos-grid">
+      <article class="producto-carta" data-categoria="torta">
+        <div class="producto-icono" aria-hidden="true">🍰</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Pastelería</span>
+          <h2>Cheesecake</h2>
+          <p>Porción cremosa con salsa casera de frutos rojos.</p>
+          <div class="producto-pie">
+            <strong>$ 4.300</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="torta-cheesecake"
+              data-producto-nombre="Cheesecake"
+              data-producto-precio="4300"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="torta">
+        <div class="producto-icono" aria-hidden="true">🥕</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Pastelería</span>
+          <h2>Carrot cake</h2>
+          <p>Torta húmeda de zanahoria, nueces y frosting.</p>
+          <div class="producto-pie">
+            <strong>$ 4.000</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="torta-carrot"
+              data-producto-nombre="Carrot cake"
+              data-producto-precio="4000"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="torta">
+        <div class="producto-icono" aria-hidden="true">🍫</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Pastelería</span>
+          <h2>Brownie tibio</h2>
+          <p>Brownie de chocolate con nueces y dulce de leche.</p>
+          <div class="producto-pie">
+            <strong>$ 3.900</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="torta-brownie"
+              data-producto-nombre="Brownie tibio"
+              data-producto-precio="3900"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="panaderia">
+        <div class="producto-icono" aria-hidden="true">🥐</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Panadería</span>
+          <h2>Medialuna</h2>
+          <p>Medialuna de manteca recién horneada.</p>
+          <div class="producto-pie">
+            <strong>$ 1.400</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="panaderia-medialuna"
+              data-producto-nombre="Medialuna"
+              data-producto-precio="1400"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="menu-seccion" id="salados">
+      <div class="menu-seccion-titulo">
+        <span>03</span>
+        <div>
+          <h2 class="serif">Algo salado</h2>
+          <p>Opciones simples y ricas para una pausa completa.</p>
+        </div>
+      </div>
+      <div class="productos-grid">
+      <article class="producto-carta" data-categoria="salado">
+        <div class="producto-icono" aria-hidden="true">🥪</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Salado</span>
+          <h2>Tostado completo</h2>
+          <p>Jamón y queso en pan artesanal crocante.</p>
+          <div class="producto-pie">
+            <strong>$ 4.500</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="salado-tostado"
+              data-producto-nombre="Tostado completo"
+              data-producto-precio="4500"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="producto-carta" data-categoria="salado">
+        <div class="producto-icono" aria-hidden="true">🥑</div>
+        <div class="producto-contenido">
+          <span class="producto-tipo">Salado</span>
+          <h2>Avocado toast</h2>
+          <p>Pan de masa madre, palta, huevo y semillas.</p>
+          <div class="producto-pie">
+            <strong>$ 5.600</strong>
+            <button
+              type="button"
+              class="boton boton-comprar btn-agregar-carrito"
+              data-producto-id="salado-avocado"
+              data-producto-nombre="Avocado toast"
+              data-producto-precio="5600"
+            >
+              Agregar +
+            </button>
+          </div>
+        </div>
+      </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="menu-footer">
+    <p class="serif">Nos vemos en Café Loop.</p>
+    <a href="index.html">Volver al inicio</a>
+  </footer>
+
+  <div class="carrito-overlay" data-cerrar-carrito></div>
+  <aside
+    class="carrito-panel"
+    id="carrito-panel"
+    aria-label="Carrito de compras"
+    aria-hidden="true"
+  >
+    <div class="carrito-encabezado">
+      <h2>Tu carrito</h2>
+      <button type="button" class="carrito-cerrar" data-cerrar-carrito aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div class="carrito-lista"></div>
+    <p class="carrito-vacio">Tu carrito está vacío.</p>
+
+    <div class="carrito-resumen">
+      <div class="carrito-total-fila">
+        <span>Total</span>
+        <strong class="carrito-total">$0</strong>
+      </div>
+      <button type="button" class="boton boton-outline carrito-vaciar">
+        Vaciar carrito
+      </button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
