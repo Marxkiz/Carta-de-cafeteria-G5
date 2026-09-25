@@ -3,172 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Café Loop: café de especialidad, pastelería y un espacio para hacer una pausa.">
   <title>Café Loop</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Navegación rápida superior -->
-  <div class="nav-proyecto">
-    <a href="#tienda">Tienda</a> |
-    <a href="menu.html">Menú</a> |
-    <a href="#portada">Portada</a>
+  <div class="promo-bar" aria-label="Promoción">
+    <span>CAFÉ RECIÉN HECHO</span>
+    <span>•</span>
+    <span>UNA PAUSA QUE VALE LA PENA</span>
+    <span>•</span>
+    <span>CAFÉ RECIÉN HECHO</span>
   </div>
 
-  <!-- SECCIÓN TIENDA -->
-  <div id="tienda">
-    <div class="promo-bar">
-      15% de descuento todos los Miércoles &nbsp;·&nbsp;
-      Café de Especialidad &nbsp;·&nbsp;
-      Café Gratis en tu cumpleaños
-    </div>
-
-    <nav class="tienda-nav">
-      <div class="nav-izquierda">
-        <a href="menu.html">SHOP</a>
-        <a href="#" data-action="ubicacion">Ubicación</a>
-        <a href="#" data-action="nosotros">Sobre nosotros</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navegación principal">
+      <div class="nav-grupo nav-grupo-izquierda">
+        <button type="button" class="nav-pill" data-action="cuestionario">Cuestionario</button>
+        <a href="menu.html">Menú</a>
+        <a href="#historia">Nosotros</a>
       </div>
-
-      <div class="logo serif">Caffe Loop</div>
-
-      <div class="nav-derecha">
-        <a href="#" aria-label="Buscar" data-action="buscar">🔍</a>
-        <a href="#" aria-label="Perfil" data-action="perfil">👤</a>
-        <button type="button" aria-label="Abrir carrito" aria-controls="carrito-panel" aria-expanded="false" class="btn-carrito-icon">🛒 <span class="badge-carrito" aria-live="polite">0</span></button>
+      <a href="index.html" class="brand" aria-label="Café Loop, inicio">
+        <span>CAFFÉ</span>
+        <strong>LOOP</strong>
+      </a>
+      <div class="nav-grupo nav-grupo-derecha">
+        <a href="menu.html" class="nav-texto">Comprar</a>
+        <button type="button" aria-label="Abrir carrito" aria-controls="carrito-panel" aria-expanded="false" class="btn-carrito-icon">
+          CARRITO <span class="badge-carrito" aria-live="polite">0</span>
+        </button>
       </div>
     </nav>
+  </header>
 
-    <section class="tienda-hero">
-      <div class="tienda-texto">
-        <span class="insignia">Café de especialidad</span>
-        <h1 class="serif">Loop</h1>
+  <main>
+    <section class="home-hero">
+      <img src="images/bolsa-cafe-manos.webp" alt="Bolsa de café Caffe Loop sostenida por varias manos" fetchpriority="high">
+      <div class="home-hero-overlay"></div>
+      <div class="home-hero-contenido">
+        <span class="eyebrow">SELECCIÓN DE LA CASA</span>
+        <h1 class="serif">Café para<br>volver siempre.</h1>
+        <p>Granos elegidos, tostados con cuidado y preparados para compartir.</p>
+        <a href="menu.html" class="boton boton-claro">Explorar el menú</a>
       </div>
-
-      <img
-        class="tienda-hero-imagen"
-        src="images/bolsa-cafe-manos.webp"
-        alt="Bolsa de café Caffe Loop sostenida por varias manos"
-        fetchpriority="high"
-      >
     </section>
 
-    <footer class="tienda-footer"></footer>
-  </div>
+    <section class="accesos-editoriales" aria-label="Explorar Café Loop">
+      <article class="acceso-card">
+        <a href="menu.html" class="acceso-imagen">
+          <img src="images/gato-taza-naranja.webp" alt="Gato negro con una taza naranja">
+        </a>
+        <div class="acceso-contenido">
+          <h2 class="serif">Nuestro menú</h2>
+          <p>Cafés, tortas y opciones saladas para cualquier momento del día.</p>
+          <a href="menu.html" class="link-flecha"><span>Ver el menú completo</span><span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="acceso-card">
+        <button type="button" class="acceso-imagen acceso-boton-imagen" data-action="cuestionario">
+          <img src="images/gato-taza-rayada.webp" alt="Gato negro con una taza rayada">
+        </button>
+        <div class="acceso-contenido">
+          <h2 class="serif">¿Curioso?</h2>
+          <p>Respondé unas preguntas y encontrá el café que mejor va con vos.</p>
+          <button type="button" class="link-flecha link-flecha-boton" data-action="cuestionario">
+            <span>Hacer el cuestionario</span><span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <section class="producto-destacado">
+      <div class="destacado-contenido">
+        <span class="eyebrow">FAVORITO DE LA CASA</span>
+        <h2 class="serif">Café “GOD”</h2>
+        <p>Intenso, aromático y con notas de chocolate. Un café pensado para tomar sin apuro.</p>
+        <ul class="notas-cafe" aria-label="Notas de sabor">
+          <li>Chocolate</li>
+          <li>Caramelo</li>
+          <li>Avellana</li>
+        </ul>
+        <div class="destacado-compra">
+          <strong>$4.500</strong>
+          <button type="button" class="boton boton-claro btn-agregar-carrito" data-producto-id="cafe-god" data-producto-nombre='Café "GOD"' data-producto-precio="4500">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+      <div class="destacado-imagen">
+        <img src="images/vaso-cafe-manos.webp" alt="Dos manos sosteniendo un vaso de café">
+      </div>
+    </section>
+
+    <section class="historia-strip" id="historia">
+      <span class="eyebrow">NUESTRA IDEA</span>
+      <p class="serif">Un buen café puede cambiar el ritmo de todo el día.</p>
+      <a href="menu.html" class="boton boton-oscuro">Elegí el tuyo</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-marca"><span>CAFFÉ</span><strong>LOOP</strong></div>
+    <p>Café, música y una mesa para quedarse.</p>
+    <div class="footer-links">
+      <a href="menu.html">Menú</a>
+      <a href="#historia">Nosotros</a>
+      <button type="button" data-action="ubicacion">Ubicación</button>
+    </div>
+  </footer>
 
   <div class="carrito-overlay" data-cerrar-carrito></div>
-  <aside
-    class="carrito-panel"
-    id="carrito-panel"
-    aria-label="Carrito de compras"
-    aria-hidden="true"
-  >
+  <aside class="carrito-panel" id="carrito-panel" aria-label="Carrito de compras" aria-hidden="true">
     <div class="carrito-encabezado">
-      <h2>Tu carrito</h2>
+      <div>
+        <span class="carrito-kicker">CAFÉ LOOP</span>
+        <h2>Tu carrito</h2>
+      </div>
       <button type="button" class="carrito-cerrar" data-cerrar-carrito aria-label="Cerrar carrito">×</button>
     </div>
-
     <div class="carrito-lista"></div>
-    <p class="carrito-vacio">Tu carrito está vacío.</p>
-
+    <p class="carrito-vacio">Tu carrito está vacío.<br>Agregá algo rico para empezar.</p>
     <div class="carrito-resumen">
-      <div class="carrito-total-fila">
-        <span>Total</span>
-        <strong class="carrito-total">$0</strong>
-      </div>
-      <button type="button" class="boton boton-outline carrito-vaciar">
-        Vaciar carrito
-      </button>
+      <div class="carrito-total-fila"><span>Total</span><strong class="carrito-total">$0</strong></div>
+      <button type="button" class="boton boton-outline carrito-vaciar">Vaciar carrito</button>
     </div>
   </aside>
-
-  <!-- SECCIÓN MENÚ -->
-  <div id="menu">
-    <header class="menu-header">
-      <h1 class="serif">Café Loop</h1>
-      <p>
-        Cafetería pensada como un espacio para tomar café, escuchar
-        música, estudiar, trabajar o compartir un momento.
-      </p>
-      <a href="menu.html" class="boton boton-claro">VER MENÚ</a>
-    </header>
-
-    <section class="menu-productos" id="menu-productos">
-
-      <!-- Acceso al menú -->
-      <article class="tarjeta-producto">
-        <img
-          class="producto-imagen"
-          src="images/gato-taza-naranja.webp"
-          alt="Gato negro sosteniendo una taza de café naranja"
-          loading="lazy"
-        >
-        <h3>Nuestro menú</h3>
-        <p class="descripcion">
-          Conocé nuestra selección de cafés, bebidas y opciones para
-          acompañar cada momento.
-        </p>
-        <a href="menu.html" class="boton boton-outline">
-          <span>Ver nuestro menú</span> <span>→</span>
-        </a>
-      </article>
-
-      <!-- Acceso al cuestionario -->
-      <article class="tarjeta-producto">
-        <img
-          class="producto-imagen"
-          src="images/gato-taza-rayada.webp"
-          alt="Gato negro sosteniendo una taza de café rayada"
-          loading="lazy"
-        >
-        <h3>¿Curioso?</h3>
-        <p class="descripcion">
-          Respondé unas preguntas y encontrá el café que mejor va con vos.
-        </p>
-        <button type="button" class="boton boton-outline" data-action="cuestionario">
-          <span>Hacer el cuestionario</span> <span>→</span>
-        </button>
-      </article>
-
-    </section>
-  </div>
-
-  <!-- SECCIÓN PORTADA -->
-  <div id="portada">
-    <header class="portada-topbar">
-      ¿ALGO NUEVO?
-    </header>
-
-    <section class="portada-hero">
-      <div class="portada-texto">
-        <span class="portada-etiqueta">Selección de la casa</span>
-        <h1 class="serif">Café "GOD"</h1>
-        <p>Intenso, aromático y listo para acompañarte.</p>
-        <div class="portada-compra">
-          <strong class="portada-precio">$4.500</strong>
-          <span class="portada-disponible">Disponible</span>
-        </div>
-        <button
-          type="button"
-          class="boton boton-claro btn-agregar-carrito"
-          data-producto-id="cafe-god"
-          data-producto-nombre='Café "GOD"'
-          data-producto-precio="4500"
-        >
-          🛒 Agregar al carrito
-        </button>
-      </div>
-
-      <img
-        class="portada-imagen"
-        src="images/vaso-cafe-manos.webp"
-        alt="Dos manos sosteniendo un vaso de café"
-        loading="lazy"
-      >
-    </section>
-  </div>
-
   <script src="script.js"></script>
 </body>
 </html>
