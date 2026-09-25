@@ -382,3 +382,93 @@ html {
 .tienda-nav .logo {
   font-size: 1.4rem;
 }
+
+/* ==========================================
+   AJUSTES VISUALES FINALES
+   ========================================== */
+.insignia {
+  background: #f6efe5;
+  color: var(--mar-oscuro);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tienda-hero-imagen {
+  /* Oculta la franja transparente que contiene el sello de la imagen. */
+  clip-path: inset(12% 0 0 0);
+}
+
+.tienda-footer {
+  height: 36px;
+}
+
+.portada-texto {
+  max-width: 460px;
+}
+
+.portada-etiqueta {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  color: var(--blanco);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portada-compra {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.portada-precio {
+  color: var(--blanco);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+}
+
+.portada-disponible {
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--blanco);
+  font-size: 0.75rem;
+}
+
+.portada-imagen {
+  right: -8%;
+  width: min(56vw, 680px);
+  max-height: 92%;
+}
+
+.boton.agregado {
+  background: #2e7d32;
+  border-color: #2e7d32;
+  color: var(--blanco);
+}
+
+@media (max-width: 768px) {
+  .tienda-footer {
+    height: 24px;
+  }
+
+  .portada-texto {
+    max-width: 100%;
+  }
+
+  .portada-compra {
+    justify-content: center;
+  }
+
+  .portada-imagen {
+    right: auto;
+    width: min(92%, 580px);
+    max-height: 420px;
+    margin-inline: auto;
+  }
+}
