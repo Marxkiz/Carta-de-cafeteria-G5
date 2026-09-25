@@ -3,346 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Menú completo de Café Loop: cafés, infusiones, tortas, panadería y opciones saladas.">
+  <meta name="description" content="Menú de Café Loop: cafés, infusiones, tortas, panadería y opciones saladas.">
   <title>Menú | Café Loop</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="menu-page">
-  <nav class="menu-nav" aria-label="Navegación principal">
-    <a href="index.html" class="menu-volver">← Volver al inicio</a>
-    <a href="index.html" class="logo serif">Caffe Loop</a>
-    <button
-      type="button"
-      aria-label="Abrir carrito"
-      aria-controls="carrito-panel"
-      aria-expanded="false"
-      class="btn-carrito-icon"
-    >
-      🛒 <span class="badge-carrito" aria-live="polite">0</span>
-    </button>
-  </nav>
-
-  <header class="menu-completo-header">
-    <span class="menu-kicker">Preparado con calma</span>
-    <h1 class="serif">Nuestro menú</h1>
-    <p>Café de especialidad, algo dulce y opciones saladas para cualquier momento del día.</p>
+  <div class="promo-bar"><span>CAFÉ RECIÉN HECHO</span><span>•</span><span>UNA PAUSA QUE VALE LA PENA</span><span>•</span><span>CAFÉ RECIÉN HECHO</span></div>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navegación principal">
+      <div class="nav-grupo nav-grupo-izquierda">
+        <a href="index.html" class="nav-pill">Inicio</a>
+        <a href="#cafes">Cafés</a>
+        <a href="#dulce">Tortas</a>
+      </div>
+      <a href="index.html" class="brand" aria-label="Café Loop, inicio"><span>CAFFÉ</span><strong>LOOP</strong></a>
+      <div class="nav-grupo nav-grupo-derecha">
+        <a href="#salado" class="nav-texto">Salados</a>
+        <button type="button" aria-label="Abrir carrito" aria-controls="carrito-panel" aria-expanded="false" class="btn-carrito-icon">CARRITO <span class="badge-carrito" aria-live="polite">0</span></button>
+      </div>
+    </nav>
   </header>
 
-  <nav class="menu-categorias" aria-label="Categorías del menú">
-    <a href="#cafes">Cafés</a>
-    <a href="#tortas">Tortas</a>
-    <a href="#salados">Salados</a>
-  </nav>
-
   <main>
-    <section class="menu-seccion" id="cafes">
-      <div class="menu-seccion-titulo">
-        <span>01</span>
-        <div>
-          <h2 class="serif">Cafés e infusiones</h2>
-          <p>Clásicos calientes y opciones refrescantes.</p>
-        </div>
-      </div>
-      <div class="productos-grid">
-      <article class="producto-carta" data-categoria="cafe">
-        <div class="producto-icono" aria-hidden="true">☕</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Café</span>
-          <h2>Espresso</h2>
-          <p>Café intenso y concentrado, preparado al momento.</p>
-          <div class="producto-pie">
-            <strong>$ 2.200</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="cafe-espresso"
-              data-producto-nombre="Espresso"
-              data-producto-precio="2200"
-            >
-              Agregar +
-            </button>
+    <header class="menu-hero">
+      <span class="eyebrow">HECHO PARA VOS</span>
+      <h1 class="serif">Nuestro menú</h1>
+      <p>Clásicos bien hechos, café de especialidad y algo rico para acompañar.</p>
+    </header>
+
+    <nav class="menu-filtros" aria-label="Categorías">
+      <a href="#cafes">Cafés e infusiones</a><a href="#dulce">Tortas y panadería</a><a href="#salado">Algo salado</a>
+    </nav>
+
+    <section class="catalogo-seccion" id="cafes">
+      <div class="catalogo-cabecera"><span>01</span><div><h2 class="serif">Cafés e infusiones</h2><p>Calientes, fríos y preparados en el momento.</p></div></div>
+      <div class="catalogo-grid">        <article class="menu-producto">
+          <div class="menu-producto-visual visual-cafe"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/><path d="M54 18c-8 8 8 13 0 21M78 15c-8 8 8 13 0 21M102 18c-8 8 8 13 0 21" fill="none" stroke="currentColor" stroke-width="6"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">CAFÉ</span>
+            <h3 class="serif">Espresso</h3>
+            <p>Intenso, corto y con crema persistente.</p>
+            <div class="menu-producto-pie">
+              <strong>$2.200</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Espresso al carrito" data-producto-id="cafe-espresso" data-producto-nombre="Espresso" data-producto-precio="2200">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="cafe">
-        <div class="producto-icono" aria-hidden="true">🥛</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Café</span>
-          <h2>Latte</h2>
-          <p>Espresso suave con abundante leche vaporizada.</p>
-          <div class="producto-pie">
-            <strong>$ 3.200</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="cafe-latte"
-              data-producto-nombre="Latte"
-              data-producto-precio="3200"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-latte"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M47 25h66l-9 99H56L47 25Z"/><path d="M52 43h56M55 66h51" fill="none" stroke="currentColor" stroke-width="7"/><path d="M66 17c8-8 20-8 28 0" fill="none" stroke="currentColor" stroke-width="5"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">CAFÉ</span>
+            <h3 class="serif">Latte</h3>
+            <p>Espresso suave con leche vaporizada.</p>
+            <div class="menu-producto-pie">
+              <strong>$3.200</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Latte al carrito" data-producto-id="cafe-latte" data-producto-nombre="Latte" data-producto-precio="3200">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="cafe">
-        <div class="producto-icono" aria-hidden="true">🤎</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Café</span>
-          <h2>Capuccino</h2>
-          <p>Espresso, leche y una capa cremosa de espuma.</p>
-          <div class="producto-pie">
-            <strong>$ 3.300</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="cafe-capuccino"
-              data-producto-nombre="Capuccino"
-              data-producto-precio="3300"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-cafe"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/><path d="M54 18c-8 8 8 13 0 21M78 15c-8 8 8 13 0 21M102 18c-8 8 8 13 0 21" fill="none" stroke="currentColor" stroke-width="6"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">CAFÉ</span>
+            <h3 class="serif">Cappuccino</h3>
+            <p>Espresso, leche y espuma cremosa.</p>
+            <div class="menu-producto-pie">
+              <strong>$3.300</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Cappuccino al carrito" data-producto-id="cafe-capuccino" data-producto-nombre="Cappuccino" data-producto-precio="3300">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="cafe">
-        <div class="producto-icono" aria-hidden="true">🧊</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Café</span>
-          <h2>Iced coffee</h2>
-          <p>Café frío con leche, hielo y un toque de vainilla.</p>
-          <div class="producto-pie">
-            <strong>$ 3.500</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="cafe-iced"
-              data-producto-nombre="Iced coffee"
-              data-producto-precio="3500"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-frio"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M48 31h64l-8 93H56l-8-93Z"/><path d="m67 31 7-19M91 31l12-23" fill="none" stroke="currentColor" stroke-width="6"/><path d="M60 55h40M58 77h44" fill="none" stroke="currentColor" stroke-width="5"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">CAFÉ FRÍO</span>
+            <h3 class="serif">Iced coffee</h3>
+            <p>Café frío, leche, hielo y vainilla.</p>
+            <div class="menu-producto-pie">
+              <strong>$3.500</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Iced coffee al carrito" data-producto-id="cafe-iced" data-producto-nombre="Iced coffee" data-producto-precio="3500">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="cafe">
-        <div class="producto-icono" aria-hidden="true">🍫</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Café</span>
-          <h2>Mocaccino</h2>
-          <p>Café, leche cremosa y chocolate semiamargo.</p>
-          <div class="producto-pie">
-            <strong>$ 3.600</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="cafe-mocaccino"
-              data-producto-nombre="Mocaccino"
-              data-producto-precio="3600"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-latte"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M47 25h66l-9 99H56L47 25Z"/><path d="M52 43h56M55 66h51" fill="none" stroke="currentColor" stroke-width="7"/><path d="M66 17c8-8 20-8 28 0" fill="none" stroke="currentColor" stroke-width="5"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">CAFÉ</span>
+            <h3 class="serif">Mocaccino</h3>
+            <p>Café, leche y chocolate semiamargo.</p>
+            <div class="menu-producto-pie">
+              <strong>$3.600</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Mocaccino al carrito" data-producto-id="cafe-mocaccino" data-producto-nombre="Mocaccino" data-producto-precio="3600">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="te">
-        <div class="producto-icono" aria-hidden="true">🫖</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Infusión</span>
-          <h2>Té en hebras</h2>
-          <p>Selección de té negro, verde o frutos rojos.</p>
-          <div class="producto-pie">
-            <strong>$ 2.600</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="te-hebras"
-              data-producto-nombre="Té en hebras"
-              data-producto-precio="2600"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-te"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M35 51h84l-9 64H44l-9-64Z"/><path d="M119 62h9a20 20 0 0 1 0 40h-14" fill="none" stroke="currentColor" stroke-width="9"/><path d="M75 20v45M75 20c18 0 23 12 19 24H75" fill="none" stroke="currentColor" stroke-width="5"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">INFUSIÓN</span>
+            <h3 class="serif">Té en hebras</h3>
+            <p>Negro, verde o frutos rojos.</p>
+            <div class="menu-producto-pie">
+              <strong>$2.600</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Té en hebras al carrito" data-producto-id="te-hebras" data-producto-nombre="Té en hebras" data-producto-precio="2600">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      </div>
+        </article></div>
     </section>
 
-    <section class="menu-seccion menu-seccion-alterna" id="tortas">
-      <div class="menu-seccion-titulo">
-        <span>02</span>
-        <div>
-          <h2 class="serif">Tortas y panadería</h2>
-          <p>Porciones caseras para acompañar tu café.</p>
-        </div>
-      </div>
-      <div class="productos-grid">
-      <article class="producto-carta" data-categoria="torta">
-        <div class="producto-icono" aria-hidden="true">🍰</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Pastelería</span>
-          <h2>Cheesecake</h2>
-          <p>Porción cremosa con salsa casera de frutos rojos.</p>
-          <div class="producto-pie">
-            <strong>$ 4.300</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="torta-cheesecake"
-              data-producto-nombre="Cheesecake"
-              data-producto-precio="4300"
-            >
-              Agregar +
-            </button>
+    <section class="catalogo-seccion catalogo-seccion-verde" id="dulce">
+      <div class="catalogo-cabecera"><span>02</span><div><h2 class="serif">Tortas y panadería</h2><p>Todo lo que tu café estaba esperando.</p></div></div>
+      <div class="catalogo-grid">        <article class="menu-producto">
+          <div class="menu-producto-visual visual-torta"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M28 112 73 31l62 81H28Z"/><path d="m51 72 59 4M39 94l86 5" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="78" cy="23" r="9"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">PASTELERÍA</span>
+            <h3 class="serif">Cheesecake</h3>
+            <p>Cremoso, con frutos rojos de la casa.</p>
+            <div class="menu-producto-pie">
+              <strong>$4.300</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Cheesecake al carrito" data-producto-id="torta-cheesecake" data-producto-nombre="Cheesecake" data-producto-precio="4300">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="torta">
-        <div class="producto-icono" aria-hidden="true">🥕</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Pastelería</span>
-          <h2>Carrot cake</h2>
-          <p>Torta húmeda de zanahoria, nueces y frosting.</p>
-          <div class="producto-pie">
-            <strong>$ 4.000</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="torta-carrot"
-              data-producto-nombre="Carrot cake"
-              data-producto-precio="4000"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-torta"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M28 112 73 31l62 81H28Z"/><path d="m51 72 59 4M39 94l86 5" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="78" cy="23" r="9"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">PASTELERÍA</span>
+            <h3 class="serif">Carrot cake</h3>
+            <p>Zanahoria, nueces y frosting suave.</p>
+            <div class="menu-producto-pie">
+              <strong>$4.000</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Carrot cake al carrito" data-producto-id="torta-carrot" data-producto-nombre="Carrot cake" data-producto-precio="4000">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="torta">
-        <div class="producto-icono" aria-hidden="true">🍫</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Pastelería</span>
-          <h2>Brownie tibio</h2>
-          <p>Brownie de chocolate con nueces y dulce de leche.</p>
-          <div class="producto-pie">
-            <strong>$ 3.900</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="torta-brownie"
-              data-producto-nombre="Brownie tibio"
-              data-producto-precio="3900"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-brownie"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="m31 54 83-25 18 66-84 25-17-66Z"/><path d="m39 70 84-24M45 91l84-24" fill="none" stroke="currentColor" stroke-width="6"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">PASTELERÍA</span>
+            <h3 class="serif">Brownie tibio</h3>
+            <p>Chocolate, nueces y dulce de leche.</p>
+            <div class="menu-producto-pie">
+              <strong>$3.900</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Brownie tibio al carrito" data-producto-id="torta-brownie" data-producto-nombre="Brownie tibio" data-producto-precio="3900">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="panaderia">
-        <div class="producto-icono" aria-hidden="true">🥐</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Panadería</span>
-          <h2>Medialuna</h2>
-          <p>Medialuna de manteca recién horneada.</p>
-          <div class="producto-pie">
-            <strong>$ 1.400</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="panaderia-medialuna"
-              data-producto-nombre="Medialuna"
-              data-producto-precio="1400"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-medialuna"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M28 80c20-47 83-62 108-7-31-15-55 5-58 40-22-3-39-13-50-33Z"/><path d="M55 53c9 13 16 31 18 54M86 36c6 11 9 24 10 37" fill="none" stroke="currentColor" stroke-width="5"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">PANADERÍA</span>
+            <h3 class="serif">Medialuna</h3>
+            <p>De manteca y recién horneada.</p>
+            <div class="menu-producto-pie">
+              <strong>$1.400</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Medialuna al carrito" data-producto-id="panaderia-medialuna" data-producto-nombre="Medialuna" data-producto-precio="1400">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      </div>
+        </article></div>
     </section>
 
-    <section class="menu-seccion" id="salados">
-      <div class="menu-seccion-titulo">
-        <span>03</span>
-        <div>
-          <h2 class="serif">Algo salado</h2>
-          <p>Opciones simples y ricas para una pausa completa.</p>
-        </div>
-      </div>
-      <div class="productos-grid">
-      <article class="producto-carta" data-categoria="salado">
-        <div class="producto-icono" aria-hidden="true">🥪</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Salado</span>
-          <h2>Tostado completo</h2>
-          <p>Jamón y queso en pan artesanal crocante.</p>
-          <div class="producto-pie">
-            <strong>$ 4.500</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="salado-tostado"
-              data-producto-nombre="Tostado completo"
-              data-producto-precio="4500"
-            >
-              Agregar +
-            </button>
+    <section class="catalogo-seccion" id="salado">
+      <div class="catalogo-cabecera"><span>03</span><div><h2 class="serif">Algo salado</h2><p>Para cuando la pausa pide un poco más.</p></div></div>
+      <div class="catalogo-grid catalogo-grid-dos">        <article class="menu-producto">
+          <div class="menu-producto-visual visual-sandwich"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="m24 101 55-73 57 73H24Z"/><path d="m35 88 89 1M46 72l67 2" fill="none" stroke="currentColor" stroke-width="7"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">SALADO</span>
+            <h3 class="serif">Tostado completo</h3>
+            <p>Jamón y queso en pan artesanal.</p>
+            <div class="menu-producto-pie">
+              <strong>$4.500</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Tostado completo al carrito" data-producto-id="salado-tostado" data-producto-nombre="Tostado completo" data-producto-precio="4500">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="producto-carta" data-categoria="salado">
-        <div class="producto-icono" aria-hidden="true">🥑</div>
-        <div class="producto-contenido">
-          <span class="producto-tipo">Salado</span>
-          <h2>Avocado toast</h2>
-          <p>Pan de masa madre, palta, huevo y semillas.</p>
-          <div class="producto-pie">
-            <strong>$ 5.600</strong>
-            <button
-              type="button"
-              class="boton boton-comprar btn-agregar-carrito"
-              data-producto-id="salado-avocado"
-              data-producto-nombre="Avocado toast"
-              data-producto-precio="5600"
-            >
-              Agregar +
-            </button>
+        </article>
+        <article class="menu-producto">
+          <div class="menu-producto-visual visual-tostada"><svg viewBox="0 0 160 140" aria-hidden="true"><path d="M36 112 29 62c-3-22 16-39 38-35l13 3 13-3c22-4 41 13 38 35l-7 50H36Z"/><path d="M55 68c14-20 42-19 53 2-12 24-40 27-53-2Z" fill="none" stroke="currentColor" stroke-width="6"/></svg></div>
+          <div class="menu-producto-info">
+            <span class="producto-categoria">SALADO</span>
+            <h3 class="serif">Avocado toast</h3>
+            <p>Masa madre, palta, huevo y semillas.</p>
+            <div class="menu-producto-pie">
+              <strong>$5.600</strong>
+              <button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Avocado toast al carrito" data-producto-id="salado-avocado" data-producto-nombre="Avocado toast" data-producto-precio="5600">+</button>
+            </div>
           </div>
-        </div>
-      </article>
-      </div>
+        </article></div>
     </section>
+
+    <section class="menu-cta"><p class="serif">¿Todavía no sabés qué elegir?</p><button type="button" class="boton boton-claro" data-action="cuestionario">Hacer el cuestionario</button></section>
   </main>
 
-  <footer class="menu-footer">
-    <p class="serif">Nos vemos en Café Loop.</p>
-    <a href="index.html">Volver al inicio</a>
+  <footer class="site-footer">
+    <div class="footer-marca"><span>CAFFÉ</span><strong>LOOP</strong></div>
+    <p>Café, música y una mesa para quedarse.</p>
+    <div class="footer-links"><a href="index.html">Inicio</a><a href="#cafes">Cafés</a><a href="#dulce">Tortas</a></div>
   </footer>
 
   <div class="carrito-overlay" data-cerrar-carrito></div>
-  <aside
-    class="carrito-panel"
-    id="carrito-panel"
-    aria-label="Carrito de compras"
-    aria-hidden="true"
-  >
+  <aside class="carrito-panel" id="carrito-panel" aria-label="Carrito de compras" aria-hidden="true">
     <div class="carrito-encabezado">
-      <h2>Tu carrito</h2>
+      <div>
+        <span class="carrito-kicker">CAFÉ LOOP</span>
+        <h2>Tu carrito</h2>
+      </div>
       <button type="button" class="carrito-cerrar" data-cerrar-carrito aria-label="Cerrar carrito">×</button>
     </div>
-
     <div class="carrito-lista"></div>
-    <p class="carrito-vacio">Tu carrito está vacío.</p>
-
+    <p class="carrito-vacio">Tu carrito está vacío.<br>Agregá algo rico para empezar.</p>
     <div class="carrito-resumen">
-      <div class="carrito-total-fila">
-        <span>Total</span>
-        <strong class="carrito-total">$0</strong>
-      </div>
-      <button type="button" class="boton boton-outline carrito-vaciar">
-        Vaciar carrito
-      </button>
+      <div class="carrito-total-fila"><span>Total</span><strong class="carrito-total">$0</strong></div>
+      <button type="button" class="boton boton-outline carrito-vaciar">Vaciar carrito</button>
     </div>
   </aside>
-
   <script src="script.js"></script>
 </body>
 </html>
