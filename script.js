@@ -1,12 +1,20 @@
 const contadorCarrito = document.querySelector('.badge-carrito');
-const botonAgregar = document.querySelector('.btn-agregar-carrito');
+const botonesAgregar = document.querySelectorAll('.btn-agregar-carrito');
 const botonCarrito = document.querySelector('.btn-carrito-icon');
 
 let cantidadProductos = 0;
 
-botonAgregar?.addEventListener('click', () => {
-  cantidadProductos += 1;
-  contadorCarrito.textContent = cantidadProductos;
+botonesAgregar.forEach((boton) => {
+  boton.addEventListener('click', () => {
+    cantidadProductos += 1;
+
+    if (contadorCarrito) {
+      contadorCarrito.textContent = cantidadProductos;
+    }
+
+    boton.classList.add('agregado');
+    setTimeout(() => boton.classList.remove('agregado'), 700);
+  });
 });
 
 botonCarrito?.addEventListener('click', (evento) => {
@@ -22,7 +30,6 @@ const mensajes = {
   nosotros: 'La sección Sobre nosotros estará disponible próximamente.',
   buscar: 'La búsqueda estará disponible próximamente.',
   perfil: 'El perfil estará disponible próximamente.',
-  cuestionario: 'El cuestionario estará disponible próximamente.'
 };
 
 document.querySelectorAll('[data-action]').forEach((enlace) => {
