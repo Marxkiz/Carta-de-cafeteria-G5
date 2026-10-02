@@ -2736,3 +2736,10 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline: 3px solid #c
 .menu-producto-visual.menu-producto-foto { height: 250px; overflow: hidden; }
 .menu-producto-foto img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 @media (max-width: 520px) { .menu-producto-visual.menu-producto-foto { height: 230px; } }
+
+/* Variantes del Café GOD: una selección por compra. */
+.opcion-god { padding: 10px 16px; min-height: 44px; border: 1px solid #c5d5ca; border-radius: 999px; background: transparent; color: #fffdf8; cursor: pointer; font-size: .8rem; }
+.opcion-god:hover { background: #2a604a; }
+.opcion-god[aria-pressed="true"] { background: #f4f0e8; color: #183e32; border-color: #f4f0e8; box-shadow: 0 0 0 2px #e2ab77; }
+.god-seleccion { margin: -10px 0 24px; font-size: .85rem; color: #f4f0e8; }
+.producto-destacado [data-requiere-sabor-god]:disabled { opacity: .55; cursor: not-allowed; transform: none; }

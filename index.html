@@ -8,7 +8,7 @@
       content="Café Loop: café de especialidad, tostado artesanal y pastelería."
     />
     <title>Café Loop — Tostadores de Café</title>
-    <link rel="stylesheet" href="style.css?v=loop-tienda-20261002" />
+    <link rel="stylesheet" href="style.css?v=loop-opciones-god-20261002" />
   </head>
   <body>
     <!-- Barra Superior de Promociones -->
@@ -146,17 +146,21 @@
             Intenso, de cuerpo sedoso y perfil balanceado con notas marcadas de
             cacao amargo, dulce de caramelo y avellanas tostadas.
           </p>
-          <ul class="notas-cafe" aria-label="Notas de sabor">
-            <li>Chocolate negro</li>
-            <li>Caramelo artesanal</li>
-            <li>Avellana</li>
-          </ul>
+          <div class="notas-cafe opciones-god" role="group" aria-label="Elegí el sabor de tu Café GOD">
+            <button type="button" class="opcion-god" data-sabor-god="chocolate-negro" aria-pressed="false">Chocolate negro</button>
+            <button type="button" class="opcion-god" data-sabor-god="caramelo-artesanal" aria-pressed="false">Caramelo artesanal</button>
+            <button type="button" class="opcion-god" data-sabor-god="avellana" aria-pressed="false">Avellana</button>
+          </div>
+          <p class="god-seleccion" id="god-seleccion" role="status" aria-live="polite">Elegí un sabor para agregar tu Café GOD.</p>
           <div class="destacado-compra">
             <strong>$4.500</strong>
             <button
               type="button"
               class="boton boton-claro btn-agregar-carrito"
               data-producto-id="cafe-god"
+              data-requiere-sabor-god
+              aria-describedby="god-seleccion"
+              disabled
               data-producto-nombre='Café "GOD"'
               data-producto-precio="4500"
             >
@@ -360,6 +364,6 @@
 <button type="button" class="cuenta-alternar" id="cuenta-alternar">¿No tenés cuenta? Registrate</button>
 </form><div id="cuenta-perfil" hidden><p id="cuenta-saludo"></p><button type="button" class="boton boton-oscuro" id="cuenta-salir">Cerrar sesión</button></div>
 </div></dialog>
-<script src="script.js?v=loop-tienda-20261002"></script>
+<script src="script.js?v=loop-opciones-god-20261002"></script>
   </body>
 </html>
