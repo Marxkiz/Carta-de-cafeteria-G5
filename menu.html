@@ -8,7 +8,7 @@
       content="Menú de Café Loop: cafés, infusiones, tortas, panadería y opciones saladas."
     />
     <title>Menú | Café Loop</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=loop-20261002" />
   </head>
   <body class="menu-page">
      <div class="promo-bar">
@@ -33,10 +33,11 @@
         </a>
 
         <div class="nav-grupo nav-grupo-derecha">
+<button type="button" class="nav-pill" data-abrir-cuenta>Iniciar sesión</button>
           <a href="index.html#tienda">Tienda</a>
-          <a href="index.html#aprende">Aprendé</a>
+
           <a href="index.html#ubicacion">Ubicación</a>
-          <a href="index.html#tienda" class="nav-comprar">Comprar</a>
+
           <button
             type="button"
             aria-label="Abrir carrito"
@@ -53,10 +54,10 @@
 
     <main>
       <header class="menu-hero">
-        <span class="eyebrow">HECHO PARA VOS</span>
+        <span class="eyebrow-dark">LA CARTA DE LOOP</span>
         <h1 class="serif">Nuestro menú</h1>
         <p>
-          Clásicos bien hechos, café de especialidad y algo rico para acompañar.
+          Clásicos bien hechos, café de especialidad y algo rico para acompañar. Precios en pesos argentinos.
         </p>
       </header>
 
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="catalogo-grid">
-          <article class="menu-producto">
+          <article class="menu-producto" id="cafe-espresso">
             <div class="menu-producto-visual visual-cafe">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path
@@ -114,7 +115,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="cafe-latte">
             <div class="menu-producto-visual visual-latte">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path d="M47 25h66l-9 99H56L47 25Z" />
@@ -151,7 +152,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="cafe-capuccino">
             <div class="menu-producto-visual visual-cafe">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path
@@ -190,7 +191,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="cafe-iced">
             <div class="menu-producto-visual visual-frio">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path d="M48 31h64l-8 93H56l-8-93Z" />
@@ -227,7 +228,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="cafe-mocaccino">
             <div class="menu-producto-visual visual-latte">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path d="M47 25h66l-9 99H56L47 25Z" />
@@ -264,7 +265,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="te-hebras">
             <div class="menu-producto-visual visual-te">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path d="M35 51h84l-9 64H44l-9-64Z" />
@@ -301,7 +302,7 @@
               </div>
             </div>
           </article>
-        </div>
+        <article class="menu-producto" id="cafe-americano"><div class="menu-producto-visual visual-cafe" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/></svg></div><div class="menu-producto-info"><span class="producto-categoria">CAFÉ</span><h3 class="serif">Americano</h3><p>Espresso con agua caliente, largo y aromático.</p><div class="menu-producto-pie"><strong>$2.800</strong><button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Americano al carrito" data-producto-id="cafe-americano" data-producto-nombre="Americano" data-producto-precio="2800">+</button></div></div></article><article class="menu-producto" id="cafe-filtrado"><div class="menu-producto-visual visual-cafe" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/></svg></div><div class="menu-producto-info"><span class="producto-categoria">CAFÉ</span><h3 class="serif">Café filtrado</h3><p>Preparado a mano para descubrir cada nota del grano.</p><div class="menu-producto-pie"><strong>$3.100</strong><button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Café filtrado al carrito" data-producto-id="cafe-filtrado" data-producto-nombre="Café filtrado" data-producto-precio="3100">+</button></div></div></article><article class="menu-producto" id="cafe-cortado"><div class="menu-producto-visual visual-latte" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/></svg></div><div class="menu-producto-info"><span class="producto-categoria">CAFÉ</span><h3 class="serif">Cortado</h3><p>Espresso con un toque de leche vaporizada.</p><div class="menu-producto-pie"><strong>$2.900</strong><button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Cortado al carrito" data-producto-id="cafe-cortado" data-producto-nombre="Cortado" data-producto-precio="2900">+</button></div></div></article><article class="menu-producto" id="te-rooibos"><div class="menu-producto-visual visual-te" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/></svg></div><div class="menu-producto-info"><span class="producto-categoria">INFUSIÓN</span><h3 class="serif">Rooibos</h3><p>Infusión sin cafeína, suave y naturalmente dulce.</p><div class="menu-producto-pie"><strong>$2.600</strong><button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Rooibos al carrito" data-producto-id="te-rooibos" data-producto-nombre="Rooibos" data-producto-precio="2600">+</button></div></div></article></div>
       </section>
 
       <section class="catalogo-seccion catalogo-seccion-verde" id="dulce">
@@ -313,7 +314,7 @@
           </div>
         </div>
         <div class="catalogo-grid">
-          <article class="menu-producto">
+          <article class="menu-producto" id="torta-cheesecake">
             <div class="menu-producto-visual visual-torta">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path d="M28 112 73 31l62 81H28Z" />
@@ -345,7 +346,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="torta-carrot">
             <div class="menu-producto-visual visual-torta">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path d="M28 112 73 31l62 81H28Z" />
@@ -377,7 +378,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="torta-brownie">
             <div class="menu-producto-visual visual-brownie">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path d="m31 54 83-25 18 66-84 25-17-66Z" />
@@ -408,7 +409,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="panaderia-medialuna">
             <div class="menu-producto-visual visual-medialuna">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path
@@ -441,7 +442,7 @@
               </div>
             </div>
           </article>
-        </div>
+        <article class="menu-producto" id="torta-lemon"><div class="menu-producto-visual visual-torta" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/></svg></div><div class="menu-producto-info"><span class="producto-categoria">PASTELERÍA</span><h3 class="serif">Lemon pie</h3><p>Crema de limón y merengue sobre masa crocante.</p><div class="menu-producto-pie"><strong>$4.200</strong><button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Lemon pie al carrito" data-producto-id="torta-lemon" data-producto-nombre="Lemon pie" data-producto-precio="4200">+</button></div></div></article><article class="menu-producto" id="panaderia-cookie"><div class="menu-producto-visual visual-brownie" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/></svg></div><div class="menu-producto-info"><span class="producto-categoria">PANADERÍA</span><h3 class="serif">Cookie de chocolate</h3><p>Con chips de chocolate y centro suave.</p><div class="menu-producto-pie"><strong>$2.300</strong><button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Cookie de chocolate al carrito" data-producto-id="panaderia-cookie" data-producto-nombre="Cookie de chocolate" data-producto-precio="2300">+</button></div></div></article></div>
       </section>
 
       <section class="catalogo-seccion" id="salado">
@@ -453,7 +454,7 @@
           </div>
         </div>
         <div class="catalogo-grid catalogo-grid-dos">
-          <article class="menu-producto">
+          <article class="menu-producto" id="salado-tostado">
             <div class="menu-producto-visual visual-sandwich">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path d="m24 101 55-73 57 73H24Z" />
@@ -484,7 +485,7 @@
               </div>
             </div>
           </article>
-          <article class="menu-producto">
+          <article class="menu-producto" id="salado-avocado">
             <div class="menu-producto-visual visual-tostada">
               <svg viewBox="0 0 160 140" aria-hidden="true">
                 <path
@@ -517,7 +518,7 @@
               </div>
             </div>
           </article>
-        </div>
+        <article class="menu-producto" id="salado-croissant"><div class="menu-producto-visual visual-medialuna" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/></svg></div><div class="menu-producto-info"><span class="producto-categoria">SALADO</span><h3 class="serif">Croissant de jamón y queso</h3><p>Masa hojaldrada, jamón cocido y queso fundido.</p><div class="menu-producto-pie"><strong>$4.900</strong><button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Croissant de jamón y queso al carrito" data-producto-id="salado-croissant" data-producto-nombre="Croissant de jamón y queso" data-producto-precio="4900">+</button></div></div></article><article class="menu-producto" id="salado-bagel"><div class="menu-producto-visual visual-tostada" aria-hidden="true"><svg viewBox="0 0 160 140"><path d="M35 42h82v58a24 24 0 0 1-24 24H59a24 24 0 0 1-24-24V42Z"/><path d="M117 57h10a22 22 0 0 1 0 44h-10" fill="none" stroke="currentColor" stroke-width="10"/></svg></div><div class="menu-producto-info"><span class="producto-categoria">SALADO</span><h3 class="serif">Bagel veggie</h3><p>Queso crema, tomate, rúcula y palta.</p><div class="menu-producto-pie"><strong>$5.200</strong><button type="button" class="add-redondo btn-agregar-carrito" aria-label="Agregar Bagel veggie al carrito" data-producto-id="salado-bagel" data-producto-nombre="Bagel veggie" data-producto-precio="5200">+</button></div></div></article></div>
       </section>
 
       <section class="menu-cta">
@@ -550,23 +551,9 @@
         <button type="button" class="quiz-cerrar" data-cerrar-cuestionario aria-label="Cerrar cuestionario">×</button>
         <span class="eyebrow-dark">ENCONTRÁ TU CAFÉ</span>
         <h2 class="serif" id="quiz-titulo">¿Qué café va con vos?</h2>
-        <p class="quiz-intro">Respondé estas dos preguntas y te recomendamos una opción de la carta.</p>
-        <form id="quiz-form">
-          <fieldset class="quiz-pregunta">
-            <legend>¿Cómo te gusta el café?</legend>
-            <label><input type="radio" name="perfil" value="suave" required /> Suave y cremoso</label>
-            <label><input type="radio" name="perfil" value="equilibrado" /> Equilibrado</label>
-            <label><input type="radio" name="perfil" value="intenso" /> Intenso</label>
-          </fieldset>
-          <fieldset class="quiz-pregunta">
-            <legend>¿Cómo lo preferís?</legend>
-            <label><input type="radio" name="metodo" value="caliente" required /> Caliente</label>
-            <label><input type="radio" name="metodo" value="frio" /> Frío</label>
-            <label><input type="radio" name="metodo" value="filtrado" /> Filtrado</label>
-          </fieldset>
-          <button type="submit" class="boton boton-newsletter">Ver mi recomendación</button>
-          <div class="quiz-result" id="quiz-result" role="status" aria-live="polite" hidden></div>
-        </form>
+        <p class="quiz-intro">Ocho preguntas para encontrar tu bebida y algo rico para acompañarla.</p>
+<p id="quiz-progreso" aria-live="polite"></p><progress id="quiz-barra" max="8" value="1" aria-label="Progreso del cuestionario"></progress>
+<form id="quiz-form"><fieldset class="quiz-pregunta" data-quiz-paso><legend>1. ¿Qué intensidad te gusta?</legend><label><input type="radio" name="perfil" value="suave" required> Suave</label><label><input type="radio" name="perfil" value="equilibrado" required> Equilibrada</label><label><input type="radio" name="perfil" value="intenso" required> Intensa</label></fieldset><fieldset class="quiz-pregunta" data-quiz-paso><legend>2. ¿Cómo lo preferís?</legend><label><input type="radio" name="metodo" value="caliente" required> Caliente</label><label><input type="radio" name="metodo" value="frio" required> Frío</label><label><input type="radio" name="metodo" value="filtrado" required> Filtrado</label></fieldset><fieldset class="quiz-pregunta" data-quiz-paso><legend>3. ¿Le agregamos leche?</legend><label><input type="radio" name="leche" value="si" required> Sí, bien cremoso</label><label><input type="radio" name="leche" value="poca" required> Solo un toque</label><label><input type="radio" name="leche" value="no" required> Sin leche</label></fieldset><fieldset class="quiz-pregunta" data-quiz-paso><legend>4. ¿Qué sabor te tienta?</legend><label><input type="radio" name="sabor" value="clasico" required> El sabor del café</label><label><input type="radio" name="sabor" value="chocolate" required> Chocolate</label><label><input type="radio" name="sabor" value="vainilla" required> Vainilla</label></fieldset><fieldset class="quiz-pregunta" data-quiz-paso><legend>5. ¿Buscás cafeína?</legend><label><input type="radio" name="cafeina" value="si" required> Sí, para activar</label><label><input type="radio" name="cafeina" value="normal" required> Una cantidad moderada</label><label><input type="radio" name="cafeina" value="no" required> Prefiero una infusión sin cafeína</label></fieldset><fieldset class="quiz-pregunta" data-quiz-paso><legend>6. ¿Cuándo lo vas a disfrutar?</legend><label><input type="radio" name="momento" value="desayuno" required> En el desayuno</label><label><input type="radio" name="momento" value="pausa" required> En una pausa</label><label><input type="radio" name="momento" value="merienda" required> En la merienda</label></fieldset><fieldset class="quiz-pregunta" data-quiz-paso><legend>7. ¿Con qué lo acompañarías?</legend><label><input type="radio" name="acompanar" value="dulce" required> Algo dulce</label><label><input type="radio" name="acompanar" value="salado" required> Algo salado</label><label><input type="radio" name="acompanar" value="solo" required> Solo la bebida</label></fieldset><fieldset class="quiz-pregunta" data-quiz-paso><legend>8. ¿Cuánto tiempo tenés?</legend><label><input type="radio" name="tiempo" value="rapido" required> Una pausa cortita</label><label><input type="radio" name="tiempo" value="tranquilo" required> Tiempo para disfrutar</label></fieldset><p id="quiz-error" role="alert"></p><div class="quiz-controles"><button type="button" class="boton boton-outline" id="quiz-anterior">Anterior</button><button type="button" class="boton boton-oscuro" id="quiz-siguiente">Siguiente</button><button type="submit" class="boton boton-oscuro" id="quiz-enviar" hidden>Ver mi recomendación</button></div><div class="quiz-result" id="quiz-result" role="status" aria-live="polite" hidden></div></form>
       </div>
     </dialog>
 
@@ -604,6 +591,7 @@
         </button>
       </div>
     </aside>
-    <script src="script.js"></script>
+    <dialog class="quiz-dialog" id="cuenta-dialog" aria-labelledby="cuenta-titulo"><div class="quiz-dialog-inner"><button type="button" class="quiz-cerrar" data-cerrar-cuenta aria-label="Cerrar cuenta">×</button><span class="eyebrow-dark">TU RINCÓN EN LOOP</span><h2 class="serif" id="cuenta-titulo">Iniciar sesión</h2><p class="quiz-intro">Tu cuenta se guarda en este navegador.</p><form id="cuenta-form"><div id="registro-nombre" hidden><label for="cuenta-nombre">Nombre</label><input id="cuenta-nombre" name="nombre" autocomplete="given-name" maxlength="60"></div><label for="cuenta-email">Correo electrónico</label><input id="cuenta-email" name="email" type="email" autocomplete="username" required maxlength="254"><label for="cuenta-password">Contraseña</label><input id="cuenta-password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required><p id="cuenta-feedback" role="status" aria-live="polite"></p><button type="submit" class="boton boton-oscuro" id="cuenta-enviar">Ingresar</button><button type="button" class="cuenta-alternar" id="cuenta-alternar">¿No tenés cuenta? Registrate</button></form><div id="cuenta-perfil" hidden><p id="cuenta-saludo"></p><button type="button" class="boton boton-oscuro" id="cuenta-salir">Cerrar sesión</button></div></div></dialog>
+<script src="script.js?v=loop-20261002"></script>
   </body>
 </html>
