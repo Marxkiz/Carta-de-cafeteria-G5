@@ -2098,8 +2098,8 @@ body.carrito-abierto {
   padding: clamp(28px, 4.5vw, 60px);
   border: 1px solid rgba(31, 24, 21, .13);
   border-radius: 5px;
-  background: #28201d;
-  background-image: url("https://www.stumptowncoffee.com/cdn/shop/t/473/assets/noise-texture.jpg?v=27140096247502942571788366326");
+  background: #183e32;
+  background-image: none;
   color: #f4f0e8;
 }
 .ubicacion-copy {
@@ -2687,3 +2687,18 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline: 3px solid #c
 }
 @media (max-width: 850px) { .catalogo-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .ubicacion-panel { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .catalogo-grid { grid-template-columns: 1fr; } .catalogo-seccion { padding: 36px 20px; } .menu-producto-visual { height: 125px; } .menu-filtros { gap: 8px; padding: 20px 12px; } .menu-filtros a { font-size: .78rem; padding: 9px 12px; } }
+
+/* Registro completo y contraste del panel de ubicación. */
+#ubicacion .ubicacion-panel { background: #183e32; background-image: none; color: #fffdf8; }
+#ubicacion .ubicacion-copy h2 { color: #fffdf8; }
+#ubicacion .ubicacion-copy p, #ubicacion .ubicacion-mapa a { color: #f1eee6; }
+#ubicacion .ubicacion-copy .eyebrow { color: #e3c6a0; }
+#cuenta-dialog.es-registro { width: min(94vw, 760px); max-width: 760px; }
+.cuenta-grid { display: grid; grid-template-columns: 1fr; gap: 0 22px; }
+.es-registro .cuenta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cuenta-campo { min-width: 0; }
+#cuenta-form select { width: 100%; padding: 13px; border: 1px solid var(--line); border-radius: 6px; font: inherit; color: var(--ink); background: var(--paper); }
+.cuenta-ayuda { margin-top: 12px; font-size: .8rem; color: #625850; }
+.cuenta-acciones { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
+#cuenta-form [aria-invalid="true"] { border-color: #a12c22; }
+@media (max-width: 620px) { .es-registro .cuenta-grid { grid-template-columns: 1fr; } }

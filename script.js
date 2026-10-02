@@ -298,8 +298,15 @@ function actualizarCuenta() {
   cuentaForm.hidden = !!usuario; document.querySelector('#cuenta-perfil').hidden = !usuario;
   document.querySelector('#cuenta-titulo').textContent = usuario ? 'Tu cuenta Loop' : registro ? 'Crear cuenta' : 'Iniciar sesión';
   document.querySelector('#cuenta-saludo').textContent = usuario ? `Hola, ${usuario.nombre}. ¡Qué bueno verte por acá!` : '';
-  document.querySelector('#registro-nombre').hidden = !registro;
-  document.querySelector('#cuenta-nombre').required = registro;
+  document.querySelectorAll('[data-abrir-registro]').forEach(b => { b.hidden = !!usuario; });
+  cuentaDialog.classList.toggle('es-registro', registro && !usuario);
+  cuentaForm.querySelectorAll('[data-solo-registro]').forEach(e => {
+    e.hidden = !registro;
+    e.querySelectorAll('input, select').forEach(input => {
+      input.disabled = !registro;
+      input.required = registro && input.hasAttribute('data-required-registro');
+    });
+  });
   document.querySelector('#cuenta-password').autocomplete = registro ? 'new-password' : 'current-password';
   document.querySelector('#cuenta-enviar').textContent = registro ? 'Crear cuenta' : 'Ingresar';
   document.querySelector('#cuenta-alternar').textContent = registro ? 'Ya tengo cuenta' : '¿No tenés cuenta? Registrate';
@@ -309,12 +316,42 @@ async function derivarPassword(password, salt) {
   const bits = await crypto.subtle.deriveBits({name:'PBKDF2', salt:Uint8Array.from(salt), iterations:210000, hash:'SHA-256'}, clave, 256);
   return Array.from(new Uint8Array(bits), b => b.toString(16).padStart(2, '0')).join('');
 }
-document.querySelectorAll('[data-abrir-cuenta]').forEach(b => b.addEventListener('click', () => { registro = false; cuentaForm.reset(); cuentaFeedback.textContent = ''; actualizarCuenta(); cuentaDialog.showModal(); }));
+function limpiarValidacionCuenta() {
+  cuentaFeedback.textContent = '';
+  cuentaForm.querySelectorAll('input').forEach(input => {
+    input.setCustomValidity(''); input.removeAttribute('aria-invalid');
+  });
+}
+function abrirCuenta(esRegistro) {
+  registro = esRegistro; cuentaForm.reset(); limpiarValidacionCuenta();
+  actualizarCuenta(); cuentaDialog.showModal();
+}
+document.querySelectorAll('[data-abrir-cuenta]').forEach(b => b.addEventListener('click', () => abrirCuenta(false)));
+document.querySelectorAll('[data-abrir-registro]').forEach(b => b.addEventListener('click', () => abrirCuenta(true)));
+cuentaForm.addEventListener('input', limpiarValidacionCuenta);
+cuentaForm.addEventListener('reset', limpiarValidacionCuenta);
 document.querySelector('[data-cerrar-cuenta]').addEventListener('click', () => cuentaDialog.close());
 cuentaDialog.addEventListener('click', e => { if (e.target === cuentaDialog) cuentaDialog.close(); });
-document.querySelector('#cuenta-alternar').addEventListener('click', () => { registro = !registro; cuentaFeedback.textContent = ''; actualizarCuenta(); });
+document.querySelector('#cuenta-alternar').addEventListener('click', () => { registro = !registro; limpiarValidacionCuenta(); actualizarCuenta(); });
 cuentaForm.addEventListener('submit', async e => {
-  e.preventDefault(); if (!cuentaForm.reportValidity()) return;
+  e.preventDefault(); limpiarValidacionCuenta();
+  const campos = cuentaForm.elements;
+  if (registro) {
+    let primerError;
+    function marcarError(input, mensaje) {
+      input.setCustomValidity(mensaje); input.setAttribute('aria-invalid', 'true');
+      if (!primerError) primerError = {input, mensaje};
+    }
+    if (!campos.nombre.value.trim()) marcarError(campos.nombre, 'Ingresá tu nombre.');
+    if (!campos.apellido.value.trim()) marcarError(campos.apellido, 'Ingresá tu apellido.');
+    if (campos.email.value.trim().toLowerCase() !== campos.emailRepetir.value.trim().toLowerCase()) marcarError(campos.emailRepetir, 'Los mails no coinciden.');
+    if (campos.password.value !== campos.passwordRepetir.value) marcarError(campos.passwordRepetir, 'Las contraseñas no coinciden.');
+    const telefono = campos.telefono.value.trim();
+    const digitos = telefono.replace(/\D/g, '');
+    if (!/^[+\d\s().-]+$/.test(telefono) || digitos.length < 8 || digitos.length > 15) marcarError(campos.telefono, 'Ingresá un teléfono válido con entre 8 y 15 números.');
+    if (primerError) { cuentaFeedback.textContent = primerError.mensaje; primerError.input.focus(); cuentaForm.reportValidity(); return; }
+  }
+  if (!cuentaForm.reportValidity()) return;
   const boton = document.querySelector('#cuenta-enviar'); boton.disabled = true;
   try {
     if (!crypto.subtle) throw new Error('Abrí la página con Live Server o HTTPS para usar tu cuenta.');
@@ -326,7 +363,7 @@ cuentaForm.addEventListener('submit', async e => {
       if (!nombre) throw new Error('Ingresá tu nombre.');
       if (usuario) throw new Error('Este correo ya tiene una cuenta. Iniciá sesión.');
       const salt = Array.from(crypto.getRandomValues(new Uint8Array(16)));
-      usuario = {nombre, email, salt, hash:await derivarPassword(cuentaForm.elements.password.value, salt)};
+      usuario = {nombre, apellido:campos.apellido.value.trim(), telefono:campos.telefono.value.trim(), genero:campos.genero.value, documento:campos.documento.value.trim(), domicilio:campos.domicilio.value.trim(), email, salt, hash:await derivarPassword(cuentaForm.elements.password.value, salt)};
       usuarios.push(usuario); localStorage.setItem('loopUsuarios', JSON.stringify(usuarios));
     } else if (!usuario || await derivarPassword(cuentaForm.elements.password.value, usuario.salt) !== usuario.hash) {
       throw new Error('El correo o la contraseña son incorrectos.');

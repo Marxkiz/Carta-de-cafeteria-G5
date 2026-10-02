@@ -8,7 +8,7 @@
       content="Menú de Café Loop: cafés, infusiones, tortas, panadería y opciones saladas."
     />
     <title>Menú | Café Loop</title>
-    <link rel="stylesheet" href="style.css?v=loop-20261002" />
+    <link rel="stylesheet" href="style.css?v=loop-registro-20261002" />
   </head>
   <body class="menu-page">
      <div class="promo-bar">
@@ -34,6 +34,7 @@
 
         <div class="nav-grupo nav-grupo-derecha">
 <button type="button" class="nav-pill" data-abrir-cuenta>Iniciar sesión</button>
+<button type="button" class="nav-pill" data-abrir-registro>Registrarse</button>
           <a href="index.html#tienda">Tienda</a>
 
           <a href="index.html#ubicacion">Ubicación</a>
@@ -591,7 +592,17 @@
         </button>
       </div>
     </aside>
-    <dialog class="quiz-dialog" id="cuenta-dialog" aria-labelledby="cuenta-titulo"><div class="quiz-dialog-inner"><button type="button" class="quiz-cerrar" data-cerrar-cuenta aria-label="Cerrar cuenta">×</button><span class="eyebrow-dark">TU RINCÓN EN LOOP</span><h2 class="serif" id="cuenta-titulo">Iniciar sesión</h2><p class="quiz-intro">Tu cuenta se guarda en este navegador.</p><form id="cuenta-form"><div id="registro-nombre" hidden><label for="cuenta-nombre">Nombre</label><input id="cuenta-nombre" name="nombre" autocomplete="given-name" maxlength="60"></div><label for="cuenta-email">Correo electrónico</label><input id="cuenta-email" name="email" type="email" autocomplete="username" required maxlength="254"><label for="cuenta-password">Contraseña</label><input id="cuenta-password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required><p id="cuenta-feedback" role="status" aria-live="polite"></p><button type="submit" class="boton boton-oscuro" id="cuenta-enviar">Ingresar</button><button type="button" class="cuenta-alternar" id="cuenta-alternar">¿No tenés cuenta? Registrate</button></form><div id="cuenta-perfil" hidden><p id="cuenta-saludo"></p><button type="button" class="boton boton-oscuro" id="cuenta-salir">Cerrar sesión</button></div></div></dialog>
-<script src="script.js?v=loop-20261002"></script>
+    <dialog class="quiz-dialog" id="cuenta-dialog" aria-labelledby="cuenta-titulo">
+<div class="quiz-dialog-inner">
+<button type="button" class="quiz-cerrar" data-cerrar-cuenta aria-label="Cerrar cuenta">×</button>
+<span class="eyebrow-dark">TU RINCÓN EN LOOP</span><h2 class="serif" id="cuenta-titulo">Iniciar sesión</h2>
+<p class="quiz-intro">Tu cuenta se guarda en este navegador.</p>
+<form id="cuenta-form"><div class="cuenta-grid"><div class="cuenta-campo" data-solo-registro hidden><label for="cuenta-nombre">Nombre</label><input id="cuenta-nombre" name="nombre" autocomplete="given-name" maxlength="60" data-required-registro></div><div class="cuenta-campo" data-solo-registro hidden><label for="cuenta-apellido">Apellido</label><input id="cuenta-apellido" name="apellido" autocomplete="family-name" maxlength="60" data-required-registro></div><div class="cuenta-campo"><label for="cuenta-email">Mail</label><input id="cuenta-email" name="email" type="email" autocomplete="username" required maxlength="254"></div><div class="cuenta-campo" data-solo-registro hidden><label for="cuenta-email-repetir">Repetir mail</label><input id="cuenta-email-repetir" name="emailRepetir" type="email" autocomplete="off" maxlength="254" data-required-registro></div><div class="cuenta-campo"><label for="cuenta-password">Contraseña</label><input id="cuenta-password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required aria-describedby="cuenta-password-ayuda"></div><div class="cuenta-campo" data-solo-registro hidden><label for="cuenta-password-repetir">Repetir contraseña</label><input id="cuenta-password-repetir" name="passwordRepetir" type="password" autocomplete="new-password" minlength="8" maxlength="128" data-required-registro></div><div class="cuenta-campo" data-solo-registro hidden><label for="cuenta-genero">Género (opcional)</label><select id="cuenta-genero" name="genero"><option value="">Seleccionar</option><option value="femenino">Femenino</option><option value="masculino">Masculino</option><option value="otro">Otro</option><option value="no-indicar">Prefiero no indicarlo</option></select></div><div class="cuenta-campo" data-solo-registro hidden><label for="cuenta-documento">Documento (opcional)</label><input id="cuenta-documento" name="documento" inputmode="numeric" maxlength="12" pattern="[0-9.\s-]{6,12}" title="Ingresá entre 6 y 12 caracteres: números, puntos o guiones."></div><div class="cuenta-campo" data-solo-registro hidden><label for="cuenta-telefono">Número de teléfono</label><input id="cuenta-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="+54 351 1234567" data-required-registro></div><div class="cuenta-campo" data-solo-registro hidden><label for="cuenta-domicilio">Domicilio (opcional)</label><input id="cuenta-domicilio" name="domicilio" autocomplete="street-address" maxlength="160" placeholder="Calle y número"></div></div><p class="cuenta-ayuda" id="cuenta-password-ayuda">Usá al menos 8 caracteres.</p>
+<p id="cuenta-feedback" role="status" aria-live="polite"></p>
+<div class="cuenta-acciones"><button type="reset" class="boton boton-outline" data-solo-registro hidden>Limpiar</button><button type="submit" class="boton boton-oscuro" id="cuenta-enviar">Ingresar</button></div>
+<button type="button" class="cuenta-alternar" id="cuenta-alternar">¿No tenés cuenta? Registrate</button>
+</form><div id="cuenta-perfil" hidden><p id="cuenta-saludo"></p><button type="button" class="boton boton-oscuro" id="cuenta-salir">Cerrar sesión</button></div>
+</div></dialog>
+<script src="script.js?v=loop-registro-20261002"></script>
   </body>
 </html>

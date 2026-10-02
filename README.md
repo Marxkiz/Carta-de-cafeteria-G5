@@ -14,7 +14,10 @@ Este paquete contiene la portada, la página del menú, la hoja de estilos y el 
 - Tienda de demostración: café en grano, taza y filtro, con agregado al carrito.
 - Carta adaptable a celulares con 20 productos y accesos directos a cada bebida.
 - Cuestionario de ocho pasos con recomendaciones de bebida y acompañamiento, y agregado al carrito.
-- Registro, ingreso y cierre de sesión compartidos entre ambas páginas en este navegador.
+- Accesos separados a Iniciar sesión y Registrarse en ambas páginas.
+- Registro con nombre, apellido, mail repetido, contraseña repetida y teléfono; género, documento y domicilio opcionales.
+- Validación de coincidencia de mails/contraseñas y formato del teléfono, con botón Limpiar.
+- Ingreso y cierre de sesión compartidos entre ambas páginas en este navegador.
 - Google Maps interactivo y enlaces para abrir el mapa y obtener indicaciones.
 - Formulario de suscripción con confirmación local de demostración.
 - Carrito compartido entre la portada y el menú mediante `localStorage`.
