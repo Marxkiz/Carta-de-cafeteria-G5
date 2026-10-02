@@ -5,37 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Café Loop: café de especialidad, tostado artesanal y pastelería."
+      content="Tienda Café Loop: café en grano, tazas y accesorios para preparar café en casa."
     />
-    <title>Café Loop — Tostadores de Café</title>
+    <title>Tienda | Café Loop</title>
     <link rel="stylesheet" href="style.css?v=loop-tienda-20261002" />
   </head>
-  <body>
-    <!-- Barra Superior de Promociones -->
-
-    <div class="promo-bar">
-      <div class="promo-scroller">
-        <span
-          >15% DE DESCUENTO CON EL CÓDIGO LOOP15 • ENVÍOS GRATIS EN COMPRAS
-          MAYORES A $25.000 • CAFÉ RECIÉN TOSTADO CADA SEMANA •</span
-        >
-        <!--Duplicado para que el bucle sea infinito y sin cortes -->
-        <span
-          >15% DE DESCUENTO CON EL CÓDIGO LOOP15 • ENVÍOS GRATIS EN COMPRAS
-          MAYORES A $25.000 • CAFÉ RECIÉN TOSTADO CADA SEMANA •</span
-        >
-      </div>
-    </div>
-
-    <!-- Header / Navegación Principal Oscura -->
+  <body class="tienda-page">
+     <div class="promo-bar">
+  <div class="promo-scroller">
+    <span>15% DE DESCUENTO CON EL CÓDIGO LOOP15  • ENVÍOS GRATIS EN COMPRAS MAYORES A $25.000  • CAFÉ RECIÉN TOSTADO CADA SEMANA  •</span>
+    <!--Duplicado para que el bucle sea infinito y sin cortes -->
+    <span>15% DE DESCUENTO CON EL CÓDIGO LOOP15 • ENVÍOS GRATIS EN COMPRAS MAYORES A $25.000  • CAFÉ RECIÉN TOSTADO CADA SEMANA  •</span>
+  </div>
+</div>
     <header class="site-header">
       <nav class="site-nav" aria-label="Navegación principal">
         <div class="nav-grupo nav-grupo-izquierda">
-          <button type="button" class="nav-pill" data-action="cuestionario">
-            Cuestionario de Café
-          </button>
+          <a href="index.html">Inicio</a>
           <a href="menu.html">Menú</a>
-          <a href="#nosotros">Nosotros</a><a href="#ubicacion">Ubicación</a>
+          <a href="index.html#aprende">Aprendé</a>
+          
         </div>
 
         <a href="index.html" class="brand" aria-label="Café Loop, inicio">
@@ -46,7 +35,10 @@
         <div class="nav-grupo nav-grupo-derecha">
 <button type="button" class="nav-pill" data-abrir-cuenta>Iniciar sesión</button>
 <button type="button" class="nav-pill" data-abrir-registro>Registrarse</button>
-          <a href="#tienda" class="nav-comprar">Comprar</a>
+          <a href="tienda.html" aria-current="page">Tienda</a>
+
+          <a href="index.html#ubicacion">Ubicación</a>
+
           <button
             type="button"
             aria-label="Abrir carrito"
@@ -61,127 +53,8 @@
       </nav>
     </header>
 
-    <main>
-      <!-- Hero Principal en 2 Columnas (Estilo Editorial Tostaduría) -->
-      <section class="home-hero hero-full">
-        <div class="hero-bg">
-          <img
-            src="images/tostadoradecafe.png"
-            alt="Proceso de tostado artesanal de café en Café Loop"
-          />
-          <div class="hero-overlay"></div>
-        </div>
-
-        <div class="hero-content">
-          <span class="eyebrow">SELECCIÓN DE LA CASA</span>
-          <h1 class="serif">Café para <br />volver siempre</h1>
-          <p>
-            Granos de origen único seleccionados a mano, tostados en pequeños
-            lotes y preparados con precisión para disfrutar en casa.
-          </p>
-          <div class="hero-acciones">
-            <a href="menu.html" class="boton boton-primario">Explorar el menú</a>
-            <button
-              type="button"
-              class="boton boton-outline"
-              data-action="cuestionario"
-            >
-              Hacer Cuestionario
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Accesos editoriales: tienda y contenidos -->
-      <section class="accesos-editoriales" aria-label="Explorar Café Loop">
-        <article class="acceso-card">
-          <a href="#tienda" class="acceso-imagen" aria-label="Explorar la tienda Café Loop">
-            <img
-              src="images/gato-taza-naranja.webp"
-              alt="Gato negro con una taza naranja"
-            />
-          </a>
-          <div class="acceso-contenido">
-            <span class="eyebrow-dark">OBJETOS Y CAFÉ</span>
-            <h2 class="serif">La tienda Loop</h2>
-            <p>
-              Café en grano, tazas y accesorios para llevar un poco de Café Loop
-              a casa.
-            </p>
-            <a href="#tienda" class="link-flecha">
-              <span>Explorar la tienda</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </article>
-
-        <article class="acceso-card">
-          <a href="#aprende" class="acceso-imagen" aria-label="Aprender sobre café">
-            <img
-              src="images/gato-taza-rayada.webp"
-              alt="Gato negro con una taza rayada"
-            />
-          </a>
-          <div class="acceso-contenido">
-            <span class="eyebrow-dark">UN MUNDO POR DESCUBRIR</span>
-            <h2 class="serif">Aprendé con Loop</h2>
-            <p>
-              Conocé los granos, los métodos de preparación y algunos rituales
-              para disfrutar cada taza.
-            </p>
-            <a href="#aprende" class="link-flecha">
-              <span>Conocer más</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </article>
-      </section>
-
-      <!-- Producto Destacado / Favorito del Tostador -->
-      <section class="producto-destacado">
-        <div class="destacado-contenido">
-          <span class="eyebrow">FAVORITO DEL TOSTADOR</span>
-          <h2 class="serif">Café “GOD”</h2>
-          <p>
-            Intenso, de cuerpo sedoso y perfil balanceado con notas marcadas de
-            cacao amargo, dulce de caramelo y avellanas tostadas.
-          </p>
-          <ul class="notas-cafe" aria-label="Notas de sabor">
-            <li>Chocolate negro</li>
-            <li>Caramelo artesanal</li>
-            <li>Avellana</li>
-          </ul>
-          <div class="destacado-compra">
-            <strong>$4.500</strong>
-            <button
-              type="button"
-              class="boton boton-claro btn-agregar-carrito"
-              data-producto-id="cafe-god"
-              data-producto-nombre='Café "GOD"'
-              data-producto-precio="4500"
-            >
-              Agregar al carrito
-            </button>
-          </div>
-        </div>
-        <div class="destacado-imagen">
-          <img
-            src="images/vaso-cafe-manos.webp"
-            alt="Dos manos sosteniendo un vaso de café recién preparado"
-          />
-        </div>
-      </section>
-
-      <!-- Tienda: productos distintos de la carta de cafetería -->
-      <section class="tienda-preview" id="tienda" aria-labelledby="tienda-titulo">
-        <div class="seccion-intro">
-          <span class="eyebrow-dark">LLEVÁ CAFÉ LOOP A CASA</span>
-          <h2 class="serif" id="tienda-titulo">La tienda</h2>
-          <p>Una selección de productos para disfrutar el café también fuera de la cafetería.</p>
-        </div>
-
-<div class="tienda-grid">
-<article class="tienda-producto" id="tienda-blend-loop" data-tienda-categoria="cafe">
+    <main><header class="menu-hero"><span class="eyebrow-dark">UN POCO DE LOOP EN TU CASA</span><h1 class="serif">La tienda</h1><p>Café en grano, objetos y accesorios para convertir cada pausa en un ritual. Precios en pesos argentinos.</p></header>
+<section class="tienda-catalogo" aria-label="Catálogo de la tienda"><div class="tienda-herramientas"><div class="tienda-filtros" role="group" aria-label="Filtrar artículos"><button type="button" data-filtro-tienda="todos" aria-pressed="true">Todos</button><button type="button" data-filtro-tienda="cafe" aria-pressed="false">Café en grano</button><button type="button" data-filtro-tienda="accesorios" aria-pressed="false">Accesorios</button><button type="button" data-filtro-tienda="objetos" aria-pressed="false">Objetos</button></div><p id="tienda-conteo" aria-live="polite">12 artículos</p></div><div class="tienda-grid"><article class="tienda-producto" id="tienda-blend-loop" data-tienda-categoria="cafe">
 <div class="tienda-visual tienda-ilustracion ilustracion-cafe"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M48 25h84l8 130H40L48 25Z"/><path d="M48 38h84"/></svg><span>CAFÉ LOOP</span></div>
 <div class="tienda-producto-info"><span class="producto-categoria">CAFÉ EN GRANO</span><h3 class="serif">Blend de la casa · 250 g</h3><p>Cacao, caramelo y un cuerpo equilibrado.</p>
 <div class="tienda-producto-pie"><strong>$8.500</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-blend-loop" data-producto-nombre="Blend de la casa · 250 g" data-producto-precio="8500" aria-label="Agregar Blend de la casa · 250 g al carrito">Agregar</button></div></div></article>
@@ -205,102 +78,44 @@
 <div class="tienda-visual tienda-ilustracion ilustracion-accesorios"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M47 50h83v95H47Z"/><path d="M40 45h98M88 45V20M72 20h32M130 65h20v60h-20M52 100h74" fill="none"/></svg><span>CAFÉ LOOP</span></div>
 <div class="tienda-producto-info"><span class="producto-categoria">MÉTODOS</span><h3 class="serif">Prensa francesa · 600 ml</h3><p>Prepará un café con cuerpo para compartir.</p>
 <div class="tienda-producto-pie"><strong>$18.500</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-prensa" data-producto-nombre="Prensa francesa · 600 ml" data-producto-precio="18500" aria-label="Agregar Prensa francesa · 600 ml al carrito">Agregar</button></div></div></article>
-</div>
-<div class="tienda-ver-mas"><a href="tienda.html" class="boton boton-oscuro">Ver más artículos →</a><p>Explorá todos nuestros cafés, objetos y accesorios.</p></div>
-      </section>
+<article class="tienda-producto" id="tienda-brasil" data-tienda-categoria="cafe">
+<div class="tienda-visual tienda-ilustracion ilustracion-cafe"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M48 25h84l8 130H40L48 25Z"/><path d="M48 38h84"/></svg><span>CAFÉ LOOP</span></div>
+<div class="tienda-producto-info"><span class="producto-categoria">CAFÉ EN GRANO</span><h3 class="serif">Brasil · 250 g</h3><p>Notas de chocolate y frutos secos.</p>
+<div class="tienda-producto-pie"><strong>$8.900</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-brasil" data-producto-nombre="Brasil · 250 g" data-producto-precio="8900" aria-label="Agregar Brasil · 250 g al carrito">Agregar</button></div></div></article>
+<article class="tienda-producto" id="tienda-espresso" data-tienda-categoria="cafe">
+<div class="tienda-visual tienda-ilustracion ilustracion-cafe"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M48 25h84l8 130H40L48 25Z"/><path d="M48 38h84"/></svg><span>CAFÉ LOOP</span></div>
+<div class="tienda-producto-info"><span class="producto-categoria">CAFÉ EN GRANO</span><h3 class="serif">Blend espresso · 500 g</h3><p>Tueste pensado para un espresso intenso y cremoso.</p>
+<div class="tienda-producto-pie"><strong>$15.800</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-espresso" data-producto-nombre="Blend espresso · 500 g" data-producto-precio="15800" aria-label="Agregar Blend espresso · 500 g al carrito">Agregar</button></div></div></article>
+<article class="tienda-producto" id="tienda-dripper" data-tienda-categoria="accesorios">
+<div class="tienda-visual tienda-ilustracion ilustracion-accesorios"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M30 40h120l-42 95H72L30 40Z"/><path d="M53 143h74M60 60l22 58M120 60l-22 58" fill="none"/></svg><span>CAFÉ LOOP</span></div>
+<div class="tienda-producto-info"><span class="producto-categoria">MÉTODOS</span><h3 class="serif">Dripper cerámico</h3><p>Cono para preparar café filtrado a mano.</p>
+<div class="tienda-producto-pie"><strong>$12.500</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-dripper" data-producto-nombre="Dripper cerámico" data-producto-precio="12500" aria-label="Agregar Dripper cerámico al carrito">Agregar</button></div></div></article>
+<article class="tienda-producto" id="tienda-molinillo" data-tienda-categoria="accesorios">
+<div class="tienda-visual tienda-ilustracion ilustracion-accesorios"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M62 65h59v85H62Z"/><path d="M60 60h65M90 60V33h47v-9M65 113h50" fill="none"/></svg><span>CAFÉ LOOP</span></div>
+<div class="tienda-producto-info"><span class="producto-categoria">ACCESORIOS</span><h3 class="serif">Molinillo manual</h3><p>Mole tus granos justo antes de preparar el café.</p>
+<div class="tienda-producto-pie"><strong>$24.000</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-molinillo" data-producto-nombre="Molinillo manual" data-producto-precio="24000" aria-label="Agregar Molinillo manual al carrito">Agregar</button></div></div></article>
+<article class="tienda-producto" id="tienda-vaso" data-tienda-categoria="objetos">
+<div class="tienda-visual tienda-ilustracion ilustracion-objetos"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M51 40h81l-8 115H59L51 40Z"/><path d="M45 35h93M58 60h67" fill="none"/></svg><span>CAFÉ LOOP</span></div>
+<div class="tienda-producto-info"><span class="producto-categoria">OBJETOS</span><h3 class="serif">Vaso térmico · 350 ml</h3><p>Tapa y doble pared para acompañarte fuera de casa.</p>
+<div class="tienda-producto-pie"><strong>$14.900</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-vaso" data-producto-nombre="Vaso térmico · 350 ml" data-producto-precio="14900" aria-label="Agregar Vaso térmico · 350 ml al carrito">Agregar</button></div></div></article>
+<article class="tienda-producto" id="tienda-tote" data-tienda-categoria="objetos">
+<div class="tienda-visual tienda-ilustracion ilustracion-objetos"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M42 60h99l10 94H32L42 60Z"/><path d="M65 62V38q0-25 25-25t25 25v24" fill="none"/></svg><span>CAFÉ LOOP</span></div>
+<div class="tienda-producto-info"><span class="producto-categoria">OBJETOS</span><h3 class="serif">Tote bag Loop</h3><p>Bolsa de algodón para llevar tus favoritos.</p>
+<div class="tienda-producto-pie"><strong>$7.900</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-tote" data-producto-nombre="Tote bag Loop" data-producto-precio="7900" aria-label="Agregar Tote bag Loop al carrito">Agregar</button></div></div></article></div><div class="tienda-ver-mas"><a href="menu.html" class="boton boton-outline">Ver menú de la cafetería</a></div></section></main>
 
-      <!-- Aprendé: contenido breve y desplegable -->
-      <section class="aprende-section" id="aprende" aria-labelledby="aprende-titulo">
-        <div class="seccion-intro seccion-intro-izquierda">
-          <span class="eyebrow-dark">UN POCO MÁS SOBRE EL CAFÉ</span>
-          <h2 class="serif" id="aprende-titulo">Aprendé a disfrutarlo</h2>
-          <p>Pequeñas ideas para conocer mejor lo que hay detrás de cada taza.</p>
-        </div>
-        <div class="aprende-lista">
-          <details class="aprende-item">
-            <summary>El origen también se siente</summary>
-            <p>La variedad del grano, el lugar donde crece y el tueste influyen en el aroma, el cuerpo y el sabor de cada café.</p>
-          </details>
-          <details class="aprende-item">
-            <summary>Cada método tiene su propio ritmo</summary>
-            <p>Espresso, prensa o filtro: el método de preparación cambia la intensidad y la textura. Elegí el que mejor acompañe tu momento.</p>
-          </details>
-          <details class="aprende-item">
-            <summary>Cómo cuidar el café en casa</summary>
-            <p>Guardá los granos en un recipiente bien cerrado, en un lugar fresco y seco, lejos de la luz y de los olores intensos.</p>
-          </details>
-        </div>
-      </section>
-
-      <!-- Ubicación: dejamos espacio para completar los datos reales -->
-      <section class="ubicacion-section" id="ubicacion" aria-labelledby="ubicacion-titulo">
-        <div class="ubicacion-panel">
-          <div class="ubicacion-copy">
-            <span class="eyebrow">VENÍ A TOMARTE UNA PAUSA</span>
-            <h2 class="serif" id="ubicacion-titulo">Nos encontramos en Café Loop</h2>
-            <p>Obispo Trejo 850, Nueva Córdoba, Córdoba.<br>Lunes a viernes de 8 a 21 h · Sábados y domingos de 9 a 22 h.</p>
-            <p class="ubicacion-nota">Dirección ficticia para el proyecto Café Loop.</p><a class="boton boton-claro" href="https://www.google.com/maps/dir/?api=1&amp;destination=Obispo+Trejo+850+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer">Cómo llegar →</a>
-          </div>
-          <div class="ubicacion-mapa"><iframe title="Google Maps: Obispo Trejo 850, Nueva Córdoba" src="https://www.google.com/maps?q=Obispo+Trejo+850,+C%C3%B3rdoba,+Argentina&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a href="https://www.google.com/maps/search/?api=1&amp;query=Obispo+Trejo+850+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer">Abrir en Google Maps ↗</a></div>
-        </div>
-      </section>
-
-      <!-- Suscripción: formulario de demostración con respuesta de JavaScript -->
-      <section class="newsletter-section" id="suscripcion" aria-labelledby="newsletter-titulo">
-        <div class="newsletter-copy">
-          <span class="eyebrow-dark">NEWSLETTER LOOP</span>
-          <h2 class="serif" id="newsletter-titulo">Una buena noticia con tu café</h2>
-          <p>Recibí novedades, lanzamientos y promociones de Café Loop en tu correo.</p>
-        </div>
-        <form class="newsletter-form" id="newsletter-form">
-          <label for="newsletter-email">Tu correo electrónico</label>
-          <div class="newsletter-campo">
-            <input id="newsletter-email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" required />
-            <button class="boton boton-newsletter" type="submit">Suscribirme</button>
-          </div>
-          <p class="newsletter-nota">Formulario demostrativo: muestra una confirmación en esta página.</p>
-          <p class="newsletter-feedback" id="newsletter-feedback" role="status" aria-live="polite"></p>
-        </form>
-      </section>
-
-      <!-- Strip Editorial de Historia -->
-      <section class="historia-strip" id="nosotros">
-        <span class="eyebrow">NUESTRA FILOSOFÍA</span>
-        <p class="serif">Un buen café transforma el ritmo de todo tu día.</p>
-      </section>
-    </main>
-
-    <!-- Pie de Página -->
     <footer class="site-footer">
-      <div class="footer-marca">
-        <span>TOSTADORES DE</span>
-        <strong>CAFÉ LOOP</strong>
-      </div>
-      <p>
-        Café de especialidad, música y un espacio pensado para tomarse una
-        pausa.
-      </p>
+      <div class="footer-marca"><span>CAFFÉ</span><strong>LOOP</strong></div>
+      <p>Café, música y una mesa para quedarse.</p>
       <div class="footer-links">
-        <a href="menu.html">Menú</a>
+        <a href="index.html">Inicio</a>
+        <a href="menu.html#cafes">Cafés</a>
+        <a href="menu.html#dulce">Tortas</a>
         <a href="tienda.html">Tienda</a>
-        <a href="#aprende">Aprendé</a>
-        <a href="#ubicacion">Ubicación</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#suscripcion">Novedades</a>
+        <a href="index.html#aprende">Aprendé</a>
+        <a href="index.html#ubicacion">Ubicación</a>
       </div>
     </footer>
 
-    <!-- Widget Flotante de Ayuda Inferior Izquierdo -->
-    <button
-      type="button"
-      class="widget-ayuda"
-      data-action="nosotros"
-      aria-label="Ayuda"
-    >
-      <span class="icon-ayuda">?</span> Ayuda
-    </button>
-
-    <!-- Cuestionario interactivo -->
     <dialog class="quiz-dialog" id="quiz-dialog" aria-labelledby="quiz-titulo">
       <div class="quiz-dialog-inner">
         <button type="button" class="quiz-cerrar" data-cerrar-cuestionario aria-label="Cerrar cuestionario">×</button>
@@ -312,7 +127,6 @@
       </div>
     </dialog>
 
-    <!-- Carrito Lateral (Drawer) -->
     <div class="carrito-overlay" data-cerrar-carrito></div>
     <aside
       class="carrito-panel"
@@ -340,15 +154,13 @@
       </p>
       <div class="carrito-resumen">
         <div class="carrito-total-fila">
-          <span>Total</span>
-          <strong class="carrito-total">$0</strong>
+          <span>Total</span><strong class="carrito-total">$0</strong>
         </div>
         <button type="button" class="boton boton-outline carrito-vaciar">
           Vaciar carrito
         </button>
       </div>
     </aside>
-
     <dialog class="quiz-dialog" id="cuenta-dialog" aria-labelledby="cuenta-titulo">
 <div class="quiz-dialog-inner">
 <button type="button" class="quiz-cerrar" data-cerrar-cuenta aria-label="Cerrar cuenta">×</button>

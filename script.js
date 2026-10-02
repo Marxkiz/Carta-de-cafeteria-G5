@@ -379,3 +379,17 @@ document.querySelector('#cuenta-salir').addEventListener('click', () => {
 });
 window.addEventListener('storage', () => { actualizarCuenta(); carrito = cargarCarrito(); renderizarCarrito(false); });
 actualizarCuenta();
+
+// Catálogo completo: filtros que conservan los productos y el carrito.
+const filtrosTienda = document.querySelectorAll('[data-filtro-tienda]');
+const productosTienda = document.querySelectorAll('[data-tienda-categoria]');
+filtrosTienda.forEach(boton => boton.addEventListener('click', () => {
+  const categoria = boton.dataset.filtroTienda;
+  filtrosTienda.forEach(filtro => filtro.setAttribute('aria-pressed', String(filtro === boton)));
+  let visibles = 0;
+  productosTienda.forEach(producto => {
+    producto.hidden = categoria !== 'todos' && producto.dataset.tiendaCategoria !== categoria;
+    if (!producto.hidden) visibles++;
+  });
+  document.querySelector('#tienda-conteo').textContent = `${visibles} ${visibles === 1 ? 'artículo' : 'artículos'}`;
+}));

@@ -11,7 +11,8 @@ Este paquete contiene la portada, la página del menú, la hoja de estilos y el 
 ## Funciones incluidas
 - Navegación con accesos diferenciados a Menú, Tienda, Aprendé y Ubicación.
 - Botón Comprar destacado en marrón oscuro y crema, sin naranja.
-- Tienda de demostración: café en grano, taza y filtro, con agregado al carrito.
+- Vista previa de tienda con 6 artículos y botón Ver más.
+- Página tienda.html con 12 artículos, filtros de categorías y el mismo carrito/cuenta de la portada y el menú.
 - Carta adaptable a celulares con 20 productos y accesos directos a cada bebida.
 - Cuestionario de ocho pasos con recomendaciones de bebida y acompañamiento, y agregado al carrito.
 - Accesos separados a Iniciar sesión y Registrarse en ambas páginas.
