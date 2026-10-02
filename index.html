@@ -1,174 +1,403 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Café Loop</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Café Loop: café de especialidad, tostado artesanal y pastelería."
+    />
+    <title>Café Loop — Tostadores de Café</title>
+    <link rel="stylesheet" href="style.css?v=cafe-loop-header-20260928" />
+  </head>
+  <body>
+    <!-- Barra Superior de Promociones -->
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- Navegación rápida superior -->
-  <div class="nav-proyecto">
-    <a href="#tienda">Tienda</a> |
-    <a href="#menu">Menú</a> |
-    <a href="#portada">Portada</a>
-  </div>
-
-  <!-- SECCIÓN TIENDA -->
-  <div id="tienda">
     <div class="promo-bar">
-      15% de descuento todos los Miércoles &nbsp;·&nbsp;
-      Café de Especialidad &nbsp;·&nbsp;
-      Café Gratis en tu cumpleaños
-    </div>
-
-    <nav class="tienda-nav">
-      <div class="nav-izquierda">
-        <a href="#menu">SHOP</a>
-        <a href="#" data-action="ubicacion">Ubicación</a>
-        <a href="#" data-action="nosotros">Sobre nosotros</a>
-      </div>
-
-      <div class="logo serif">Caffe Loop</div>
-
-      <div class="nav-derecha">
-        <a href="#" aria-label="Buscar" data-action="buscar">🔍</a>
-        <a href="#" aria-label="Perfil" data-action="perfil">👤</a>
-        <button type="button" aria-label="Abrir carrito" aria-controls="carrito-panel" aria-expanded="false" class="btn-carrito-icon">🛒 <span class="badge-carrito" aria-live="polite">0</span></button>
-      </div>
-    </nav>
-
-    <section class="tienda-hero">
-      <div class="tienda-texto">
-        <span class="insignia">Café de especialidad</span>
-        <h1 class="serif">Loop</h1>
-      </div>
-
-      <img
-        class="tienda-hero-imagen"
-        src="images/bolsa-cafe-manos.webp"
-        alt="Bolsa de café Caffe Loop sostenida por varias manos"
-        fetchpriority="high"
-      >
-    </section>
-
-    <footer class="tienda-footer"></footer>
-  </div>
-
-  <div class="carrito-overlay" data-cerrar-carrito></div>
-  <aside
-    class="carrito-panel"
-    id="carrito-panel"
-    aria-label="Carrito de compras"
-    aria-hidden="true"
-  >
-    <div class="carrito-encabezado">
-      <h2>Tu carrito</h2>
-      <button type="button" class="carrito-cerrar" data-cerrar-carrito aria-label="Cerrar carrito">×</button>
-    </div>
-
-    <div class="carrito-lista"></div>
-    <p class="carrito-vacio">Tu carrito está vacío.</p>
-
-    <div class="carrito-resumen">
-      <div class="carrito-total-fila">
-        <span>Total</span>
-        <strong class="carrito-total">$0</strong>
-      </div>
-      <button type="button" class="boton boton-outline carrito-vaciar">
-        Vaciar carrito
-      </button>
-    </div>
-  </aside>
-
-  <!-- SECCIÓN MENÚ -->
-  <div id="menu">
-    <header class="menu-header">
-      <h1 class="serif">Café Loop</h1>
-      <p>
-        Cafetería pensada como un espacio para tomar café, escuchar
-        música, estudiar, trabajar o compartir un momento.
-      </p>
-      <a href="#menu-productos" class="boton boton-claro">VER MENÚ</a>
-    </header>
-
-    <section class="menu-productos" id="menu-productos">
-
-      <!-- Acceso al menú -->
-      <article class="tarjeta-producto">
-        <img
-          class="producto-imagen"
-          src="images/gato-taza-naranja.webp"
-          alt="Gato negro sosteniendo una taza de café naranja"
-          loading="lazy"
+      <div class="promo-scroller">
+        <span
+          >15% DE DESCUENTO CON EL CÓDIGO LOOP15 • ENVÍOS GRATIS EN COMPRAS
+          MAYORES A $25.000 • CAFÉ RECIÉN TOSTADO CADA SEMANA •</span
         >
-        <h3>Nuestro menú</h3>
-        <p class="descripcion">
-          Conocé nuestra selección de cafés, bebidas y opciones para
-          acompañar cada momento.
-        </p>
-        <a href="#menu" class="boton boton-outline">
-          <span>Ver nuestro menú</span> <span>→</span>
+        <!--Duplicado para que el bucle sea infinito y sin cortes -->
+        <span
+          >15% DE DESCUENTO CON EL CÓDIGO LOOP15 • ENVÍOS GRATIS EN COMPRAS
+          MAYORES A $25.000 • CAFÉ RECIÉN TOSTADO CADA SEMANA •</span
+        >
+      </div>
+    </div>
+
+    <!-- Header / Navegación Principal Oscura -->
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Navegación principal">
+        <div class="nav-grupo nav-grupo-izquierda">
+          <button type="button" class="nav-pill" data-action="cuestionario">
+            Cuestionario de Café
+          </button>
+          <a href="menu.html">Menú</a>
+          <a href="#nosotros">Nosotros</a>
+        </div>
+
+        <a href="index.html" class="brand" aria-label="Café Loop, inicio">
+          <span class="brand-sub">TOSTADORES DE</span>
+          <strong class="brand-title">CAFÉ LOOP</strong>
         </a>
-      </article>
 
-      <!-- Acceso al cuestionario -->
-      <article class="tarjeta-producto">
-        <img
-          class="producto-imagen"
-          src="images/gato-taza-rayada.webp"
-          alt="Gato negro sosteniendo una taza de café rayada"
-          loading="lazy"
-        >
-        <h3>¿Curioso?</h3>
-        <p class="descripcion">
-          Respondé unas preguntas y encontrá el café que mejor va con vos.
-        </p>
-        <button type="button" class="boton boton-outline" data-action="cuestionario">
-          <span>Hacer el cuestionario</span> <span>→</span>
-        </button>
-      </article>
-
-    </section>
-  </div>
-
-  <!-- SECCIÓN PORTADA -->
-  <div id="portada">
-    <header class="portada-topbar">
-      ¿ALGO NUEVO?
+        <div class="nav-grupo nav-grupo-derecha">
+          <a href="#tienda" class="nav-comprar">Comprar</a>
+          <button
+            type="button"
+            aria-label="Abrir carrito"
+            aria-controls="carrito-panel"
+            aria-expanded="false"
+            class="btn-carrito-icon"
+          >
+            <span>CARRITO</span>
+            <span class="badge-carrito" aria-live="polite">0</span>
+          </button>
+        </div>
+      </nav>
     </header>
 
-    <section class="portada-hero">
-      <div class="portada-texto">
-        <span class="portada-etiqueta">Selección de la casa</span>
-        <h1 class="serif">Café "GOD"</h1>
-        <p>Intenso, aromático y listo para acompañarte.</p>
-        <div class="portada-compra">
-          <strong class="portada-precio">$4.500</strong>
-          <span class="portada-disponible">Disponible</span>
+    <main>
+      <!-- Hero Principal en 2 Columnas (Estilo Editorial Tostaduría) -->
+      <section class="home-hero hero-full">
+        <div class="hero-bg">
+          <img
+            src="images/tostadoradecafe.png"
+            alt="Proceso de tostado artesanal de café en Café Loop"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+          <span class="eyebrow">SELECCIÓN DE LA CASA</span>
+          <h1 class="serif">Café para <br />volver siempre</h1>
+          <p>
+            Granos de origen único seleccionados a mano, tostados en pequeños
+            lotes y preparados con precisión para disfrutar en casa.
+          </p>
+          <div class="hero-acciones">
+            <a href="menu.html" class="boton boton-primario">Explorar el menú</a>
+            <button
+              type="button"
+              class="boton boton-outline"
+              data-action="cuestionario"
+            >
+              Hacer Cuestionario
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accesos editoriales: tienda y contenidos -->
+      <section class="accesos-editoriales" aria-label="Explorar Café Loop">
+        <article class="acceso-card">
+          <a href="#tienda" class="acceso-imagen" aria-label="Explorar la tienda Café Loop">
+            <img
+              src="images/gato-taza-naranja.webp"
+              alt="Gato negro con una taza naranja"
+            />
+          </a>
+          <div class="acceso-contenido">
+            <span class="eyebrow-dark">OBJETOS Y CAFÉ</span>
+            <h2 class="serif">La tienda Loop</h2>
+            <p>
+              Café en grano, tazas y accesorios para llevar un poco de Café Loop
+              a casa.
+            </p>
+            <a href="#tienda" class="link-flecha">
+              <span>Explorar la tienda</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="acceso-card">
+          <a href="#aprende" class="acceso-imagen" aria-label="Aprender sobre café">
+            <img
+              src="images/gato-taza-rayada.webp"
+              alt="Gato negro con una taza rayada"
+            />
+          </a>
+          <div class="acceso-contenido">
+            <span class="eyebrow-dark">UN MUNDO POR DESCUBRIR</span>
+            <h2 class="serif">Aprendé con Loop</h2>
+            <p>
+              Conocé los granos, los métodos de preparación y algunos rituales
+              para disfrutar cada taza.
+            </p>
+            <a href="#aprende" class="link-flecha">
+              <span>Conocer más</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Producto Destacado / Favorito del Tostador -->
+      <section class="producto-destacado">
+        <div class="destacado-contenido">
+          <span class="eyebrow">FAVORITO DEL TOSTADOR</span>
+          <h2 class="serif">Café “GOD”</h2>
+          <p>
+            Intenso, de cuerpo sedoso y perfil balanceado con notas marcadas de
+            cacao amargo, dulce de caramelo y avellanas tostadas.
+          </p>
+          <ul class="notas-cafe" aria-label="Notas de sabor">
+            <li>Chocolate negro</li>
+            <li>Caramelo artesanal</li>
+            <li>Avellana</li>
+          </ul>
+          <div class="destacado-compra">
+            <strong>$4.500</strong>
+            <button
+              type="button"
+              class="boton boton-claro btn-agregar-carrito"
+              data-producto-id="cafe-god"
+              data-producto-nombre='Café "GOD"'
+              data-producto-precio="4500"
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </div>
+        <div class="destacado-imagen">
+          <img
+            src="images/vaso-cafe-manos.webp"
+            alt="Dos manos sosteniendo un vaso de café recién preparado"
+          />
+        </div>
+      </section>
+
+      <!-- Tienda: productos distintos de la carta de cafetería -->
+      <section class="tienda-preview" id="tienda" aria-labelledby="tienda-titulo">
+        <div class="seccion-intro">
+          <span class="eyebrow-dark">LLEVÁ CAFÉ LOOP A CASA</span>
+          <h2 class="serif" id="tienda-titulo">La tienda</h2>
+          <p>Una selección de productos para disfrutar el café también fuera de la cafetería.</p>
+        </div>
+
+        <div class="tienda-grid">
+          <article class="tienda-producto">
+            <div class="tienda-visual" aria-hidden="true">
+              <div class="envase-cafe">
+                <span>CAFÉ LOOP</span>
+                <small>BLEND DE LA CASA</small>
+                <b>250 g</b>
+              </div>
+            </div>
+            <div class="tienda-producto-info">
+              <span class="producto-categoria">CAFÉ EN GRANO</span>
+              <h3 class="serif">Blend de la casa</h3>
+              <p>Un café para acompañar tus momentos cotidianos.</p>
+              <div class="tienda-producto-pie">
+                <strong>$8.500</strong>
+                <button type="button" class="boton boton-compra-card btn-agregar-carrito"
+                  data-producto-id="tienda-blend-loop"
+                  data-producto-nombre="Blend de la casa · 250 g"
+                  data-producto-precio="8500">Comprar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="tienda-producto">
+            <div class="tienda-visual" aria-hidden="true">
+              <div class="taza-loop"><span>LOOP</span></div>
+            </div>
+            <div class="tienda-producto-info">
+              <span class="producto-categoria">OBJETOS</span>
+              <h3 class="serif">Taza Café Loop</h3>
+              <p>Un clásico para convertir cualquier pausa en un ritual.</p>
+              <div class="tienda-producto-pie">
+                <strong>$6.500</strong>
+                <button type="button" class="boton boton-compra-card btn-agregar-carrito"
+                  data-producto-id="tienda-taza-loop"
+                  data-producto-nombre="Taza Café Loop"
+                  data-producto-precio="6500">Comprar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="tienda-producto">
+            <div class="tienda-visual" aria-hidden="true">
+              <div class="filtro-loop"><span>LOOP</span></div>
+            </div>
+            <div class="tienda-producto-info">
+              <span class="producto-categoria">ACCESORIOS</span>
+              <h3 class="serif">Filtro reutilizable</h3>
+              <p>Una alternativa práctica para preparar café filtrado.</p>
+              <div class="tienda-producto-pie">
+                <strong>$3.900</strong>
+                <button type="button" class="boton boton-compra-card btn-agregar-carrito"
+                  data-producto-id="tienda-filtro-reutilizable"
+                  data-producto-nombre="Filtro reutilizable"
+                  data-producto-precio="3900">Comprar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="tienda-nota">Precios ilustrativos para esta demostración; se pueden editar.</p>
+      </section>
+
+      <!-- Aprendé: contenido breve y desplegable -->
+      <section class="aprende-section" id="aprende" aria-labelledby="aprende-titulo">
+        <div class="seccion-intro seccion-intro-izquierda">
+          <span class="eyebrow-dark">UN POCO MÁS SOBRE EL CAFÉ</span>
+          <h2 class="serif" id="aprende-titulo">Aprendé a disfrutarlo</h2>
+          <p>Pequeñas ideas para conocer mejor lo que hay detrás de cada taza.</p>
+        </div>
+        <div class="aprende-lista">
+          <details class="aprende-item">
+            <summary>El origen también se siente</summary>
+            <p>La variedad del grano, el lugar donde crece y el tueste influyen en el aroma, el cuerpo y el sabor de cada café.</p>
+          </details>
+          <details class="aprende-item">
+            <summary>Cada método tiene su propio ritmo</summary>
+            <p>Espresso, prensa o filtro: el método de preparación cambia la intensidad y la textura. Elegí el que mejor acompañe tu momento.</p>
+          </details>
+          <details class="aprende-item">
+            <summary>Cómo cuidar el café en casa</summary>
+            <p>Guardá los granos en un recipiente bien cerrado, en un lugar fresco y seco, lejos de la luz y de los olores intensos.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Ubicación: dejamos espacio para completar los datos reales -->
+      <section class="ubicacion-section" id="ubicacion" aria-labelledby="ubicacion-titulo">
+        <div class="ubicacion-panel">
+          <div class="ubicacion-copy">
+            <span class="eyebrow">VENÍ A TOMARTE UNA PAUSA</span>
+            <h2 class="serif" id="ubicacion-titulo">Nos encontramos en Café Loop</h2>
+            <p>Estamos preparando la información de dirección y horarios para que puedas planear tu visita.</p>
+            <span class="ubicacion-pendiente">Dirección y horarios próximamente</span>
+          </div>
+          <div class="ubicacion-mapa-falso" aria-label="Información de ubicación próximamente">
+            <span class="ubicacion-pin" aria-hidden="true">⌖</span>
+            <strong>CAFÉ LOOP</strong>
+            <small>UBICACIÓN PRÓXIMAMENTE</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Suscripción: formulario de demostración con respuesta de JavaScript -->
+      <section class="newsletter-section" id="suscripcion" aria-labelledby="newsletter-titulo">
+        <div class="newsletter-copy">
+          <span class="eyebrow-dark">NEWSLETTER LOOP</span>
+          <h2 class="serif" id="newsletter-titulo">Una buena noticia con tu café</h2>
+          <p>Recibí novedades, lanzamientos y promociones de Café Loop en tu correo.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <label for="newsletter-email">Tu correo electrónico</label>
+          <div class="newsletter-campo">
+            <input id="newsletter-email" name="email" type="email" placeholder="nombre@correo.com" autocomplete="email" required />
+            <button class="boton boton-newsletter" type="submit">Suscribirme</button>
+          </div>
+          <p class="newsletter-nota">Formulario demostrativo: muestra una confirmación en esta página.</p>
+          <p class="newsletter-feedback" id="newsletter-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <!-- Strip Editorial de Historia -->
+      <section class="historia-strip" id="nosotros">
+        <span class="eyebrow">NUESTRA FILOSOFÍA</span>
+        <p class="serif">Un buen café transforma el ritmo de todo tu día.</p>
+      </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="site-footer">
+      <div class="footer-marca">
+        <span>TOSTADORES DE</span>
+        <strong>CAFÉ LOOP</strong>
+      </div>
+      <p>
+        Café de especialidad, música y un espacio pensado para tomarse una
+        pausa.
+      </p>
+      <div class="footer-links">
+        <a href="menu.html">Menú</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#aprende">Aprendé</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#suscripcion">Novedades</a>
+      </div>
+    </footer>
+
+    <!-- Widget Flotante de Ayuda Inferior Izquierdo -->
+    <button
+      type="button"
+      class="widget-ayuda"
+      data-action="nosotros"
+      aria-label="Ayuda"
+    >
+      <span class="icon-ayuda">?</span> Ayuda
+    </button>
+
+    <!-- Cuestionario interactivo -->
+    <dialog class="quiz-dialog" id="quiz-dialog" aria-labelledby="quiz-titulo">
+      <div class="quiz-dialog-inner">
+        <button type="button" class="quiz-cerrar" data-cerrar-cuestionario aria-label="Cerrar cuestionario">×</button>
+        <span class="eyebrow-dark">ENCONTRÁ TU CAFÉ</span>
+        <h2 class="serif" id="quiz-titulo">¿Qué café va con vos?</h2>
+        <p class="quiz-intro">Respondé estas dos preguntas y te recomendamos una opción de la carta.</p>
+        <form id="quiz-form">
+          <fieldset class="quiz-pregunta">
+            <legend>¿Cómo te gusta el café?</legend>
+            <label><input type="radio" name="perfil" value="suave" required /> Suave y cremoso</label>
+            <label><input type="radio" name="perfil" value="equilibrado" /> Equilibrado</label>
+            <label><input type="radio" name="perfil" value="intenso" /> Intenso</label>
+          </fieldset>
+          <fieldset class="quiz-pregunta">
+            <legend>¿Cómo lo preferís?</legend>
+            <label><input type="radio" name="metodo" value="caliente" required /> Caliente</label>
+            <label><input type="radio" name="metodo" value="frio" /> Frío</label>
+            <label><input type="radio" name="metodo" value="filtrado" /> Filtrado</label>
+          </fieldset>
+          <button type="submit" class="boton boton-newsletter">Ver mi recomendación</button>
+          <div class="quiz-result" id="quiz-result" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Carrito Lateral (Drawer) -->
+    <div class="carrito-overlay" data-cerrar-carrito></div>
+    <aside
+      class="carrito-panel"
+      id="carrito-panel"
+      aria-label="Carrito de compras"
+      aria-hidden="true"
+    >
+      <div class="carrito-encabezado">
+        <div>
+          <span class="carrito-kicker">CAFÉ LOOP</span>
+          <h2>Tu carrito</h2>
         </div>
         <button
           type="button"
-          class="boton boton-claro btn-agregar-carrito"
-          data-producto-id="cafe-god"
-          data-producto-nombre='Café "GOD"'
-          data-producto-precio="4500"
+          class="carrito-cerrar"
+          data-cerrar-carrito
+          aria-label="Cerrar carrito"
         >
-          🛒 Agregar al carrito
+          ×
         </button>
       </div>
+      <div class="carrito-lista"></div>
+      <p class="carrito-vacio">
+        Tu carrito está vacío.<br />Agregá algo rico para empezar.
+      </p>
+      <div class="carrito-resumen">
+        <div class="carrito-total-fila">
+          <span>Total</span>
+          <strong class="carrito-total">$0</strong>
+        </div>
+        <button type="button" class="boton boton-outline carrito-vaciar">
+          Vaciar carrito
+        </button>
+      </div>
+    </aside>
 
-      <img
-        class="portada-imagen"
-        src="images/vaso-cafe-manos.webp"
-        alt="Dos manos sosteniendo un vaso de café"
-        loading="lazy"
-      >
-    </section>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
