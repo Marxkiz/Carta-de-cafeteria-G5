@@ -133,14 +133,8 @@ function cerrarCarrito() {
 }
 
 function agregarProducto(boton) {
-  let id = boton.dataset.productoId;
-  let nombre = boton.dataset.productoNombre;
-  if (boton.hasAttribute('data-requiere-sabor-god')) {
-    const opcion = document.querySelector('[data-sabor-god][aria-pressed="true"]');
-    if (!opcion) return;
-    id += '-' + opcion.dataset.saborGod;
-    nombre += ' · ' + opcion.textContent.trim();
-  }
+  const id = boton.dataset.productoId;
+  const nombre = boton.dataset.productoNombre;
   const precio = Number(boton.dataset.productoPrecio);
 
   if (!id || !nombre || !Number.isFinite(precio) || precio < 0) return;
@@ -398,14 +392,4 @@ filtrosTienda.forEach(boton => boton.addEventListener('click', () => {
     if (!producto.hidden) visibles++;
   });
   document.querySelector('#tienda-conteo').textContent = `${visibles} ${visibles === 1 ? 'artículo' : 'artículos'}`;
-}));
-
-// Elegir una variante del Café GOD antes de agregarla al carrito.
-const opcionesGod = document.querySelectorAll('[data-sabor-god]');
-const compraGod = document.querySelector('[data-requiere-sabor-god]');
-opcionesGod.forEach(opcion => opcion.addEventListener('click', () => {
-  opcionesGod.forEach(boton => boton.setAttribute('aria-pressed', String(boton === opcion)));
-  document.querySelector('#god-seleccion').textContent = 'Sabor seleccionado: ' + opcion.textContent.trim();
-  compraGod.disabled = false;
-  compraGod.setAttribute('aria-label', 'Agregar Café GOD de ' + opcion.textContent.trim() + ' al carrito');
 }));

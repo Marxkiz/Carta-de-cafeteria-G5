@@ -11,7 +11,7 @@ Este paquete contiene la portada, la página del menú, la hoja de estilos y el 
 ## Funciones incluidas
 - Navegación con accesos diferenciados a Menú, Tienda, Aprendé y Ubicación.
 - Botón Comprar destacado en marrón oscuro y crema, sin naranja.
-- Vista previa de tienda con 6 artículos y botón Ver más.
+- Vista previa compacta de tienda con 3 artículos y botón Ver más.
 - Página tienda.html con 12 artículos, filtros de categorías y el mismo carrito/cuenta de la portada y el menú.
 - Carta adaptable a celulares con 20 productos y accesos directos a cada bebida.
 - Cuestionario de ocho pasos con recomendaciones de bebida y acompañamiento, y agregado al carrito.
@@ -29,3 +29,6 @@ La dirección Obispo Trejo 850, Nueva Córdoba, y los horarios son ficticios par
 
 ## Cuenta local
 Abrí la web con Live Server (localhost) o HTTPS. La cuenta y sesión se guardan solo en el navegador actual; no se sincronizan entre dispositivos. Las contraseñas se derivan con PBKDF2-SHA-256, sal aleatoria y 210.000 iteraciones, sin guardar la contraseña original. Esta entrega estática no ofrece autenticación de servidor ni protege recursos: para cuentas reales en producción se necesita un backend con sesiones seguras.
+
+## Versión combinada
+Integra fotos-tortas-panaderia con feature/ajustes-diseno-cafe-loop: portada más compacta sin Café GOD, diseño y textos de Valentina, 20 productos del menú con las diez fotos de Lucas, tienda completa de 12 artículos, registro local, cuestionario de ocho pasos, mapa y carrito compartido.

@@ -8,7 +8,7 @@
       content="Café Loop: café de especialidad, tostado artesanal y pastelería."
     />
     <title>Café Loop — Tostadores de Café</title>
-    <link rel="stylesheet" href="style.css?v=loop-opciones-god-20261002" />
+    <link rel="stylesheet" href="style.css?v=loop-combinado-20261002" />
   </head>
   <body>
     <!-- Barra Superior de Promociones -->
@@ -29,36 +29,38 @@
 
     <!-- Header / Navegación Principal Oscura -->
     <header class="site-header">
-      <nav class="site-nav" aria-label="Navegación principal">
-        <div class="nav-grupo nav-grupo-izquierda">
-          <button type="button" class="nav-pill" data-action="cuestionario">
-            Cuestionario de Café
-          </button>
-          <a href="menu.html">Menú</a>
-          <a href="#nosotros">Nosotros</a><a href="#ubicacion">Ubicación</a>
-        </div>
 
-        <a href="index.html" class="brand" aria-label="Café Loop, inicio">
-          <span class="brand-sub">TOSTADORES DE</span>
-          <strong class="brand-title">CAFÉ LOOP</strong>
-        </a>
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="nav-grupo nav-grupo-izquierda">
+    <a href="menu.html">Menú</a>
+    <a href="#aprende">Aprendé</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#ubicacion">Ubicación</a>
+  </div>
 
-        <div class="nav-grupo nav-grupo-derecha">
-<button type="button" class="nav-pill" data-abrir-cuenta>Iniciar sesión</button>
-<button type="button" class="nav-pill" data-abrir-registro>Registrarse</button>
-          <a href="#tienda" class="nav-comprar">Comprar</a>
-          <button
-            type="button"
-            aria-label="Abrir carrito"
-            aria-controls="carrito-panel"
-            aria-expanded="false"
-            class="btn-carrito-icon"
-          >
-            <span>CARRITO</span>
-            <span class="badge-carrito" aria-live="polite">0</span>
-          </button>
-        </div>
-      </nav>
+  <a href="index.html" class="brand" aria-label="Café Loop, inicio">
+    <span class="brand-sub">TOSTADORES DE</span>
+    <strong class="brand-title">CAFÉ LOOP</strong>
+  </a>
+
+  <div class="nav-grupo nav-grupo-derecha">
+    <button type="button" class="nav-pill" data-abrir-cuenta>
+      Iniciar sesión
+    </button>
+    <button type="button" class="nav-pill" data-abrir-registro>Registrarse</button>
+    <a href="tienda.html" class="nav-comprar">Comprar</a>
+    <button
+      type="button"
+      aria-label="Abrir carrito"
+      aria-controls="carrito-panel"
+      aria-expanded="false"
+      class="btn-carrito-icon"
+    >
+      <span>CARRITO</span>
+      <span class="badge-carrito" aria-live="polite">0</span>
+    </button>
+  </div>
+</nav>
     </header>
 
     <main>
@@ -116,64 +118,28 @@
         </article>
 
         <article class="acceso-card">
-          <a href="#aprende" class="acceso-imagen" aria-label="Aprender sobre café">
-            <img
+          <a href="#nosotros" class="acceso-imagen"
+     aria-label="Conocer Café Loop">
+    <img
               src="images/gato-taza-rayada.webp"
               alt="Gato negro con una taza rayada"
             />
           </a>
+
           <div class="acceso-contenido">
-            <span class="eyebrow-dark">UN MUNDO POR DESCUBRIR</span>
-            <h2 class="serif">Aprendé con Loop</h2>
+            <span class="eyebrow-dark">NUESTRA FILOSOFÍA</span>
+            <h2 class="serif">Conocé Café Loop</h2>
             <p>
-              Conocé los granos, los métodos de preparación y algunos rituales
-              para disfrutar cada taza.
+              Café de especialidad, encuentros y pequeños
+              rituales para disfrutar cada taza.
             </p>
-            <a href="#aprende" class="link-flecha">
-              <span>Conocer más</span>
+            <a href="#nosotros" class="link-flecha">
+              <span>Conocer nuestra filosofía</span>
               <span aria-hidden="true">→</span>
             </a>
           </div>
         </article>
-      </section>
 
-      <!-- Producto Destacado / Favorito del Tostador -->
-      <section class="producto-destacado">
-        <div class="destacado-contenido">
-          <span class="eyebrow">FAVORITO DEL TOSTADOR</span>
-          <h2 class="serif">Café “GOD”</h2>
-          <p>
-            Intenso, de cuerpo sedoso y perfil balanceado con notas marcadas de
-            cacao amargo, dulce de caramelo y avellanas tostadas.
-          </p>
-          <div class="notas-cafe opciones-god" role="group" aria-label="Elegí el sabor de tu Café GOD">
-            <button type="button" class="opcion-god" data-sabor-god="chocolate-negro" aria-pressed="false">Chocolate negro</button>
-            <button type="button" class="opcion-god" data-sabor-god="caramelo-artesanal" aria-pressed="false">Caramelo artesanal</button>
-            <button type="button" class="opcion-god" data-sabor-god="avellana" aria-pressed="false">Avellana</button>
-          </div>
-          <p class="god-seleccion" id="god-seleccion" role="status" aria-live="polite">Elegí un sabor para agregar tu Café GOD.</p>
-          <div class="destacado-compra">
-            <strong>$4.500</strong>
-            <button
-              type="button"
-              class="boton boton-claro btn-agregar-carrito"
-              data-producto-id="cafe-god"
-              data-requiere-sabor-god
-              aria-describedby="god-seleccion"
-              disabled
-              data-producto-nombre='Café "GOD"'
-              data-producto-precio="4500"
-            >
-              Agregar al carrito
-            </button>
-          </div>
-        </div>
-        <div class="destacado-imagen">
-          <img
-            src="images/vaso-cafe-manos.webp"
-            alt="Dos manos sosteniendo un vaso de café recién preparado"
-          />
-        </div>
       </section>
 
       <!-- Tienda: productos distintos de la carta de cafetería -->
@@ -184,7 +150,7 @@
           <p>Una selección de productos para disfrutar el café también fuera de la cafetería.</p>
         </div>
 
-<div class="tienda-grid">
+        <div class="tienda-grid">
 <article class="tienda-producto" id="tienda-blend-loop" data-tienda-categoria="cafe">
 <div class="tienda-visual tienda-ilustracion ilustracion-cafe"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M48 25h84l8 130H40L48 25Z"/><path d="M48 38h84"/></svg><span>CAFÉ LOOP</span></div>
 <div class="tienda-producto-info"><span class="producto-categoria">CAFÉ EN GRANO</span><h3 class="serif">Blend de la casa · 250 g</h3><p>Cacao, caramelo y un cuerpo equilibrado.</p>
@@ -197,44 +163,49 @@
 <div class="tienda-visual tienda-ilustracion ilustracion-accesorios"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M30 40h120l-42 95H72L30 40Z"/><path d="M53 143h74M60 60l22 58M120 60l-22 58" fill="none"/></svg><span>CAFÉ LOOP</span></div>
 <div class="tienda-producto-info"><span class="producto-categoria">ACCESORIOS</span><h3 class="serif">Filtro reutilizable</h3><p>Una alternativa práctica para preparar café filtrado.</p>
 <div class="tienda-producto-pie"><strong>$3.900</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-filtro-reutilizable" data-producto-nombre="Filtro reutilizable" data-producto-precio="3900" aria-label="Agregar Filtro reutilizable al carrito">Agregar</button></div></div></article>
-<article class="tienda-producto" id="tienda-colombia" data-tienda-categoria="cafe">
-<div class="tienda-visual tienda-ilustracion ilustracion-cafe"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M48 25h84l8 130H40L48 25Z"/><path d="M48 38h84"/></svg><span>CAFÉ LOOP</span></div>
-<div class="tienda-producto-info"><span class="producto-categoria">CAFÉ EN GRANO</span><h3 class="serif">Colombia · 250 g</h3><p>Granos con notas de panela y frutos amarillos.</p>
-<div class="tienda-producto-pie"><strong>$9.800</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-colombia" data-producto-nombre="Colombia · 250 g" data-producto-precio="9800" aria-label="Agregar Colombia · 250 g al carrito">Agregar</button></div></div></article>
-<article class="tienda-producto" id="tienda-descafeinado" data-tienda-categoria="cafe">
-<div class="tienda-visual tienda-ilustracion ilustracion-cafe"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M48 25h84l8 130H40L48 25Z"/><path d="M48 38h84"/></svg><span>CAFÉ LOOP</span></div>
-<div class="tienda-producto-info"><span class="producto-categoria">CAFÉ EN GRANO</span><h3 class="serif">Descafeinado · 250 g</h3><p>Un perfil suave para disfrutar a cualquier hora.</p>
-<div class="tienda-producto-pie"><strong>$9.200</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-descafeinado" data-producto-nombre="Descafeinado · 250 g" data-producto-precio="9200" aria-label="Agregar Descafeinado · 250 g al carrito">Agregar</button></div></div></article>
-<article class="tienda-producto" id="tienda-prensa" data-tienda-categoria="accesorios">
-<div class="tienda-visual tienda-ilustracion ilustracion-accesorios"><svg viewBox="0 0 180 180" aria-hidden="true"><path d="M47 50h83v95H47Z"/><path d="M40 45h98M88 45V20M72 20h32M130 65h20v60h-20M52 100h74" fill="none"/></svg><span>CAFÉ LOOP</span></div>
-<div class="tienda-producto-info"><span class="producto-categoria">MÉTODOS</span><h3 class="serif">Prensa francesa · 600 ml</h3><p>Prepará un café con cuerpo para compartir.</p>
-<div class="tienda-producto-pie"><strong>$18.500</strong><button type="button" class="boton boton-compra-card btn-agregar-carrito" data-producto-id="tienda-prensa" data-producto-nombre="Prensa francesa · 600 ml" data-producto-precio="18500" aria-label="Agregar Prensa francesa · 600 ml al carrito">Agregar</button></div></div></article>
 </div>
-<div class="tienda-ver-mas"><a href="tienda.html" class="boton boton-oscuro">Ver más artículos →</a><p>Explorá todos nuestros cafés, objetos y accesorios.</p></div>
-      </section>
+<div class="tienda-ver-mas"><a href="tienda.html" class="boton boton-oscuro">Ver más artículos →</a><p>Explorá los doce cafés, objetos y accesorios de nuestra tienda.</p></div>
+</section>
 
-      <!-- Aprendé: contenido breve y desplegable -->
-      <section class="aprende-section" id="aprende" aria-labelledby="aprende-titulo">
-        <div class="seccion-intro seccion-intro-izquierda">
-          <span class="eyebrow-dark">UN POCO MÁS SOBRE EL CAFÉ</span>
-          <h2 class="serif" id="aprende-titulo">Aprendé a disfrutarlo</h2>
-          <p>Pequeñas ideas para conocer mejor lo que hay detrás de cada taza.</p>
-        </div>
-        <div class="aprende-lista">
-          <details class="aprende-item">
-            <summary>El origen también se siente</summary>
-            <p>La variedad del grano, el lugar donde crece y el tueste influyen en el aroma, el cuerpo y el sabor de cada café.</p>
-          </details>
-          <details class="aprende-item">
-            <summary>Cada método tiene su propio ritmo</summary>
-            <p>Espresso, prensa o filtro: el método de preparación cambia la intensidad y la textura. Elegí el que mejor acompañe tu momento.</p>
-          </details>
-          <details class="aprende-item">
-            <summary>Cómo cuidar el café en casa</summary>
-            <p>Guardá los granos en un recipiente bien cerrado, en un lugar fresco y seco, lejos de la luz y de los olores intensos.</p>
-          </details>
-        </div>
-      </section>
+      <!-- El ritual detrás de cada taza -->
+<section class="aprende-section" id="aprende" aria-labelledby="aprende-titulo">
+  <div class="seccion-intro seccion-intro-izquierda">
+    <span class="eyebrow-dark">EL MUNDO DEL CAFÉ</span>
+    <h2 class="serif" id="aprende-titulo">
+      El ritual detrás de cada taza
+    </h2>
+    <p>
+      Cada café tiene una historia. Descubrí qué hace especial
+      a cada grano y cómo disfrutarlo en casa.
+    </p>
+  </div>
+
+  <div class="aprende-lista">
+    <details class="aprende-item">
+      <summary>El origen también se siente</summary>
+      <p>
+        El lugar donde crece el café y su variedad influyen
+        en el aroma, el cuerpo y el sabor.
+      </p>
+    </details>
+
+    <details class="aprende-item">
+      <summary>Cada método tiene su propio ritmo</summary>
+      <p>
+        El espresso, la prensa francesa y el filtro ofrecen
+        distintas intensidades y texturas.
+      </p>
+    </details>
+
+    <details class="aprende-item">
+      <summary>Cómo cuidar el café en casa</summary>
+      <p>
+        Conservá los granos en un recipiente cerrado,
+        en un lugar fresco y seco, lejos de la luz.
+      </p>
+    </details>
+  </div>
+</section>
 
       <!-- Ubicación: dejamos espacio para completar los datos reales -->
       <section class="ubicacion-section" id="ubicacion" aria-labelledby="ubicacion-titulo">
@@ -253,7 +224,9 @@
       <section class="newsletter-section" id="suscripcion" aria-labelledby="newsletter-titulo">
         <div class="newsletter-copy">
           <span class="eyebrow-dark">NEWSLETTER LOOP</span>
-          <h2 class="serif" id="newsletter-titulo">Una buena noticia con tu café</h2>
+        <h2 class="serif" id="newsletter-titulo">
+  Novedades de Café Loop
+</h2>
           <p>Recibí novedades, lanzamientos y promociones de Café Loop en tu correo.</p>
         </div>
         <form class="newsletter-form" id="newsletter-form">
@@ -364,6 +337,6 @@
 <button type="button" class="cuenta-alternar" id="cuenta-alternar">¿No tenés cuenta? Registrate</button>
 </form><div id="cuenta-perfil" hidden><p id="cuenta-saludo"></p><button type="button" class="boton boton-oscuro" id="cuenta-salir">Cerrar sesión</button></div>
 </div></dialog>
-<script src="script.js?v=loop-opciones-god-20261002"></script>
+<script src="script.js?v=loop-combinado-20261002"></script>
   </body>
 </html>
