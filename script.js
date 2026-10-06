@@ -277,9 +277,9 @@ function crearCheckout() {
     exito.innerHTML = `
       <span class="checkout-check" aria-hidden="true">✓</span>
       <h3>¡Compra realizada!</h3>
-      <p>Gracias, ${datos.get('nombre')}. Tu pedido <strong>${numeroPedido}</strong> fue confirmado.</p>
-      <p>Total: <strong>${formatearPrecio(totalPagado)}</strong> · Pago: ${datos.get('pago')}.</p>
-      <p>Enviamos la confirmación a ${datos.get('email')}.</p>
+      <p>Gracias, ${escaparTextoCheckout(datos.get('nombre'))}. Tu pedido <strong>${numeroPedido}</strong> fue confirmado.</p>
+      <p>Total: <strong>${formatearPrecio(totalPagado)}</strong> · Pago: ${escaparTextoCheckout(datos.get('pago'))}.</p>
+      <p>Enviamos la confirmación a ${escaparTextoCheckout(datos.get('email'))}.</p>
       <button type="button" class="boton boton-oscuro checkout-listo">Listo</button>
     `;
     exito.querySelector('.checkout-listo').addEventListener('click', () => {
