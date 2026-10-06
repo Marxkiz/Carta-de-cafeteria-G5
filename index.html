@@ -34,8 +34,7 @@
           <button type="button" class="nav-pill" data-action="cuestionario">
             Cuestionario de Café
           </button>
-          <a href="menu.html">Menú</a>
-          <a href="#nosotros">Nosotros</a><a href="#ubicacion">Ubicación</a>
+          <a href="menu.html">Menú</a><a href="#ubicacion">Ubicación</a>
         </div>
 
         <a href="index.html" class="brand" aria-label="Café Loop, inicio">
@@ -285,22 +284,9 @@
         <a href="tienda.html">Tienda</a>
         <a href="#aprende">Aprendé</a>
         <a href="#ubicacion">Ubicación</a>
-        <a href="#nosotros">Nosotros</a>
         <a href="#suscripcion">Novedades</a>
       </div>
-    </footer>
-
-    <!-- Widget Flotante de Ayuda Inferior Izquierdo -->
-    <button
-      type="button"
-      class="widget-ayuda"
-      data-action="nosotros"
-      aria-label="Ayuda"
-    >
-      <span class="icon-ayuda">?</span> Ayuda
-    </button>
-
-    <!-- Cuestionario interactivo -->
+    </footer><!-- Cuestionario interactivo -->
     <dialog class="quiz-dialog" id="quiz-dialog" aria-labelledby="quiz-titulo">
       <div class="quiz-dialog-inner">
         <button type="button" class="quiz-cerrar" data-cerrar-cuestionario aria-label="Cerrar cuestionario">×</button>
@@ -346,6 +332,10 @@
         <button type="button" class="boton boton-outline carrito-vaciar">
           Vaciar carrito
         </button>
+        <button type="button" class="boton boton-primario carrito-finalizar" disabled>
+          Finalizar compra y pagar
+        </button>
+        <p class="carrito-pago-nota">Pago de demostración: no se realizará ningún cobro real.</p>
       </div>
     </aside>
 
