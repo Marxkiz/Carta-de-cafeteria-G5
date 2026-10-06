@@ -110,7 +110,16 @@ function renderizarCarrito(guardar = true) {
   totalCarrito.textContent = formatearPrecio(precioTotal);
   mensajeVacio.classList.toggle('oculto', carrito.length > 0);
   botonVaciar.disabled = carrito.length === 0;
-  const botonFinalizar = document.querySelector('.carrito-finalizar');
+  function escaparTextoCheckout(valor) {
+  return String(valor)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+const botonFinalizar = document.querySelector('.carrito-finalizar');
   if (botonFinalizar) botonFinalizar.disabled = carrito.length === 0;
   if (guardar) guardarCarrito();
 }
