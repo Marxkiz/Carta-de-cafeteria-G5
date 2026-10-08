@@ -680,12 +680,6 @@ body.carrito-abierto {
   .acceso-imagen {
     height: 380px;
   }
-  .producto-destacado {
-    grid-template-columns: 1fr;
-  }
-  .destacado-imagen {
-    height: 440px;
-  }
 }
 
 @media (max-width: 620px) {
