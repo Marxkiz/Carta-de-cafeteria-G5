@@ -33,7 +33,6 @@ function guardarCarrito() {
   try {
     localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
   } catch (error) {
-    // El carrito sigue funcionando durante la visita aunque el navegador bloquee el almacenamiento.
   }
 }
 
@@ -303,7 +302,6 @@ quizForm.addEventListener('submit', e => {
 });
 mostrarPaso();
 
-// Newsletter: formulario local de demostración (sin envío a un servidor).
 const newsletterForm = document.querySelector('#newsletter-form');
 const newsletterFeedback = document.querySelector('#newsletter-feedback');
 
@@ -318,7 +316,6 @@ newsletterForm?.addEventListener('submit', (evento) => {
 
 renderizarCarrito();
 
-// Cuenta local para la entrega estática. Las contraseñas se derivan con PBKDF2.
 const cuentaDialog = document.querySelector('#cuenta-dialog');
 const cuentaForm = document.querySelector('#cuenta-form');
 const cuentaFeedback = document.querySelector('#cuenta-feedback');
@@ -417,7 +414,6 @@ document.querySelector('#cuenta-salir').addEventListener('click', () => {
 window.addEventListener('storage', () => { actualizarCuenta(); carrito = cargarCarrito(); renderizarCarrito(false); });
 actualizarCuenta();
 
-// Catálogo completo: filtros que conservan los productos y el carrito.
 const filtrosTienda = document.querySelectorAll('[data-filtro-tienda]');
 const productosTienda = document.querySelectorAll('[data-tienda-categoria]');
 filtrosTienda.forEach(boton => boton.addEventListener('click', () => {
