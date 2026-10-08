@@ -110,16 +110,7 @@ function renderizarCarrito(guardar = true) {
   totalCarrito.textContent = formatearPrecio(precioTotal);
   mensajeVacio.classList.toggle('oculto', carrito.length > 0);
   botonVaciar.disabled = carrito.length === 0;
-  function escaparTextoCheckout(valor) {
-  return String(valor)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
-}
-
-const botonFinalizar = document.querySelector('.carrito-finalizar');
+  const botonFinalizar = document.querySelector('.carrito-finalizar');
   if (botonFinalizar) botonFinalizar.disabled = carrito.length === 0;
   if (guardar) guardarCarrito();
 }
@@ -202,105 +193,45 @@ botonVaciar?.addEventListener('click', () => {
 });
 
 const botonFinalizar = document.querySelector('.carrito-finalizar');
-let checkoutDialog;
+let compraFinalizadaDialog;
 
-function obtenerTotalCarrito() {
-  return carrito.reduce(
-    (total, producto) => total + producto.precio * producto.cantidad,
-    0
-  );
-}
+function obtenerDialogCompraFinalizada() {
+  if (compraFinalizadaDialog) return compraFinalizadaDialog;
 
-function crearCheckout() {
-  if (checkoutDialog) return checkoutDialog;
-
-  checkoutDialog = document.createElement('dialog');
-  checkoutDialog.className = 'checkout-dialog';
-  checkoutDialog.setAttribute('aria-labelledby', 'checkout-titulo');
-  checkoutDialog.innerHTML = `
-    <div class="checkout-contenido">
-      <button type="button" class="checkout-cerrar" aria-label="Cerrar pago">×</button>
-      <span class="eyebrow-dark">ÚLTIMO PASO</span>
-      <h2 class="serif" id="checkout-titulo">Finalizar compra y pagar</h2>
-      <p class="checkout-intro">Completá tus datos para confirmar el pedido.</p>
-      <form class="checkout-form">
-        <label>
-          Nombre y apellido
-          <input name="nombre" autocomplete="name" required maxlength="100">
-        </label>
-        <label>
-          Correo electrónico
-          <input name="email" type="email" autocomplete="email" required maxlength="254">
-        </label>
-        <label>
-          Método de pago
-          <select name="pago" required>
-            <option value="">Elegí una opción</option>
-            <option value="Tarjeta de crédito o débito">Tarjeta de crédito o débito</option>
-            <option value="Mercado Pago">Mercado Pago</option>
-            <option value="Efectivo al retirar">Efectivo al retirar</option>
-          </select>
-        </label>
-        <div class="checkout-resumen">
-          <span>Total a pagar</span>
-          <strong class="checkout-total">$0</strong>
-        </div>
-        <p class="checkout-aclaracion">Esta es una compra de demostración: no se solicitarán datos de tarjeta ni se realizará un cobro real.</p>
-        <button type="submit" class="boton boton-primario checkout-confirmar">Confirmar compra y pagar</button>
-      </form>
-      <div class="checkout-exito" role="status" aria-live="polite" hidden></div>
+  compraFinalizadaDialog = document.createElement('dialog');
+  compraFinalizadaDialog.className = 'compra-finalizada-dialog';
+  compraFinalizadaDialog.setAttribute('aria-labelledby', 'compra-finalizada-titulo');
+  compraFinalizadaDialog.innerHTML = `
+    <div class="compra-finalizada-contenido">
+      <span class="compra-finalizada-check" aria-hidden="true">✓</span>
+      <h2 class="serif" id="compra-finalizada-titulo">Compra finalizada</h2>
+      <button type="button" class="boton boton-oscuro compra-finalizada-cerrar">Aceptar</button>
     </div>
   `;
 
-  document.body.append(checkoutDialog);
-  const cerrar = checkoutDialog.querySelector('.checkout-cerrar');
-  const formulario = checkoutDialog.querySelector('.checkout-form');
-
-  cerrar.addEventListener('click', () => checkoutDialog.close());
-  checkoutDialog.addEventListener('click', (evento) => {
-    if (evento.target === checkoutDialog) checkoutDialog.close();
-  });
-
-  formulario.addEventListener('submit', (evento) => {
-    evento.preventDefault();
-    if (!formulario.reportValidity() || carrito.length === 0) return;
-
-    const datos = new FormData(formulario);
-    const numeroPedido = 'LOOP-' + Date.now().toString().slice(-6);
-    const totalPagado = obtenerTotalCarrito();
-    const exito = checkoutDialog.querySelector('.checkout-exito');
-
-    carrito = [];
-    renderizarCarrito();
-    formulario.hidden = true;
-    exito.hidden = false;
-    exito.innerHTML = `
-      <span class="checkout-check" aria-hidden="true">✓</span>
-      <h3>¡Compra realizada!</h3>
-      <p>Gracias, ${escaparTextoCheckout(datos.get('nombre'))}. Tu pedido <strong>${numeroPedido}</strong> fue confirmado.</p>
-      <p>Total: <strong>${formatearPrecio(totalPagado)}</strong> · Pago: ${escaparTextoCheckout(datos.get('pago'))}.</p>
-      <p>Enviamos la confirmación a ${escaparTextoCheckout(datos.get('email'))}.</p>
-      <button type="button" class="boton boton-oscuro checkout-listo">Listo</button>
-    `;
-    exito.querySelector('.checkout-listo').addEventListener('click', () => {
-      checkoutDialog.close();
+  document.body.append(compraFinalizadaDialog);
+  compraFinalizadaDialog
+    .querySelector('.compra-finalizada-cerrar')
+    .addEventListener('click', () => {
+      compraFinalizadaDialog.close();
       cerrarCarrito();
     });
+
+  compraFinalizadaDialog.addEventListener('click', (evento) => {
+    if (evento.target === compraFinalizadaDialog) {
+      compraFinalizadaDialog.close();
+      cerrarCarrito();
+    }
   });
 
-  return checkoutDialog;
+  return compraFinalizadaDialog;
 }
 
 botonFinalizar?.addEventListener('click', () => {
   if (carrito.length === 0) return;
-  const dialog = crearCheckout();
-  const formulario = dialog.querySelector('.checkout-form');
-  const exito = dialog.querySelector('.checkout-exito');
-  formulario.hidden = false;
-  exito.hidden = true;
-  formulario.reset();
-  dialog.querySelector('.checkout-total').textContent = formatearPrecio(obtenerTotalCarrito());
-  dialog.showModal();
+  carrito = [];
+  renderizarCarrito();
+  obtenerDialogCompraFinalizada().showModal();
 });
 
 document.addEventListener('keydown', (evento) => {
