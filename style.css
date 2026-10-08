@@ -61,51 +61,50 @@ img {
   margin-bottom: 6px;
 }
 
-/* Barra Superior de Promociones animado */
+
 .promo-bar {
-  background-color: #22201e; /* Un tono oscuro sutilmente más gris, como en tu referencia */
+  background-color: #22201e; 
   color: #f4f0e8;
   padding: 10px 0;
-  overflow: hidden; /* Clave: esconde el texto que sale de los bordes de la pantalla */
+  overflow: hidden; 
   white-space: nowrap;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Línea divisoria muy fina y elegante */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
 }
 
-/* El contenedor que realmente se mueve */
+
 .promo-scroller {
   display: flex;
   gap: 15px;
-  /* Animación: nombre, duración, velocidad constante (linear), repetición infinita */
+  
   animation: scrollPromo 30s linear infinite;
 }
 
 .promo-scroller span {
-  font-size: 0.95rem; /* Texto más grande */
+  font-size: 0.95rem; 
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* Detalle profesional: pausar la animación si el usuario pasa el mouse para poder leer */
+
 .promo-bar:hover .promo-scroller {
   animation-play-state: paused;
 }
 
-/* Los fotogramas de la animación */
+
 @keyframes scrollPromo {
   0% {
     transform: translateX(0);
   }
   100% {
-    /* Se mueve exactamente el 50% de su ancho total. 
-       Como el texto está duplicado, el salto vuelve al inicio sin que el ojo lo note. */
+    
     transform: translateX(-50%);
   }
 }
 
-/* Header & Navegación Oscura */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -141,7 +140,7 @@ img {
   justify-content: flex-end;
 }
 
-/* Botón Píldora Cuestionario */
+
 .nav-pill {
   padding: 9px 20px;
   border: 1px solid #ffffff;
@@ -155,7 +154,7 @@ img {
   color: var(--ink) !important;
 }
 
-/* Logo de Marca Centrado */
+
 .brand {
   display: flex;
   flex-direction: column;
@@ -201,11 +200,10 @@ img {
   font-weight: 700;
 }
 
-/* Hero Principal estilo Tostaduría */
 
 .home-hero.hero-full {
   position: relative;
-  min-height: 70vh; /* Altura reducida para que la imagen se vea más pequeña */
+  min-height: 70vh; 
   display: flex;
   align-items: center;
   padding: 60px 8%;
@@ -213,7 +211,7 @@ img {
   background-color: #181614;
 }
 
-/* Contenedor de la imagen de fondo */
+
 .hero-bg {
   position: absolute;
   top: 0;
@@ -223,7 +221,7 @@ img {
   z-index: 1;
 }
 
-/* Hace que la imagen ocupe todo el espacio sin deformarse */
+
 .hero-bg img {
   width: 100%;
   height: 100%;
@@ -231,7 +229,7 @@ img {
   object-position: center;
 }
 
-/* Degradado oscuro para que el texto blanco resalte perfectamente */
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -246,7 +244,7 @@ img {
   );
 }
 
-/* Contenedor del texto que flota encima */
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -255,7 +253,7 @@ img {
 
 .hero-content .eyebrow {
   color: var(--orange, #e06d3b);
-  font-size: 0.9rem; /* Un poco más grande */
+  font-size: 0.9rem; 
   font-weight: 700;
   letter-spacing: 0.15em;
   margin-bottom: 12px;
@@ -264,7 +262,7 @@ img {
 }
 
 .hero-content h1 {
-  /* Se usa clamp para que sea gigante en PC (6rem) y se achique solo en celulares (4rem) */
+  
   font-size: clamp(4rem, 7vw, 6.5rem);
   line-height: 1;
   margin-bottom: 24px;
@@ -272,7 +270,7 @@ img {
 }
 
 .hero-content p {
-  font-size: 1.25rem; /* Párrafo más grande y legible */
+  font-size: 1.25rem; 
   line-height: 1.5;
   color: #d1c9bf;
   margin-bottom: 35px;
@@ -340,7 +338,7 @@ img {
   display: block;
 }
 
-/* Tarjetas Editoriales de Acceso Directo */
+
 .accesos-editoriales {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -416,7 +414,7 @@ img {
   cursor: pointer;
 }
 
-/* Historia Strip */
+
 .historia-strip {
   display: flex;
   flex-direction: column;
@@ -437,7 +435,7 @@ img {
   line-height: 1;
 }
 
-/* Footer */
+
 .site-footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -483,7 +481,7 @@ img {
   font-size: 0.88rem;
 }
 
-/* Widget Flotante de Ayuda */
+
 .widget-ayuda {
   position: fixed;
   bottom: 20px;
@@ -520,7 +518,7 @@ img {
   font-size: 0.7rem;
 }
 
-/* Carrito Slide-out Drawer */
+
 body.carrito-abierto {
   overflow: hidden;
 }
@@ -659,7 +657,7 @@ body.carrito-abierto {
   cursor: not-allowed;
 }
 
-/* Adaptabilidad Responsiva */
+
 @media (max-width: 900px) {
   .nav-grupo-izquierda a:not(.nav-pill),
   .nav-texto {
@@ -719,7 +717,6 @@ body.carrito-abierto {
 }
 
 
-/* ===== Ajustes del inicio: hero con texto protagonista ===== */
 .promo-bar {
   min-height: 48px;
   padding: 11px 0;
@@ -747,7 +744,7 @@ body.carrito-abierto {
   to { transform: translateX(-50%); }
 }
 
-/* El hero ocupa el ancho y usa la foto únicamente como ambiente */
+
 .home-hero.hero-full {
   min-height: min(760px, 78vh);
   padding: clamp(64px, 9vw, 128px) 8%;
@@ -830,7 +827,7 @@ body.carrito-abierto {
   border-color: #fff;
 }
 
-/* Evita que el contenido se comprima en pantallas pequeñas */
+
 @media (max-width: 900px) {
   .home-hero.hero-full {
     min-height: 68vh;
@@ -897,7 +894,7 @@ body.carrito-abierto {
   }
 }
 
-/* ===== Ajuste final: inicio inspirado en la referencia ===== */
+
 .promo-bar {
   min-height: 40px;
   padding: 8px 0;
@@ -934,7 +931,7 @@ body.carrito-abierto {
   padding: 0 clamp(20px, 4vw, 60px);
 }
 
-/* Se cubren las dos estructuras usadas por el inicio: hero directo o con grid. */
+
 .home-hero.hero-full,
 .home-hero-grid {
   position: relative;
@@ -1100,7 +1097,7 @@ body.carrito-abierto {
   }
 }
 
-/* ===== Corrección final según la captura: hero más compacto y foto visible ===== */
+
 @media (min-width: 901px) {
   .home-hero.hero-full {
     min-height: clamp(360px, 62vh, 470px);
@@ -1143,7 +1140,7 @@ body.carrito-abierto {
     object-position: 58% center;
   }
 
-  /* Evita oscurecer dos veces la misma fotografía. */
+  
   .home-hero.hero-full::before {
     display: none;
   }
@@ -1194,8 +1191,7 @@ body.carrito-abierto {
   }
 }
 
-/* ===== Retoques sutiles finales de Café Loop ===== */
-/* La promo acompaña sin competir con el mensaje principal. */
+
 .promo-bar {
   min-height: 44px;
   padding: 8px 0;
@@ -1207,7 +1203,7 @@ body.carrito-abierto {
   letter-spacing: .07em;
 }
 
-/* La marca gana un poco más de presencia en la navegación. */
+
 .brand-title {
   font-size: 1.82rem;
 }
@@ -1216,7 +1212,7 @@ body.carrito-abierto {
   font-size: .55rem;
 }
 
-/* La foto se aclara apenas, manteniendo contraste para el texto blanco. */
+
 @media (min-width: 901px) {
   .hero-bg img {
     filter: brightness(.88) saturate(.98);
@@ -1263,7 +1259,7 @@ body.carrito-abierto {
   }
 }
 
-/* ===== Tarjetas de inicio: proporciones inspiradas en la referencia ===== */
+
 .accesos-editoriales {
   grid-template-columns: repeat(2, minmax(0, 185px));
   justify-content: center;
@@ -1354,7 +1350,7 @@ body.carrito-abierto {
   }
 }
 
-/* ===== Tarjetas de inicio: tamaño recuperado + interacción hover ===== */
+
 .accesos-editoriales {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   justify-content: stretch;
@@ -1395,7 +1391,7 @@ body.carrito-abierto {
   transition: transform .55s cubic-bezier(.2, .7, .2, 1), filter .35s ease;
 }
 
-/* Al pasar el mouse, la tarjeta se eleva, la imagen se acerca y el marco cambia. */
+
 .acceso-card:hover,
 .acceso-card:focus-within {
   transform: translateY(-6px);
@@ -1513,7 +1509,6 @@ body.carrito-abierto {
 }
 
 
-/* ===== Ajuste final de tarjetas: centradas, más aire y marco oval al hover ===== */
 .accesos-editoriales {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 250px));
@@ -1588,7 +1583,7 @@ body.carrito-abierto {
   margin: 0 auto;
 }
 
-/* En hover, el marco pasa suavemente de rectangular a ovalado. */
+
 .acceso-card:hover,
 .acceso-card:focus-within {
   transform: translateY(-3px);
@@ -1644,7 +1639,6 @@ body.carrito-abierto {
 }
 
 
-/* ===== Navegación integrada y botón Comprar destacado, sin naranja ===== */
 .site-header {
   background-color: #28201d;
   background-image: url("https://www.stumptowncoffee.com/cdn/shop/t/473/assets/noise-texture.jpg?v=27140096247502942571788366326");
@@ -1701,7 +1695,7 @@ body.carrito-abierto {
   outline-offset: 4px;
 }
 
-/* ===== Contenidos nuevos de la portada ===== */
+
 .tienda-preview,
 .aprende-section,
 .ubicacion-section,
@@ -1921,7 +1915,7 @@ body.carrito-abierto {
   text-align: center;
 }
 
-/* Aprendé: contenido desplegable, sin botones repetidos */
+
 .aprende-section {
   display: grid;
   grid-template-columns: minmax(230px, .85fr) minmax(0, 1.15fr);
@@ -1991,7 +1985,7 @@ body.carrito-abierto {
   line-height: 1.65;
 }
 
-/* Ubicación: tarjeta de marca mientras se agregan los datos reales */
+
 .ubicacion-section {
   padding: clamp(52px, 6vw, 82px) clamp(22px, 6vw, 88px);
   background: #e9e2d7;
@@ -2075,7 +2069,7 @@ body.carrito-abierto {
   letter-spacing: .15em;
 }
 
-/* Newsletter */
+
 .newsletter-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2165,7 +2159,7 @@ body.carrito-abierto {
   font-weight: 600;
 }
 
-/* Cuestionario */
+
 .quiz-dialog {
   width: min(92vw, 610px);
   max-width: 610px;
@@ -2266,7 +2260,7 @@ body.carrito-abierto {
   padding: 8px 13px;
 }
 
-/* Responsividad de los nuevos bloques y del encabezado */
+
 @media (max-width: 1000px) {
   .site-nav {
     gap: 12px;
@@ -2365,7 +2359,6 @@ body.carrito-abierto {
 }
 
 
-/* ===== Recuperación visual del encabezado y los botones del hero ===== */
 html body .site-header,
 html body header.site-header {
   position: sticky !important;
@@ -2501,7 +2494,7 @@ html body .site-header .badge-carrito {
   color: #fff !important;
 }
 
-/* Ajuste compacto: mantener los accesos visibles en ventanas intermedias. */
+
 @media (max-width: 900px) and (min-width: 621px) {
   html body .site-header .site-nav {
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
@@ -2542,7 +2535,7 @@ html body .site-header .badge-carrito {
   }
 }
 
-/* Carta: estilos compartidos por todos los productos del menú. */
+
 [hidden] { display: none !important; }
 .menu-hero { padding: 70px 20px 45px; text-align: center; background: var(--paper); }
 .menu-hero h1 { font-size: clamp(3rem, 7vw, 6rem); margin: 12px 0; line-height: 1.05; }
@@ -2596,7 +2589,7 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline: 3px solid #c
 @media (max-width: 850px) { .catalogo-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .ubicacion-panel { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .catalogo-grid { grid-template-columns: 1fr; } .catalogo-seccion { padding: 36px 20px; } .menu-producto-visual { height: 125px; } .menu-filtros { gap: 8px; padding: 20px 12px; } .menu-filtros a { font-size: .78rem; padding: 9px 12px; } }
 
-/* Registro completo y contraste del panel de ubicación. */
+
 #ubicacion .ubicacion-panel { background: #183e32; background-image: none; color: #fffdf8; }
 #ubicacion .ubicacion-copy h2 { color: #fffdf8; }
 #ubicacion .ubicacion-copy p, #ubicacion .ubicacion-mapa a { color: #f1eee6; }
@@ -2611,7 +2604,7 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline: 3px solid #c
 #cuenta-form [aria-invalid="true"] { border-color: #a12c22; }
 @media (max-width: 620px) { .es-registro .cuenta-grid { grid-template-columns: 1fr; } }
 
-/* Las dos tarjetas comparten altura de imagen y alineación del contenido. */
+
 .accesos-editoriales { align-items: stretch; }
 .accesos-editoriales .acceso-card { display: grid; grid-template-rows: 312px 1fr; align-items: stretch; transform: none; }
 .accesos-editoriales .acceso-imagen { display: block; height: 312px; aspect-ratio: auto; flex-shrink: 0; }
@@ -2641,8 +2634,6 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline: 3px solid #c
 @media (max-width: 520px) { .accesos-editoriales { grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 16px; padding-inline: 16px; } .accesos-editoriales .acceso-card { grid-template-rows: 220px 1fr; } .accesos-editoriales .acceso-imagen { height: 220px; } .acceso-contenido h2 { font-size: 1.25rem; } .acceso-contenido .eyebrow-dark { font-size: .6rem; letter-spacing: .08em; } }
 
 
-
-/* Confirmación simple de compra */
 .carrito-finalizar {
   width: 100%;
   margin-top: 0.75rem;
