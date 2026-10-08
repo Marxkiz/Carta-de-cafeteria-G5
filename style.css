@@ -2681,3 +2681,37 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline: 3px solid #c
   margin-bottom: 1.5rem;
   font-size: clamp(2rem, 7vw, 3rem);
 }
+
+.tienda-visual.tienda-fotografia {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  padding: 0;
+  overflow: hidden;
+  background: #f1ece4;
+}
+.tienda-visual.tienda-fotografia img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+.menu-producto-visual.menu-producto-foto {
+  height: 280px;
+  padding: 8px;
+  overflow: hidden;
+  background: #f1ece4;
+}
+.menu-producto-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+@media (max-width: 520px) {
+  .menu-producto-visual.menu-producto-foto { height: 270px; }
+}
