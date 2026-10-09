@@ -5,19 +5,24 @@
 const IMAGENES_CONFIG = {
   carpetaMenu: "images/menu/",
   carpetaTienda: "images/tienda/",
-  carpetaSitio: "images/",
+  carpetaSitio: "images/entrada/",
   extensiones: ["jpg", "jpeg", "png", "webp"],
 
   excepciones: {
-    "tienda-colombia": "colombia.jpg",
-    "tienda-descafeinado": "descafeinado.jpg",
-    "tienda-prensa": "prensa.jpg",
-    "tienda-brasil": "brasil.jpg",
-    "tienda-espresso": "espresso.jpg",
-    "tienda-dripper": "dripper.jpg",
-    "tienda-molinillo": "molinillo.jpg",
-    "tienda-vaso": "vaso.jpg",
-    "tienda-tote": "tote.jpg",
+    "tienda-blend-loop": "tienda-blend-loop.jpg",
+    "tienda-taza-loop": "tienda-taza-loop.jpg",
+    "tienda-filtro-reutilizable": "tienda-filtro-reutilizable.jpg",
+
+    "tienda-prensa": "tienda-prensa.jpg",
+
+    "tienda-colombia": "tienda-colombia-recortada.jpg",
+    "tienda-brasil": "tienda-brasil-recortada.jpg",
+    "tienda-descafeinado": "tienda-descafeinado-recortada.jpg",
+    "tienda-espresso": "tienda-espresso-recortada.jpg",
+    "tienda-dripper": "tienda-dripper.jpg",
+    "tienda-molinillo": "tienda-molinillo.jpg",
+    "tienda-vaso": "tienda-vaso.jpg",
+    "tienda-tote": "tienda-tote.jpg",
   },
 
   sitio: {

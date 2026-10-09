@@ -1343,22 +1343,29 @@ a {
 .footer-marca {
   display: flex;
   flex-direction: column;
-
-  line-height: 0.85;
+  align-items: flex-start;
+  gap: 0;
 }
 
 .footer-marca span {
-  font-size: 0.55rem;
-
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-size: 0.65rem;
   letter-spacing: 0.35em;
-
-  opacity: 0.7;
+  text-transform: uppercase;
+  color: #c4c4c4;
+  line-height: 1;
+  margin-bottom: 2px;
 }
 
 .footer-marca strong {
+  display: block;
   font-family: "Playfair Display", Georgia, serif;
-
-  font-size: 1.9rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .site-footer > p {
@@ -3134,5 +3141,146 @@ body {
   .acceso-imagen,
   .acceso-imagen img {
     transition: none;
+  }
+}
+
+.video-cafe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+/* Video de fondo de la portada */
+.home-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-bg .video-cafe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================
+   INTRO ANIMADO — CAFÉ LOOP
+===================================== */
+
+.intro-cafe-loop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #879780;
+  overflow: hidden;
+
+  transform: translateX(0);
+  transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+
+  will-change: transform;
+}
+
+.intro-cafe-loop__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  padding: 24px;
+  text-align: center;
+
+  animation: cafeLoopAparecer 0.65s ease-out both;
+}
+
+.intro-cafe-loop__eyebrow {
+  color: #f3ebdd;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  line-height: 1.8;
+}
+
+.intro-cafe-loop__title {
+  margin: 0;
+
+  color: #f3ebdd;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 12vw, 10rem);
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  line-height: 0.95;
+}
+
+.intro-cafe-loop__title span {
+  color: #4b382d;
+}
+
+.intro-cafe-loop__detail {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.intro-cafe-loop__detail span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #f3ebdd;
+}
+
+/* Salida lateral de la pantalla */
+.intro-cafe-loop--salir {
+  transform: translateX(100%);
+  pointer-events: none;
+}
+
+/* Entrada suave del nombre */
+@keyframes cafeLoopAparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .intro-cafe-loop {
+    transition: none;
+  }
+
+  .intro-cafe-loop__content {
+    animation: none;
   }
 }
