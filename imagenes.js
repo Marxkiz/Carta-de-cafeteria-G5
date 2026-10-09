@@ -55,7 +55,7 @@ const IMAGENES_CONFIG = {
   async function cargarFotoTarjeta(tarjeta, contenedor, carpeta) {
     const id = tarjeta.id;
 
-    if (!id || !contenedor) return true;
+    if (!id || !contenedor || contenedor.querySelector("img")) return true;
 
     const url = await buscarImagen(carpeta, id);
 
