@@ -1645,6 +1645,7 @@ a {
 ========================================================= */
 
 .checkout-dialog {
+  margin: auto;
   width: min(92vw, 540px);
 
   max-height: 90vh;
@@ -3186,101 +3187,4 @@ body {
 
 /* =====================================
    INTRO ANIMADO — CAFÉ LOOP
-===================================== */
-
-.intro-cafe-loop {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #879780;
-  overflow: hidden;
-
-  transform: translateX(0);
-  transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
-
-  will-change: transform;
-}
-
-.intro-cafe-loop__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-
-  padding: 24px;
-  text-align: center;
-
-  animation: cafeLoopAparecer 0.65s ease-out both;
-}
-
-.intro-cafe-loop__eyebrow {
-  color: #f3ebdd;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  line-height: 1.8;
-}
-
-.intro-cafe-loop__title {
-  margin: 0;
-
-  color: #f3ebdd;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.5rem, 12vw, 10rem);
-  font-weight: 400;
-  letter-spacing: 0.035em;
-  line-height: 0.95;
-}
-
-.intro-cafe-loop__title span {
-  color: #4b382d;
-}
-
-.intro-cafe-loop__detail {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 4px;
-}
-
-.intro-cafe-loop__detail span {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #f3ebdd;
-}
-
-/* Salida lateral de la pantalla */
-.intro-cafe-loop--salir {
-  transform: translateX(100%);
-  pointer-events: none;
-}
-
-/* Entrada suave del nombre */
-@keyframes cafeLoopAparecer {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Respeta la preferencia de movimiento reducido */
-@media (prefers-reduced-motion: reduce) {
-  .intro-cafe-loop {
-    transition: none;
-  }
-
-  .intro-cafe-loop__content {
-    animation: none;
-  }
 }
