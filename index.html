@@ -3,28 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <meta
       name="description"
       content="Café Loop: café de especialidad, tostado artesanal y pastelería."
     />
-
     <title>Café Loop — Tostadores de Café</title>
 
     <link rel="stylesheet" href="style.css?v=compra-directa-20261008" />
   </head>
-
   <body>
-    <!-- =========================
-       BARRA DE PROMOCIÓN
-  ========================== -->
+    <!-- PANTALLA DE BIENVENIDA CAFÉ LOOP -->
+    <div class="intro-cafe-loop" id="introCafeLoop" aria-hidden="true">
+      <div class="intro-cafe-loop__content">
+        <span class="intro-cafe-loop__eyebrow">
+          UNA PAUSA HECHA PARA QUEDARSE
+        </span>
+        <h2 class="intro-cafe-loop__title">CAFÉ <span>LOOP</span></h2>
+        <div class="intro-cafe-loop__detail">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- FIN DE LA PANTALLA DE BIENVENIDA -->
+
     <div class="promo-bar">
       <div class="promo-scroller">
         <span>
           15% DE DESCUENTO CON EL CÓDIGO LOOP15 · ENVÍOS GRATIS EN COMPRAS
           MAYORES A $25.000 · CAFÉ RECIÉN TOSTADO CADA SEMANA ·
         </span>
-
         <span aria-hidden="true">
           15% DE DESCUENTO CON EL CÓDIGO LOOP15 · ENVÍOS GRATIS EN COMPRAS
           MAYORES A $25.000 · CAFÉ RECIÉN TOSTADO CADA SEMANA ·
@@ -32,23 +41,18 @@
       </div>
     </div>
 
-    <!-- =========================
-       HEADER
-  ========================== -->
+    <!-- HEADER -->
     <header class="site-header">
       <nav class="site-nav" aria-label="Navegación principal">
         <div class="nav-grupo nav-grupo-izquierda">
           <a href="menu.html">Menú</a>
           <a href="#ubicacion">Ubicación</a>
         </div>
-
         <a href="index.html" class="brand" aria-label="Café Loop, inicio">
           <span class="brand-sub">TOSTADORES DE</span>
           <strong class="brand-title">CAFÉ LOOP</strong>
         </a>
-
         <div class="nav-grupo nav-grupo-derecha">
-          <!-- BÚSQUEDA: acceso al menú -->
           <a
             href="menu.html"
             class="nav-icon-link"
@@ -60,8 +64,6 @@
               <path d="m16 16 4.2 4.2" />
             </svg>
           </a>
-
-          <!-- CUENTA -->
           <button type="button" class="nav-pill" data-abrir-cuenta>
             <svg class="icono-ui" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="7.5" r="3.5" />
@@ -69,11 +71,7 @@
             </svg>
             <span>Cuenta</span>
           </button>
-
-          <!-- COMPRAR -->
-          <a href="#tienda" class="nav-comprar"> Comprar </a>
-
-          <!-- CESTA / CARRITO -->
+          <a href="#tienda" class="nav-comprar">Comprar</a>
           <button
             type="button"
             aria-label="Abrir carrito"
@@ -86,9 +84,7 @@
               <path d="m7.5 9 4.5-6 4.5 6" />
               <path d="M9 13v3.5M15 13v3.5" />
             </svg>
-
             <span>CARRITO</span>
-
             <span class="badge-carrito" aria-live="polite">0</span>
           </button>
         </div>
@@ -96,37 +92,36 @@
     </header>
 
     <main>
-      <!-- =========================
-         HERO
-    ========================== -->
+      <!-- HERO -->
       <section class="home-hero hero-full">
         <div class="hero-bg">
-          <img
-            src="images/tostadoradecafe.png"
-            alt="Proceso de tostado artesanal de café en Café Loop"
-          />
-
+          <video
+            class="video-cafe"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="images/cafe-loop-bolsa.jpg"
+          >
+            <source src="videos/cafe1.mp4" type="video/mp4" />
+            Tu navegador no puede reproducir este video.
+          </video>
           <div class="hero-overlay"></div>
         </div>
-
         <div class="hero-content">
-          <span class="eyebrow"> SELECCIÓN DE LA CASA </span>
-
+          <span class="eyebrow">SELECCIÓN DE LA CASA</span>
           <h1 class="serif">
-            Un café para
-            <br />
+            Un café para<br />
             encontrarse.
           </h1>
-
           <p>
             Café de especialidad, tostado artesanal y una pausa para quedarse.
           </p>
-
           <div class="hero-acciones">
             <a href="menu.html" class="boton boton-primario">
               Explorar el menú
             </a>
-
             <button
               type="button"
               class="boton boton-outline"
@@ -138,28 +133,20 @@
         </div>
       </section>
 
-      <!-- =========================
-         IDENTIDAD
-    ========================== -->
-      <!-- =========================
-     IDENTIDAD CAFÉ LOOP
-========================== -->
+      <!-- IDENTIDAD CAFÉ LOOP -->
       <section class="identidad-section" aria-labelledby="identidad-titulo">
         <div class="identidad-foto">
           <img
-            src="images/cafe-especial.jpg"
-            alt="Manos trabajando con café de especialidad"
+            src="images/entrada/cafe-loop-bolsa.jpg"
+            alt="Manos sosteniendo una bolsa de café Café Loop"
             loading="lazy"
           />
         </div>
-
         <div class="identidad-inner">
           <span class="eyebrow-dark">CAFÉ LOOP · NUESTRA ESENCIA</span>
-
           <h2 class="serif" id="identidad-titulo">
             Una pausa hecha para quedarse.
           </h2>
-
           <p>
             Creemos en el aroma del café recién preparado, en los pequeños
             rituales y en esos momentos que se disfrutan sin apuro. Café de
@@ -168,9 +155,7 @@
         </div>
       </section>
 
-      <!-- =========================
-         ACCESOS
-    ========================== -->
+      <!-- ACCESOS -->
       <section class="accesos-editoriales" aria-label="Explorar Café Loop">
         <!-- TIENDA -->
         <article class="acceso-card">
@@ -180,22 +165,18 @@
             aria-label="Explorar la tienda Café Loop"
           >
             <img
-              src="images/gato-taza-naranja.webp"
+              src="images/entrada/gato-taza-naranja.webp"
               data-imagen="acceso-tienda"
               alt="Gato negro con una taza naranja"
             />
           </a>
-
           <div class="acceso-contenido">
-            <span class="eyebrow-dark"> OBJETOS Y CAFÉ </span>
-
+            <span class="eyebrow-dark">OBJETOS Y CAFÉ</span>
             <h2 class="serif">La tienda Loop</h2>
-
             <p>
               Café en grano, tazas y accesorios para llevar un poco de Café Loop
               a casa.
             </p>
-
             <a href="#tienda" class="link-flecha">
               <span>Explorar la tienda</span>
               <span aria-hidden="true">→</span>
@@ -212,21 +193,17 @@
             aria-label="Encontrar mi café"
           >
             <img
-              src="images/gato-taza-rayada.webp"
+              src="images/entrada/gato-taza-rayada.webp"
               data-imagen="acceso-aprende"
               alt="Gato negro con una taza rayada"
             />
           </button>
-
           <div class="acceso-contenido">
-            <span class="eyebrow-dark"> ELEGÍ A TU MEDIDA </span>
-
+            <span class="eyebrow-dark">ELEGÍ A TU MEDIDA</span>
             <h2 class="serif">Encontrá tu café</h2>
-
             <p>
               Respondé unas preguntas y descubrí qué bebida va mejor con vos.
             </p>
-
             <button
               type="button"
               class="link-flecha link-flecha-boton"
@@ -239,25 +216,20 @@
         </article>
       </section>
 
-      <!-- =========================
-         TIENDA PREVIEW
-    ========================== -->
+      <!-- TIENDA PREVIEW -->
       <section
         class="tienda-preview"
         id="tienda"
         aria-labelledby="tienda-titulo"
       >
         <div class="seccion-intro">
-          <span class="eyebrow-dark"> LLEVÁ CAFÉ LOOP A CASA </span>
-
+          <span class="eyebrow-dark">LLEVÁ CAFÉ LOOP A CASA</span>
           <h2 class="serif" id="tienda-titulo">La tienda</h2>
-
           <p>
             Una selección de favoritos para disfrutar el café también fuera de
             la cafetería.
           </p>
         </div>
-
         <div class="tienda-grid">
           <!-- PRODUCTO 1 -->
           <article
@@ -268,15 +240,11 @@
             <div class="tienda-visual tienda-fotografia"><img src="images/tienda/tienda-blend-loop.jpg" alt="blend loop" width="900" height="600" loading="lazy" /></div>
 
             <div class="tienda-producto-info">
-              <span class="producto-categoria"> CAFÉ EN GRANO </span>
-
+              <span class="producto-categoria">CAFÉ EN GRANO</span>
               <h3 class="serif">Blend de la casa · 250 g</h3>
-
               <p>Cacao, caramelo y un cuerpo equilibrado.</p>
-
               <div class="tienda-producto-pie">
-                <strong> $8.500 </strong>
-
+                <strong>$8.500</strong>
                 <button
                   type="button"
                   class="boton boton-compra-card btn-agregar-carrito"
@@ -300,15 +268,11 @@
             <div class="tienda-visual tienda-fotografia"><img src="images/tienda/tienda-taza-loop.jpg" alt="taza loop" width="900" height="600" loading="lazy" /></div>
 
             <div class="tienda-producto-info">
-              <span class="producto-categoria"> OBJETOS </span>
-
+              <span class="producto-categoria">OBJETOS</span>
               <h3 class="serif">Taza Café Loop</h3>
-
               <p>Cerámica de 300 ml para tu café de todos los días.</p>
-
               <div class="tienda-producto-pie">
-                <strong> $6.500 </strong>
-
+                <strong>$6.500</strong>
                 <button
                   type="button"
                   class="boton boton-compra-card btn-agregar-carrito"
@@ -332,15 +296,11 @@
             <div class="tienda-visual tienda-fotografia"><img src="images/tienda/tienda-filtro-reutilizable.jpg" alt="filtro reutilizable" width="900" height="600" loading="lazy" /></div>
 
             <div class="tienda-producto-info">
-              <span class="producto-categoria"> ACCESORIOS </span>
-
+              <span class="producto-categoria">ACCESORIOS</span>
               <h3 class="serif">Filtro reutilizable</h3>
-
               <p>Una alternativa práctica para preparar café filtrado.</p>
-
               <div class="tienda-producto-pie">
-                <strong> $3.900 </strong>
-
+                <strong>$3.900</strong>
                 <button
                   type="button"
                   class="boton boton-compra-card btn-agregar-carrito"
@@ -355,7 +315,6 @@
             </div>
           </article>
         </div>
-
         <div class="tienda-ver-mas">
           <a href="tienda.html" class="boton boton-oscuro">
             Ver toda la tienda →
@@ -363,46 +322,36 @@
         </div>
       </section>
 
-      <!-- =========================
-         APRENDÉ
-    ========================== -->
+      <!-- APRENDÉ -->
       <section
         class="aprende-section"
         id="aprende"
         aria-labelledby="aprende-titulo"
       >
         <div class="seccion-intro seccion-intro-izquierda">
-          <span class="eyebrow-dark"> UN POCO MÁS SOBRE EL CAFÉ </span>
-
+          <span class="eyebrow-dark">UN POCO MÁS SOBRE EL CAFÉ</span>
           <h2 class="serif" id="aprende-titulo">Aprendé a disfrutarlo</h2>
-
           <p>
             Pequeñas ideas para conocer mejor lo que hay detrás de cada taza.
           </p>
         </div>
-
         <div class="aprende-lista">
           <details class="aprende-item">
             <summary>El origen también se siente</summary>
-
             <p>
               La variedad del grano, el lugar donde crece y el tueste influyen
               en el aroma, el cuerpo y el sabor de cada café.
             </p>
           </details>
-
           <details class="aprende-item">
             <summary>Cada método tiene su propio ritmo</summary>
-
             <p>
               Espresso, prensa o filtro: el método de preparación cambia la
               intensidad y la textura. Elegí el que mejor acompañe tu momento.
             </p>
           </details>
-
           <details class="aprende-item">
             <summary>Cómo cuidar el café en casa</summary>
-
             <p>
               Guardá los granos en un recipiente bien cerrado, en un lugar
               fresco y seco, lejos de la luz y de los olores intensos.
@@ -411,9 +360,7 @@
         </div>
       </section>
 
-      <!-- =========================
-         UBICACIÓN
-    ========================== -->
+      <!-- UBICACIÓN -->
       <section
         class="ubicacion-section"
         id="ubicacion"
@@ -421,22 +368,17 @@
       >
         <div class="ubicacion-panel">
           <div class="ubicacion-copy">
-            <span class="eyebrow"> VENÍ A TOMARTE UNA PAUSA </span>
-
+            <span class="eyebrow">VENÍ A TOMARTE UNA PAUSA</span>
             <h2 class="serif" id="ubicacion-titulo">
               Nos encontramos en Café Loop
             </h2>
-
             <p>
-              Obispo Trejo 850, Nueva Córdoba, Córdoba.
-              <br />
+              Obispo Trejo 850, Nueva Córdoba, Córdoba.<br />
               Lunes a viernes de 8 a 21 h · Sábados y domingos de 9 a 22 h.
             </p>
-
             <p class="ubicacion-nota">
               Dirección ficticia para el proyecto Café Loop.
             </p>
-
             <a
               class="boton boton-claro"
               href="https://www.google.com/maps/dir/?api=1&destination=Obispo+Trejo+850+C%C3%B3rdoba+Argentina"
@@ -446,7 +388,6 @@
               Cómo llegar →
             </a>
           </div>
-
           <div class="ubicacion-mapa">
             <iframe
               title="Google Maps: Obispo Trejo 850, Nueva Córdoba"
@@ -455,7 +396,6 @@
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen
             ></iframe>
-
             <a
               href="https://www.google.com/maps/search/?api=1&query=Obispo+Trejo+850+C%C3%B3rdoba+Argentina"
               target="_blank"
@@ -467,28 +407,22 @@
         </div>
       </section>
 
-      <!-- =========================
-         NEWSLETTER
-    ========================== -->
+      <!-- NEWSLETTER -->
       <section
         class="newsletter-section"
         id="suscripcion"
         aria-labelledby="newsletter-titulo"
       >
         <div class="newsletter-copy">
-          <span class="eyebrow-dark"> NEWSLETTER LOOP </span>
-
+          <span class="eyebrow-dark">NEWSLETTER LOOP</span>
           <h2 class="serif" id="newsletter-titulo">Novedades de Café Loop</h2>
-
           <p>
             Recibí novedades, lanzamientos y promociones de Café Loop en tu
             correo.
           </p>
         </div>
-
         <form class="newsletter-form" id="newsletter-form">
-          <label for="newsletter-email"> Tu correo electrónico </label>
-
+          <label for="newsletter-email">Tu correo electrónico</label>
           <div class="newsletter-campo">
             <input
               id="newsletter-email"
@@ -498,16 +432,13 @@
               autocomplete="email"
               required
             />
-
             <button class="boton boton-newsletter" type="submit">
               Suscribirme
             </button>
           </div>
-
           <p class="newsletter-nota">
-            Formulario demostrativo: muestra una confirmación en esta página.
+            Novedades, café y momentos especiales. Sumate a Café Loop.
           </p>
-
           <p
             class="newsletter-feedback"
             id="newsletter-feedback"
@@ -518,20 +449,16 @@
       </section>
     </main>
 
-    <!-- =========================
-       FOOTER
-  ========================== -->
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-marca">
         <span>TOSTADORES DE</span>
         <strong>CAFÉ LOOP</strong>
       </div>
-
       <p>
         Café de especialidad, música y un espacio pensado para tomarse una
         pausa.
       </p>
-
       <div class="footer-links">
         <a href="menu.html">Menú</a>
         <a href="tienda.html">Tienda</a>
@@ -540,9 +467,7 @@
       </div>
     </footer>
 
-    <!-- =========================
-       QUIZ
-  ========================== -->
+    <!-- QUIZ -->
     <dialog class="quiz-dialog" id="quiz-dialog" aria-labelledby="quiz-titulo">
       <div class="quiz-dialog-inner">
         <button
@@ -553,174 +478,136 @@
         >
           ×
         </button>
-
-        <span class="eyebrow-dark"> ENCONTRÁ TU CAFÉ </span>
-
+        <span class="eyebrow-dark">ENCONTRÁ TU CAFÉ</span>
         <h2 class="serif" id="quiz-titulo">¿Qué café va con vos?</h2>
-
         <p class="quiz-intro">
           Ocho preguntas para encontrar tu bebida y algo rico para acompañarla.
         </p>
-
         <p id="quiz-progreso" aria-live="polite"></p>
-
         <progress
           id="quiz-barra"
           max="8"
           value="1"
           aria-label="Progreso del cuestionario"
         ></progress>
-
         <form id="quiz-form">
           <fieldset class="quiz-pregunta" data-quiz-paso>
             <legend>1. ¿Qué intensidad te gusta?</legend>
-
             <label>
               <input type="radio" name="perfil" value="suave" required />
               Suave
             </label>
-
             <label>
               <input type="radio" name="perfil" value="equilibrado" required />
-              Equilibrada
+              Equilibrado
             </label>
-
             <label>
               <input type="radio" name="perfil" value="intenso" required />
-              Intensa
+              Intenso
             </label>
           </fieldset>
-
           <fieldset class="quiz-pregunta" data-quiz-paso>
             <legend>2. ¿Cómo lo preferís?</legend>
-
             <label>
               <input type="radio" name="metodo" value="caliente" required />
               Caliente
             </label>
-
             <label>
               <input type="radio" name="metodo" value="frio" required />
               Frío
             </label>
-
             <label>
               <input type="radio" name="metodo" value="filtrado" required />
               Filtrado
             </label>
           </fieldset>
-
           <fieldset class="quiz-pregunta" data-quiz-paso>
             <legend>3. ¿Le agregamos leche?</legend>
-
             <label>
               <input type="radio" name="leche" value="si" required />
-              Sí, bien cremoso
+              Sí
             </label>
-
             <label>
               <input type="radio" name="leche" value="poca" required />
-              Solo un toque
+              Cortado
             </label>
-
             <label>
               <input type="radio" name="leche" value="no" required />
               Sin leche
             </label>
           </fieldset>
-
           <fieldset class="quiz-pregunta" data-quiz-paso>
             <legend>4. ¿Qué sabor te tienta?</legend>
-
             <label>
               <input type="radio" name="sabor" value="clasico" required />
               El sabor del café
             </label>
-
             <label>
               <input type="radio" name="sabor" value="chocolate" required />
               Chocolate
             </label>
-
             <label>
               <input type="radio" name="sabor" value="vainilla" required />
               Vainilla
             </label>
           </fieldset>
-
           <fieldset class="quiz-pregunta" data-quiz-paso>
             <legend>5. ¿Buscás cafeína?</legend>
-
             <label>
               <input type="radio" name="cafeina" value="si" required />
-              Sí, para activar
+              Sí
             </label>
-
             <label>
               <input type="radio" name="cafeina" value="normal" required />
               Una cantidad moderada
             </label>
-
             <label>
               <input type="radio" name="cafeina" value="no" required />
               Prefiero una infusión sin cafeína
             </label>
           </fieldset>
-
           <fieldset class="quiz-pregunta" data-quiz-paso>
             <legend>6. ¿Cuándo lo vas a disfrutar?</legend>
-
             <label>
               <input type="radio" name="momento" value="desayuno" required />
               En el desayuno
             </label>
-
             <label>
               <input type="radio" name="momento" value="pausa" required />
-              En una pausa
+              En una pausa/de paso
             </label>
-
             <label>
               <input type="radio" name="momento" value="merienda" required />
               En la merienda
             </label>
           </fieldset>
-
           <fieldset class="quiz-pregunta" data-quiz-paso>
             <legend>7. ¿Con qué lo acompañarías?</legend>
-
             <label>
               <input type="radio" name="acompanar" value="dulce" required />
-              Algo dulce
+              Dulce
             </label>
-
             <label>
               <input type="radio" name="acompanar" value="salado" required />
-              Algo salado
+              Salado
             </label>
-
             <label>
               <input type="radio" name="acompanar" value="solo" required />
               Solo la bebida
             </label>
           </fieldset>
-
           <fieldset class="quiz-pregunta" data-quiz-paso>
             <legend>8. ¿Cuánto tiempo tenés?</legend>
-
             <label>
               <input type="radio" name="tiempo" value="rapido" required />
               Una pausa cortita
             </label>
-
             <label>
               <input type="radio" name="tiempo" value="tranquilo" required />
               Tiempo para disfrutar
             </label>
           </fieldset>
-
           <p id="quiz-error" role="alert"></p>
-
           <div class="quiz-controles">
             <button
               type="button"
@@ -729,7 +616,6 @@
             >
               Anterior
             </button>
-
             <button
               type="button"
               class="boton boton-oscuro"
@@ -737,7 +623,6 @@
             >
               Siguiente
             </button>
-
             <button
               type="submit"
               class="boton boton-oscuro"
@@ -747,7 +632,6 @@
               Ver mi recomendación
             </button>
           </div>
-
           <div
             class="quiz-result"
             id="quiz-result"
@@ -759,11 +643,8 @@
       </div>
     </dialog>
 
-    <!-- =========================
-       CARRITO
-  ========================== -->
+    <!-- CARRITO -->
     <div class="carrito-overlay" data-cerrar-carrito></div>
-
     <aside
       class="carrito-panel"
       id="carrito-panel"
@@ -772,11 +653,9 @@
     >
       <div class="carrito-encabezado">
         <div>
-          <span class="carrito-kicker"> CAFÉ LOOP </span>
-
+          <span class="carrito-kicker">CAFÉ LOOP</span>
           <h2>Tu carrito</h2>
         </div>
-
         <button
           type="button"
           class="carrito-cerrar"
@@ -786,25 +665,19 @@
           ×
         </button>
       </div>
-
       <div class="carrito-lista"></div>
-
       <p class="carrito-vacio">
-        Tu carrito está vacío.
-        <br />
+        Tu carrito está vacío.<br />
         Agregá algo rico para empezar.
       </p>
-
       <div class="carrito-resumen">
         <div class="carrito-total-fila">
           <span>Total</span>
           <strong class="carrito-total">$0</strong>
         </div>
-
         <button type="button" class="boton boton-outline carrito-vaciar">
           Vaciar carrito
         </button>
-
         <button
           type="button"
           class="boton boton-primario carrito-finalizar"
@@ -812,16 +685,13 @@
         >
           Finalizar compra
         </button>
-
         <p class="carrito-pago-nota">
           Pago de demostración: no se realizará ningún cobro real.
         </p>
       </div>
     </aside>
 
-    <!-- =========================
-       CUENTA
-  ========================== -->
+    <!-- CUENTA -->
     <dialog
       class="quiz-dialog"
       id="cuenta-dialog"
@@ -836,18 +706,13 @@
         >
           ×
         </button>
-
-        <span class="eyebrow-dark"> TU RINCÓN EN LOOP </span>
-
+        <span class="eyebrow-dark">TU RINCÓN EN LOOP</span>
         <h2 class="serif" id="cuenta-titulo">Iniciar sesión</h2>
-
         <p class="quiz-intro">Tu cuenta se guarda en este navegador.</p>
-
         <form id="cuenta-form">
           <div class="cuenta-grid">
             <div class="cuenta-campo" data-solo-registro hidden>
-              <label for="cuenta-nombre"> Nombre </label>
-
+              <label for="cuenta-nombre">Nombre</label>
               <input
                 id="cuenta-nombre"
                 name="nombre"
@@ -856,10 +721,8 @@
                 data-required-registro
               />
             </div>
-
             <div class="cuenta-campo" data-solo-registro hidden>
-              <label for="cuenta-apellido"> Apellido </label>
-
+              <label for="cuenta-apellido">Apellido</label>
               <input
                 id="cuenta-apellido"
                 name="apellido"
@@ -868,10 +731,8 @@
                 data-required-registro
               />
             </div>
-
             <div class="cuenta-campo">
-              <label for="cuenta-email"> Mail </label>
-
+              <label for="cuenta-email">Mail</label>
               <input
                 id="cuenta-email"
                 name="email"
@@ -881,10 +742,8 @@
                 maxlength="254"
               />
             </div>
-
             <div class="cuenta-campo" data-solo-registro hidden>
-              <label for="cuenta-email-repetir"> Repetir mail </label>
-
+              <label for="cuenta-email-repetir">Repetir mail</label>
               <input
                 id="cuenta-email-repetir"
                 name="emailRepetir"
@@ -894,10 +753,8 @@
                 data-required-registro
               />
             </div>
-
             <div class="cuenta-campo">
-              <label for="cuenta-password"> Contraseña </label>
-
+              <label for="cuenta-password">Contraseña</label>
               <input
                 id="cuenta-password"
                 name="password"
@@ -909,10 +766,8 @@
                 aria-describedby="cuenta-password-ayuda"
               />
             </div>
-
             <div class="cuenta-campo" data-solo-registro hidden>
-              <label for="cuenta-password-repetir"> Repetir contraseña </label>
-
+              <label for="cuenta-password-repetir">Repetir contraseña</label>
               <input
                 id="cuenta-password-repetir"
                 name="passwordRepetir"
@@ -923,10 +778,8 @@
                 data-required-registro
               />
             </div>
-
             <div class="cuenta-campo" data-solo-registro hidden>
-              <label for="cuenta-genero"> Género (opcional) </label>
-
+              <label for="cuenta-genero">Género (opcional)</label>
               <select id="cuenta-genero" name="genero">
                 <option value="">Seleccionar</option>
                 <option value="femenino">Femenino</option>
@@ -935,10 +788,8 @@
                 <option value="no-indicar">Prefiero no indicarlo</option>
               </select>
             </div>
-
             <div class="cuenta-campo" data-solo-registro hidden>
-              <label for="cuenta-documento"> Documento (opcional) </label>
-
+              <label for="cuenta-documento">Documento (opcional)</label>
               <input
                 id="cuenta-documento"
                 name="documento"
@@ -948,10 +799,8 @@
                 title="Ingresá entre 6 y 12 caracteres: números, puntos o guiones."
               />
             </div>
-
             <div class="cuenta-campo" data-solo-registro hidden>
-              <label for="cuenta-telefono"> Número de teléfono </label>
-
+              <label for="cuenta-telefono">Número de teléfono</label>
               <input
                 id="cuenta-telefono"
                 name="telefono"
@@ -963,10 +812,8 @@
                 data-required-registro
               />
             </div>
-
             <div class="cuenta-campo" data-solo-registro hidden>
-              <label for="cuenta-domicilio"> Domicilio (opcional) </label>
-
+              <label for="cuenta-domicilio">Domicilio (opcional)</label>
               <input
                 id="cuenta-domicilio"
                 name="domicilio"
@@ -976,13 +823,10 @@
               />
             </div>
           </div>
-
           <p class="cuenta-ayuda" id="cuenta-password-ayuda">
             Usá al menos 8 caracteres.
           </p>
-
           <p id="cuenta-feedback" role="status" aria-live="polite"></p>
-
           <div class="cuenta-acciones">
             <button
               type="reset"
@@ -992,20 +836,16 @@
             >
               Limpiar
             </button>
-
             <button type="submit" class="boton boton-oscuro" id="cuenta-enviar">
               Ingresar
             </button>
           </div>
-
           <button type="button" class="cuenta-alternar" id="cuenta-alternar">
             ¿No tenés cuenta? Registrate
           </button>
         </form>
-
         <div id="cuenta-perfil" hidden>
           <p id="cuenta-saludo"></p>
-
           <button type="button" class="boton boton-oscuro" id="cuenta-salir">
             Cerrar sesión
           </button>

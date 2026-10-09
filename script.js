@@ -1131,3 +1131,53 @@ if (productosTienda.length) {
 
 renderizarCarrito();
 actualizarCuenta();
+
+// =====================================
+// INTRO ANIMADO — CAFÉ LOOP
+// =====================================
+
+(function iniciarIntroCafeLoop() {
+  function mostrarIntro() {
+    const intro = document.getElementById("introCafeLoop");
+
+    if (!intro) return;
+
+    // Mostrar la intro solo una vez por sesión.
+    try {
+      if (sessionStorage.getItem("cafeLoopIntroVisto") === "si") {
+        intro.remove();
+        return;
+      }
+
+      sessionStorage.setItem("cafeLoopIntroVisto", "si");
+    } catch (error) {
+      // Si el almacenamiento no está disponible,
+      // la animación igualmente puede continuar.
+    }
+
+    // Esperar brevemente y deslizar la pantalla.
+    window.setTimeout(function () {
+      intro.classList.add("intro-cafe-loop--salir");
+    }, 850);
+
+    // Eliminar la pantalla cuando termina la transición.
+    intro.addEventListener("transitionend", function (event) {
+      if (event.target === intro && event.propertyName === "transform") {
+        intro.remove();
+      }
+    });
+
+    // Respaldo por si el evento de transición no se dispara.
+    window.setTimeout(function () {
+      intro.remove();
+    }, 2200);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", mostrarIntro, {
+      once: true,
+    });
+  } else {
+    mostrarIntro();
+  }
+})();
