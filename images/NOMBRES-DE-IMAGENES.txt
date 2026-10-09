@@ -1,0 +1,37 @@
+LISTA DE NOMBRES DE IMAGEN (.jpg por defecto)
+
+== images/menu/ ==
+cafe-espresso.jpg
+cafe-latte.jpg
+cafe-capuccino.jpg
+cafe-iced.jpg
+cafe-mocaccino.jpg
+te-hebras.jpg
+cafe-americano.jpg
+cafe-filtrado.jpg
+cafe-cortado.jpg
+te-rooibos.jpg
+torta-cheesecake.jpg
+torta-carrot.jpg
+torta-brownie.jpg
+panaderia-medialuna.jpg
+torta-lemon.jpg
+panaderia-cookie.jpg
+salado-tostado.jpg
+salado-avocado.jpg
+salado-croissant.jpg
+salado-bagel.jpg
+
+== images/tienda/ ==
+tienda-blend-loop.jpg
+tienda-taza-loop.jpg
+tienda-filtro-reutilizable.jpg
+tienda-colombia.jpg
+tienda-descafeinado.jpg
+tienda-prensa.jpg
+tienda-brasil.jpg
+tienda-espresso.jpg
+tienda-dripper.jpg
+tienda-molinillo.jpg
+tienda-vaso.jpg
+tienda-tote.jpg
