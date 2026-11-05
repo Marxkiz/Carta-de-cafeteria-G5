@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import db from '../data/db.json'
-import { addCartItem, deleteCartItem, getCart, getProducts, updateCartItem } from '../services/cafeteriaService.js'
+import db from '@/data/db.json'
+import { addCartItem, deleteCartItem, getCart, getProducts, updateCartItem } from '@/api/cafeteriaApi.js'
 
 const CafeteriaContext = createContext()
 
@@ -36,12 +36,16 @@ export function CafeteriaProvider({ children }) {
     localStorage.setItem('cafe-loop-carrito', JSON.stringify(carrito))
   }, [carrito])
 
-  function agregarAlCarrito(producto) {
+  async function agregarAlCarrito(producto) {
     const existente = carrito.find((item) => item.productId === producto.id)
     if (existente) {
       const cantidad = existente.cantidad + 1
       setCarrito((actual) => actual.map((item) => item.productId === producto.id ? { ...item, cantidad } : item))
-      updateCartItem(existente.id, { cantidad }).catch(() => {})
+      try {
+        await updateCartItem(existente.id, { cantidad })
+      } catch {
+        return
+      }
       return
     }
     const nuevoItem = {
@@ -54,25 +58,34 @@ export function CafeteriaProvider({ children }) {
     }
     setCarrito((actual) => [...actual, nuevoItem])
     const { id, ...itemParaApi } = nuevoItem
-    addCartItem(itemParaApi)
-      .then((creado) => {
-        setCarrito((actual) => actual.map((item) => item.id === id ? { ...item, id: creado.id } : item))
-      })
-      .catch(() => {})
+    try {
+      const creado = await addCartItem(itemParaApi)
+      setCarrito((actual) => actual.map((item) => item.id === id ? { ...item, id: creado.id } : item))
+    } catch {
+      return
+    }
   }
 
-  function cambiarCantidad(id, nuevaCantidad) {
+  async function cambiarCantidad(id, nuevaCantidad) {
     if (nuevaCantidad < 1) {
       eliminarDelCarrito(id)
       return
     }
     setCarrito((actual) => actual.map((item) => item.id === id ? { ...item, cantidad: nuevaCantidad } : item))
-    updateCartItem(id, { cantidad: nuevaCantidad }).catch(() => {})
+    try {
+      await updateCartItem(id, { cantidad: nuevaCantidad })
+    } catch {
+      return
+    }
   }
 
-  function eliminarDelCarrito(id) {
+  async function eliminarDelCarrito(id) {
     setCarrito((actual) => actual.filter((item) => item.id !== id))
-    deleteCartItem(id).catch(() => {})
+    try {
+      await deleteCartItem(id)
+    } catch {
+      return
+    }
   }
 
   async function vaciarCarrito() {

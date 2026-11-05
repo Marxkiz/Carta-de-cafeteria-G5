@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ProductCard from '../components/ProductCard.jsx'
-import { useCafeteria } from '../context/CafeteriaContext.jsx'
+import ProductCard from '@/components/ProductCard.jsx'
+import { useCafeteria } from '@/context/CafeteriaContext.jsx'
 
 const categorias = ['Todos', 'Cafés', 'Pastelería', 'Salados', 'Tienda']
 

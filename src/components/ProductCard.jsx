@@ -1,4 +1,5 @@
-import { useCafeteria } from '../context/CafeteriaContext.jsx'
+import { useCafeteria } from '@/context/CafeteriaContext.jsx'
+import { formatearPrecio } from '@/utils/formato.js'
 
 function ProductCard({ producto }) {
   const { agregarAlCarrito } = useCafeteria()
@@ -11,7 +12,7 @@ function ProductCard({ producto }) {
         <h3 className="card-title">{producto.nombre}</h3>
         <p className="card-text">{producto.descripcion}</p>
         <div className="product-actions mt-auto">
-          <strong>${producto.precio.toLocaleString('es-AR')}</strong>
+          <strong>{formatearPrecio(producto.precio)}</strong>
           <button className="btn btn-cafe" type="button" onClick={() => agregarAlCarrito(producto)}>Agregar</button>
         </div>
       </div>

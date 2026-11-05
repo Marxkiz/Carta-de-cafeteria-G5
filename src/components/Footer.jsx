@@ -12,6 +12,7 @@ function Footer() {
           <Link to="/">Inicio</Link>
           <Link to="/menu">Menú</Link>
           <Link to="/carrito">Carrito</Link>
+          <Link to="/cuenta">Cuenta</Link>
         </div>
         <div>
           <p className="footer-title">Visitános</p>
