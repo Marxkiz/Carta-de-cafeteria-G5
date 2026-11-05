@@ -1,0 +1,113 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "nombre": "Espresso",
+      "categoria": "Cafés",
+      "descripcion": "Intenso, corto y con notas a chocolate.",
+      "precio": 2600,
+      "imagen": "/images/menu/cafe-espresso.jpeg",
+      "destacado": true
+    },
+    {
+      "id": "2",
+      "nombre": "Latte",
+      "categoria": "Cafés",
+      "descripcion": "Espresso suave con leche texturizada.",
+      "precio": 3400,
+      "imagen": "/images/menu/cafe-latte.jpg",
+      "destacado": false
+    },
+    {
+      "id": "3",
+      "nombre": "Capuccino",
+      "categoria": "Cafés",
+      "descripcion": "Espresso, leche y espuma cremosa.",
+      "precio": 3600,
+      "imagen": "/images/menu/cafe-capuccino.jpg",
+      "destacado": true
+    },
+    {
+      "id": "4",
+      "nombre": "Iced coffee",
+      "categoria": "Cafés",
+      "descripcion": "Café frío, leche, hielo y vainilla.",
+      "precio": 3900,
+      "imagen": "/images/menu/cafe-iced.jpeg",
+      "destacado": false
+    },
+    {
+      "id": "5",
+      "nombre": "Cheesecake",
+      "categoria": "Pastelería",
+      "descripcion": "Cremoso, con base crocante y frutos rojos.",
+      "precio": 4800,
+      "imagen": "/images/menu/torta-cheesecake.jpg",
+      "destacado": true
+    },
+    {
+      "id": "6",
+      "nombre": "Carrot cake",
+      "categoria": "Pastelería",
+      "descripcion": "Torta de zanahoria, nueces y frosting suave.",
+      "precio": 4500,
+      "imagen": "/images/menu/torta-carrot.jpg",
+      "destacado": false
+    },
+    {
+      "id": "7",
+      "nombre": "Brownie",
+      "categoria": "Pastelería",
+      "descripcion": "Chocolate intenso y centro húmedo.",
+      "precio": 3700,
+      "imagen": "/images/menu/torta-brownie.jpeg",
+      "destacado": false
+    },
+    {
+      "id": "8",
+      "nombre": "Medialuna",
+      "categoria": "Pastelería",
+      "descripcion": "Manteca, almíbar suave y masa aireada.",
+      "precio": 1900,
+      "imagen": "/images/menu/panaderia-medialuna.jpg",
+      "destacado": false
+    },
+    {
+      "id": "9",
+      "nombre": "Avocado toast",
+      "categoria": "Salados",
+      "descripcion": "Pan de masa madre, palta, huevo y semillas.",
+      "precio": 5200,
+      "imagen": "/images/menu/salado-avocado.jpg",
+      "destacado": false
+    },
+    {
+      "id": "10",
+      "nombre": "Bagel completo",
+      "categoria": "Salados",
+      "descripcion": "Queso crema, vegetales frescos y jamón.",
+      "precio": 5100,
+      "imagen": "/images/menu/salado-bagel.jpeg",
+      "destacado": false
+    },
+    {
+      "id": "11",
+      "nombre": "Blend Loop",
+      "categoria": "Tienda",
+      "descripcion": "Café en grano de la casa, paquete de 250 gramos.",
+      "precio": 9800,
+      "imagen": "/images/tienda/tienda-blend-loop.jpg",
+      "destacado": false
+    },
+    {
+      "id": "12",
+      "nombre": "Prensa francesa",
+      "categoria": "Tienda",
+      "descripcion": "Método simple para preparar café con cuerpo.",
+      "precio": 24500,
+      "imagen": "/images/tienda/tienda-prensa.jpg",
+      "destacado": false
+    }
+  ],
+  "cart": []
+}
