@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import FormInput from '@/components/FormInput.jsx'
 import { validarCampo, validarFormulario } from '@/utils/validaciones.js'
@@ -14,9 +14,14 @@ const datosIniciales = {
 
 function Cuenta() {
   const navigate = useNavigate()
+  const primerCampoRef = useRef(null)
   const [esRegistro, setEsRegistro] = useState(false)
   const [datos, setDatos] = useState(datosIniciales)
   const [errores, setErrores] = useState({})
+
+  useEffect(() => {
+    primerCampoRef.current?.focus()
+  }, [esRegistro])
 
   function cambiarCampo(event) {
     const { name, value } = event.target
@@ -56,8 +61,8 @@ function Cuenta() {
           <p>Guardamos tu sesión en este dispositivo para demostrar el uso de localStorage.</p>
         </div>
         <form className="account-form" onSubmit={enviarFormulario} noValidate>
-          {esRegistro && <FormInput id="nombre" name="nombre" label="Nombre" value={datos.nombre} onChange={cambiarCampo} error={errores.nombre} placeholder="Lucas" maxLength="40" />}
-          <FormInput id="email" name="email" type="email" label="Correo electrónico" value={datos.email} onChange={cambiarCampo} error={errores.email} placeholder="nombre@correo.com" maxLength="80" />
+          {esRegistro && <FormInput ref={primerCampoRef} id="nombre" name="nombre" label="Nombre" value={datos.nombre} onChange={cambiarCampo} error={errores.nombre} placeholder="Lucas" maxLength="40" />}
+          <FormInput ref={esRegistro ? undefined : primerCampoRef} id="email" name="email" type="email" label="Correo electrónico" value={datos.email} onChange={cambiarCampo} error={errores.email} placeholder="nombre@correo.com" maxLength="80" />
           {esRegistro && <FormInput id="repetirEmail" name="repetirEmail" type="email" label="Repetir correo" value={datos.repetirEmail} onChange={cambiarCampo} error={errores.repetirEmail} placeholder="Repetí tu correo" maxLength="80" />}
           <FormInput id="password" name="password" type="password" label="Contraseña" value={datos.password} onChange={cambiarCampo} error={errores.password} placeholder="Mínimo 6 caracteres" maxLength="30" />
           {esRegistro && <FormInput id="repetirPassword" name="repetirPassword" type="password" label="Repetir contraseña" value={datos.repetirPassword} onChange={cambiarCampo} error={errores.repetirPassword} placeholder="Repetí tu contraseña" maxLength="30" />}

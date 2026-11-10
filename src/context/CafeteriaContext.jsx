@@ -16,6 +16,7 @@ export function CafeteriaProvider({ children }) {
   const [productos, setProductos] = useState(db.products)
   const [carrito, setCarrito] = useState(leerCarritoLocal)
   const [cargando, setCargando] = useState(true)
+  const [errorApi, setErrorApi] = useState('')
 
   useEffect(() => {
     async function cargarDatos() {
@@ -23,8 +24,10 @@ export function CafeteriaProvider({ children }) {
         const [productosApi, carritoApi] = await Promise.all([getProducts(), getCart()])
         setProductos(productosApi)
         if (carritoApi.length > 0) setCarrito(carritoApi)
+        setErrorApi('')
       } catch {
         setProductos(db.products)
+        setErrorApi('La API no está disponible. Se están usando los datos guardados en la aplicación.')
       } finally {
         setCargando(false)
       }
@@ -43,7 +46,9 @@ export function CafeteriaProvider({ children }) {
       setCarrito((actual) => actual.map((item) => item.productId === producto.id ? { ...item, cantidad } : item))
       try {
         await updateCartItem(existente.id, { cantidad })
+        setErrorApi('')
       } catch {
+        setErrorApi('El carrito se guardó solamente en este dispositivo porque la API no está disponible.')
         return
       }
       return
@@ -61,7 +66,9 @@ export function CafeteriaProvider({ children }) {
     try {
       const creado = await addCartItem(itemParaApi)
       setCarrito((actual) => actual.map((item) => item.id === id ? { ...item, id: creado.id } : item))
+      setErrorApi('')
     } catch {
+      setErrorApi('El carrito se guardó solamente en este dispositivo porque la API no está disponible.')
       return
     }
   }
@@ -74,7 +81,9 @@ export function CafeteriaProvider({ children }) {
     setCarrito((actual) => actual.map((item) => item.id === id ? { ...item, cantidad: nuevaCantidad } : item))
     try {
       await updateCartItem(id, { cantidad: nuevaCantidad })
+      setErrorApi('')
     } catch {
+      setErrorApi('El carrito se guardó solamente en este dispositivo porque la API no está disponible.')
       return
     }
   }
@@ -83,7 +92,9 @@ export function CafeteriaProvider({ children }) {
     setCarrito((actual) => actual.filter((item) => item.id !== id))
     try {
       await deleteCartItem(id)
+      setErrorApi('')
     } catch {
+      setErrorApi('El carrito se actualizó solamente en este dispositivo porque la API no está disponible.')
       return
     }
   }
@@ -91,12 +102,17 @@ export function CafeteriaProvider({ children }) {
   async function vaciarCarrito() {
     const items = [...carrito]
     setCarrito([])
-    await Promise.allSettled(items.map((item) => deleteCartItem(item.id)))
+    const resultados = await Promise.allSettled(items.map((item) => deleteCartItem(item.id)))
+    if (resultados.some((resultado) => resultado.status === 'rejected')) {
+      setErrorApi('La compra se completó y el carrito se vació en este dispositivo, pero la API no está disponible.')
+      return
+    }
+    setErrorApi('')
   }
 
   const cantidadTotal = carrito.reduce((total, item) => total + item.cantidad, 0)
   const precioTotal = carrito.reduce((total, item) => total + item.precio * item.cantidad, 0)
-  const value = useMemo(() => ({ productos, carrito, cargando, cantidadTotal, precioTotal, agregarAlCarrito, cambiarCantidad, eliminarDelCarrito, vaciarCarrito }), [productos, carrito, cargando, cantidadTotal, precioTotal])
+  const value = useMemo(() => ({ productos, carrito, cargando, errorApi, cantidadTotal, precioTotal, agregarAlCarrito, cambiarCantidad, eliminarDelCarrito, vaciarCarrito }), [productos, carrito, cargando, errorApi, cantidadTotal, precioTotal])
 
   return <CafeteriaContext.Provider value={value}>{children}</CafeteriaContext.Provider>
 }

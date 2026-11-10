@@ -5,7 +5,7 @@ import { useCafeteria } from '@/context/CafeteriaContext.jsx'
 const categorias = ['Todos', 'Cafés', 'Pastelería', 'Salados', 'Tienda']
 
 function Menu() {
-  const { productos, cargando } = useCafeteria()
+  const { productos, cargando, errorApi } = useCafeteria()
   const [busqueda, setBusqueda] = useState('')
   const [categoria, setCategoria] = useState('Todos')
   const filtrados = productos.filter((producto) => {
@@ -22,6 +22,7 @@ function Menu() {
           <h1>Nuestro menú</h1>
           <p>Buscá un producto o filtrá por categoría.</p>
         </header>
+        {errorApi && <p className="api-message" role="status">{errorApi}</p>}
         <div className="menu-tools">
           <label className="search-field">
             <span>Buscar</span>

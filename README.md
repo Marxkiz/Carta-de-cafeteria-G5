@@ -26,6 +26,9 @@ La aplicación conserva la identidad visual de la primera versión de Café Loop
 - Registro e inicio de sesión con validaciones en tiempo real.
 - Datos del usuario y del carrito almacenados en localStorage.
 - Productos y carrito conectados a una API REST simulada.
+- Navegación compatible con GitHub Pages mediante HashRouter.
+- Enfoque automático de formularios con ref de React 19, sin forwardRef.
+- Mensaje de respaldo cuando la API no está disponible.
 
 ## Tecnologías
 
@@ -73,7 +76,7 @@ En otra terminal:
 npm run dev
 ```
 
-La API se ejecuta en `http://localhost:4000`. Vite muestra en la terminal la dirección de la aplicación, normalmente `http://localhost:5173`.
+La API se ejecuta en `http://localhost:4000`. Vite muestra en la terminal la dirección de la aplicación, normalmente `http://localhost:5173`. Los dos comandos deben permanecer ejecutándose mientras se prueba el proyecto completo.
 
 ## Servicios
 

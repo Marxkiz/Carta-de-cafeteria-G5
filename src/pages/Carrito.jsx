@@ -4,7 +4,7 @@ import { useCafeteria } from '@/context/CafeteriaContext.jsx'
 import { formatearPrecio } from '@/utils/formato.js'
 
 function Carrito() {
-  const { carrito, precioTotal, cambiarCantidad, eliminarDelCarrito, vaciarCarrito } = useCafeteria()
+  const { carrito, precioTotal, errorApi, cambiarCantidad, eliminarDelCarrito, vaciarCarrito } = useCafeteria()
   const [mensaje, setMensaje] = useState('')
   const navigate = useNavigate()
 
@@ -20,6 +20,7 @@ function Carrito() {
           <p className="eyebrow dark">TU PEDIDO</p>
           <h1>Carrito</h1>
         </header>
+        {errorApi && <p className="api-message" role="status">{errorApi}</p>}
         {mensaje && (
           <div className="purchase-complete" role="status">
             <div className="alert purchase-message">{mensaje}</div>
