@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCafeteria } from '@/context/CafeteriaContext.jsx'
 import { formatearPrecio } from '@/utils/formato.js'
+import { rutaImagen } from '@/utils/imagenes.js'
 
 function Carrito() {
   const { carrito, precioTotal, errorApi, cambiarCantidad, eliminarDelCarrito, vaciarCarrito } = useCafeteria()
@@ -39,7 +40,7 @@ function Carrito() {
             <div className="cart-items">
               {carrito.map((item) => (
                 <article className="cart-item" key={item.id}>
-                  <img src={item.imagen} alt={item.nombre} />
+                  <img src={rutaImagen(item.imagen)} alt={item.nombre} />
                   <div className="cart-item-info">
                     <h2>{item.nombre}</h2>
                     <p>{formatearPrecio(item.precio)} cada uno</p>

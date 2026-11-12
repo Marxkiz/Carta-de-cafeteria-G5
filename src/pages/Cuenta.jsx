@@ -30,6 +30,10 @@ function Cuenta() {
     setErrores((actuales) => ({
       ...actuales,
       [name]: validarCampo(name, value, nuevosDatos, esRegistro),
+      ...(esRegistro && name === 'email' && datos.repetirEmail
+        ? { repetirEmail: validarCampo('repetirEmail', datos.repetirEmail, nuevosDatos, esRegistro) } : {}),
+      ...(esRegistro && name === 'password' && datos.repetirPassword
+        ? { repetirPassword: validarCampo('repetirPassword', datos.repetirPassword, nuevosDatos, esRegistro) } : {}),
     }))
   }
 

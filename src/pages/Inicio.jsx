@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { rutaImagen } from '@/utils/imagenes.js'
 import ProductCard from '@/components/ProductCard.jsx'
 import { useCafeteria } from '@/context/CafeteriaContext.jsx'
 import gatoRayado from '@/assets/gato-taza-rayada.webp'
@@ -11,7 +12,7 @@ function Inicio() {
   return (
     <>
       <section className="hero-section">
-        <img src="/images/entrada/cafe-loop-bolsa.jpg" alt="Bolsa de café Café Loop" className="hero-image" />
+        <img src={rutaImagen('/images/entrada/cafe-loop-bolsa.jpg')} alt="Bolsa de café Café Loop" className="hero-image" />
         <div className="hero-shade"></div>
         <div className="container hero-content">
           <p className="eyebrow">CAFÉ DE ESPECIALIDAD · CÓRDOBA</p>
@@ -31,7 +32,7 @@ function Inicio() {
             <p>Seleccionamos granos de origen, los tostamos en pequeños lotes y preparamos cada taza en el momento. La idea es simple: que puedas elegir rápido y disfrutar sin apuro.</p>
             <Link className="text-link" to="/menu">Conocé todas las opciones →</Link>
           </div>
-          <img src="/images/vaso-cafe-manos.webp" alt="Vaso de café sostenido entre las manos" />
+          <img src={rutaImagen('/images/vaso-cafe-manos.webp')} alt="Vaso de café sostenido entre las manos" />
         </div>
       </section>
       <section className="section-space explore-section">
@@ -45,7 +46,7 @@ function Inicio() {
             </div>
           </Link>
           <Link className="explore-card explore-card-account" to="/tienda">
-            <img src="/images/bolsa-cafe-manos.webp" alt="Bolsa de café sostenida entre las manos" />
+            <img src={rutaImagen('/images/bolsa-cafe-manos.webp')} alt="Bolsa de café sostenida entre las manos" />
             <div>
               <p className="eyebrow">LA TIENDA LOOP</p>
               <h2>Preparalo en casa</h2>
@@ -123,13 +124,13 @@ function Inicio() {
             <a className="btn btn-cafe" href="https://www.google.com/maps/search/?api=1&query=Obispo+Trejo+950+Córdoba" target="_blank" rel="noreferrer">Abrir en Google Maps</a>
           </div>
           <div className="location-image">
-            <img src="/images/tostadoradecafe.png" alt="Tostadora de café de Café Loop" />
+            <img src={rutaImagen('/images/tostadoradecafe.png')} alt="Tostadora de café de Café Loop" />
           </div>
         </div>
       </section>
       <section className="section-space cat-section">
         <div className="container cat-card">
-          <img src="/images/entrada/gato-taza-naranja.webp" alt="Gatito dentro de una taza naranja" />
+          <img src={rutaImagen('/images/entrada/gato-taza-naranja.webp')} alt="Gatito dentro de una taza naranja" />
           <div>
             <p className="eyebrow">¿QUÉ VAS A ELEGIR HOY?</p>
             <h2>El gatito ahora te lleva directo al menú.</h2>
