@@ -5,7 +5,7 @@ function ProductCard({ producto }) {
   const { agregarAlCarrito } = useCafeteria()
 
   return (
-    <article className="card product-card h-100">
+    <article className={`card product-card h-100${producto.categoria === 'Tienda' ? ' store-product' : ''}`}>
       <img src={producto.imagen} className="card-img-top" alt={producto.nombre} />
       <div className="card-body d-flex flex-column">
         <span className="product-category">{producto.categoria}</span>

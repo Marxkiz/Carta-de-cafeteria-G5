@@ -20,7 +20,8 @@ La aplicación conserva la identidad visual de la primera versión de Café Loop
 ## Funcionalidades
 
 - Inicio con información de la cafetería, productos destacados y ubicación.
-- Menú completo con cafés, pastelería, salados y productos de tienda.
+- Menú completo con los 20 cafés, productos de pastelería y salados de la versión original.
+- Tienda separada con sus 12 productos, imágenes y filtros.
 - Buscador y filtros por categoría.
 - Carrito con cantidades, eliminación, total y finalización directa.
 - Registro e inicio de sesión con validaciones en tiempo real.

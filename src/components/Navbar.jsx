@@ -19,6 +19,7 @@ function Navbar() {
           <div className="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <NavLink className={navClass} to="/">Inicio</NavLink>
             <NavLink className={navClass} to="/menu">Menú</NavLink>
+            <NavLink className={navClass} to="/tienda">Tienda</NavLink>
             <NavLink className={navClass} to="/cuenta">Cuenta</NavLink>
             <NavLink className="btn cart-button ms-lg-2" to="/carrito">
               Carrito <span className="cart-count">{cantidadTotal}</span>

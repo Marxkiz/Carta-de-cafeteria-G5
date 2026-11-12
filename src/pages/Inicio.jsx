@@ -6,6 +6,7 @@ import gatoRayado from '@/assets/gato-taza-rayada.webp'
 function Inicio() {
   const { productos } = useCafeteria()
   const destacados = productos.filter((producto) => producto.destacado).slice(0, 3)
+  const tiendaDestacada = productos.filter((producto) => producto.categoria === 'Tienda').slice(0, 3)
 
   return (
     <>
@@ -43,14 +44,32 @@ function Inicio() {
               <span>Ver cafés, tortas y salados →</span>
             </div>
           </Link>
-          <Link className="explore-card explore-card-account" to="/cuenta">
+          <Link className="explore-card explore-card-account" to="/tienda">
             <img src="/images/bolsa-cafe-manos.webp" alt="Bolsa de café sostenida entre las manos" />
             <div>
-              <p className="eyebrow">TU CUENTA</p>
-              <h2>Guardá tu lugar en Loop</h2>
-              <span>Iniciar sesión o registrarme →</span>
+              <p className="eyebrow">LA TIENDA LOOP</p>
+              <h2>Preparalo en casa</h2>
+              <span>Ver café, métodos y objetos →</span>
             </div>
           </Link>
+        </div>
+      </section>
+      <section className="section-space store-preview-section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow dark">LA TIENDA</p>
+              <h2>Café Loop en casa</h2>
+            </div>
+            <Link className="text-link" to="/tienda">Ver los 12 productos →</Link>
+          </div>
+          <div className="row g-4">
+            {tiendaDestacada.map((producto) => (
+              <div className="col-12 col-md-6 col-lg-4" key={producto.id}>
+                <ProductCard producto={producto} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section className="section-space featured-section">

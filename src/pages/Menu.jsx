@@ -2,17 +2,27 @@ import { useState } from 'react'
 import ProductCard from '@/components/ProductCard.jsx'
 import { useCafeteria } from '@/context/CafeteriaContext.jsx'
 
-const categorias = ['Todos', 'Cafés', 'Pastelería', 'Salados', 'Tienda']
+const categorias = ['Todos', 'Cafés', 'Pastelería', 'Salados']
+
+const descripciones = {
+  'Cafés': 'Cafés de especialidad e infusiones preparados en el momento.',
+  'Pastelería': 'Tortas, panadería y algo dulce para acompañar.',
+  'Salados': 'Opciones completas para desayunar, almorzar o merendar.',
+}
 
 function Menu() {
   const { productos, cargando, errorApi } = useCafeteria()
   const [busqueda, setBusqueda] = useState('')
   const [categoria, setCategoria] = useState('Todos')
-  const filtrados = productos.filter((producto) => {
+  const productosMenu = productos.filter((producto) => producto.categoria !== 'Tienda')
+  const filtrados = productosMenu.filter((producto) => {
     const coincideCategoria = categoria === 'Todos' || producto.categoria === categoria
     const coincideBusqueda = producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
     return coincideCategoria && coincideBusqueda
   })
+  const secciones = categoria === 'Todos'
+    ? categorias.slice(1).map((nombre) => ({ nombre, productos: filtrados.filter((producto) => producto.categoria === nombre) }))
+    : [{ nombre: categoria, productos: filtrados }]
 
   return (
     <section className="menu-page section-space">
@@ -36,13 +46,23 @@ function Menu() {
         </div>
         {cargando && <p className="status-message">Cargando productos...</p>}
         {!cargando && filtrados.length === 0 && <p className="status-message">No encontramos productos con esa búsqueda.</p>}
-        <div className="row g-4">
-          {filtrados.map((producto) => (
-            <div className="col-12 col-md-6 col-lg-4" key={producto.id}>
-              <ProductCard producto={producto} />
-            </div>
-          ))}
-        </div>
+        {!cargando && secciones.map((seccion) => (
+          seccion.productos.length > 0 && (
+            <section className="catalog-section" key={seccion.nombre}>
+              <div className="catalog-heading">
+                <h2>{seccion.nombre}</h2>
+                <p>{descripciones[seccion.nombre]}</p>
+              </div>
+              <div className="row g-4">
+                {seccion.productos.map((producto) => (
+                  <div className="col-12 col-md-6 col-lg-4" key={producto.id}>
+                    <ProductCard producto={producto} />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )
+        ))}
       </div>
     </section>
   )
