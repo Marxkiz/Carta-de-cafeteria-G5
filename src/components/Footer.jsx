@@ -17,7 +17,7 @@ function Footer() {
         </div>
         <div>
           <p className="footer-title">Visitános</p>
-          <p>Obispo Trejo 950, Nueva Córdoba</p>
+          <p>Obispo Trejo 850, Nueva Córdoba</p>
           <p>Lunes a sábado de 8 a 21 h</p>
         </div>
       </div>
