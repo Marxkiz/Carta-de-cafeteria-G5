@@ -13,6 +13,9 @@ function Inicio() {
     <>
       <section className="hero-section">
         <img src={rutaImagen('/images/entrada/cafe-loop-bolsa.jpg')} alt="Bolsa de café Café Loop" className="hero-image" />
+        <video className="hero-image" autoPlay muted loop playsInline preload="metadata" poster={rutaImagen('/images/entrada/cafe-loop-bolsa.jpg')} aria-hidden="true">
+          <source src={rutaImagen('/videos/cafe1.mp4')} type="video/mp4" />
+        </video>
         <div className="hero-shade"></div>
         <div className="container hero-content">
           <p className="eyebrow">CAFÉ DE ESPECIALIDAD · CÓRDOBA</p>
@@ -119,22 +122,30 @@ function Inicio() {
           <div>
             <p className="eyebrow dark">NUEVA CÓRDOBA</p>
             <h2>Nos encontramos en Café Loop</h2>
-            <p>Obispo Trejo 950, Córdoba.</p>
+            <p>Obispo Trejo 850, Nueva Córdoba, Córdoba, Argentina.</p>
             <p>Lunes a sábado de 8 a 21 h.</p>
-            <a className="btn btn-cafe" href="https://www.google.com/maps/search/?api=1&query=Obispo+Trejo+950+Córdoba" target="_blank" rel="noreferrer">Abrir en Google Maps</a>
+            <a className="btn btn-cafe" href="https://www.google.com/maps/search/?api=1&query=Obispo+Trejo+850%2C+Nueva+C%C3%B3rdoba%2C+C%C3%B3rdoba%2C+Argentina" target="_blank" rel="noreferrer">Abrir en Google Maps</a>
           </div>
           <div className="location-image">
             <img src={rutaImagen('/images/tostadoradecafe.png')} alt="Tostadora de café de Café Loop" />
           </div>
+          <iframe
+            className="location-map"
+            title="Ubicación de Café Loop en Obispo Trejo 850, Nueva Córdoba"
+            src="https://www.google.com/maps?q=Obispo+Trejo+850%2C+Nueva+C%C3%B3rdoba%2C+C%C3%B3rdoba%2C+Argentina&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
       </section>
       <section className="section-space cat-section">
         <div className="container cat-card">
           <img src={rutaImagen('/images/entrada/gato-taza-naranja.webp')} alt="Gatito dentro de una taza naranja" />
           <div>
-            <p className="eyebrow">¿QUÉ VAS A ELEGIR HOY?</p>
-            <h2>El gatito ahora te lleva directo al menú.</h2>
-            <p>Cafés, tortas, panadería y opciones saladas en un mismo lugar.</p>
+            <p className="eyebrow">HACÉ UNA PAUSA CON NOSOTROS</p>
+            <h2>Tu próximo café te está esperando.</h2>
+            <p>Elegí tu café favorito y acompañalo con algo rico de nuestro menú.</p>
             <Link className="btn btn-light" to="/menu">Ir al menú</Link>
           </div>
         </div>
