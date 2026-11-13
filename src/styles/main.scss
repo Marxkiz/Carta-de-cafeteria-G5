@@ -160,6 +160,9 @@ main { flex: 1; }
 
 .account-page { min-height: 75vh; background: $coffee-dark; color: white; }
 .account-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 7vw, 7rem); align-items: start; }
+.account-layout > *, .form-field, .form-field .form-control { min-width: 0; }
+.account-copy h1, .account-details dd, .account-notice, .field-error { overflow-wrap: anywhere; }
+.account-nav-label { display: block; max-width: 12rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .account-copy { padding-top: 2rem; }
 .account-copy h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 0.98; }
 .account-copy > p:last-child { color: rgba(255, 255, 255, 0.7); font-size: 1.08rem; line-height: 1.7; }
@@ -167,6 +170,12 @@ main { flex: 1; }
 .form-field label { display: block; font-weight: 700; margin-bottom: 0.45rem; }
 .field-error { color: #a72f24; font-size: 0.88rem; margin: 0.4rem 0 0; }
 .account-switch { border: 0; background: transparent; color: $coffee; font-weight: 700; text-decoration: underline; }
+.account-switch:disabled { opacity: 0.6; cursor: wait; }
+.account-form h2, .account-details { margin: 0; }
+.account-details dt { font-weight: 700; margin-bottom: 0.3rem; }
+.account-details dd { color: $muted; margin-bottom: 1rem; }
+.account-details dd:last-child { margin-bottom: 0; }
+.account-notice { margin: 0; padding: 1rem; background: $cream; border-left: 3px solid $orange; border-radius: 8px; line-height: 1.6; }
 
 .cafe-footer { background: #17100d; color: rgba(255, 255, 255, 0.72); padding: 3.5rem 0; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr 0.7fr 1fr; gap: 3rem; }
