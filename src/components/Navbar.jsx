@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import { useCafeteria } from '@/context/CafeteriaContext.jsx'
+import { useSesion } from '@/context/SesionContext.jsx'
 
 function Navbar() {
   const { cantidadTotal } = useCafeteria()
+  const { usuario } = useSesion()
   const navClass = ({ isActive }) => `nav-link${isActive ? ' active' : ''}`
 
   return (
@@ -20,7 +22,9 @@ function Navbar() {
             <NavLink className={navClass} to="/">Inicio</NavLink>
             <NavLink className={navClass} to="/menu">Menú</NavLink>
             <NavLink className={navClass} to="/tienda">Tienda</NavLink>
-            <NavLink className={navClass} to="/cuenta">Cuenta</NavLink>
+            <NavLink className={navClass} to="/cuenta" aria-label={usuario ? `Mi cuenta, ${usuario.nombre}` : undefined}>
+              <span className="account-nav-label">{usuario ? `Hola, ${usuario.nombre.split(' ')[0]}` : 'Cuenta'}</span>
+            </NavLink>
             <NavLink className="btn cart-button ms-lg-2" to="/carrito">
               Carrito <span className="cart-count">{cantidadTotal}</span>
             </NavLink>

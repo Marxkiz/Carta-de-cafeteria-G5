@@ -6,13 +6,16 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import '@/styles/main.scss'
 import App from '@/App.jsx'
 import { CafeteriaProvider } from '@/context/CafeteriaContext.jsx'
+import { SesionProvider } from '@/context/SesionContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
-      <CafeteriaProvider>
-        <App />
-      </CafeteriaProvider>
+      <SesionProvider>
+        <CafeteriaProvider>
+          <App />
+        </CafeteriaProvider>
+      </SesionProvider>
     </HashRouter>
   </StrictMode>,
 )
